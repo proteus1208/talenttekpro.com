@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --ttp-ink: #0b1218;
+  --ttp-slate: #15202b;
+  --ttp-surface: #1a2633;
+  --ttp-surface-raised: #243447;
+  --ttp-border: rgba(242, 245, 247, 0.08);
+  --ttp-text: #f2f5f7;
+  --ttp-text-muted: #a8b5c2;
+  --ttp-text-faint: #6b7a8a;
+  --ttp-teal: #2ec4b6;
+  --ttp-teal-dim: #1a8f85;
+  --ttp-ember: #e07a3d;
+  --ttp-ember-hover: #f08a4d;
+  --ttp-focus: #2ec4b6;
+  --ttp-danger: #e25c5c;
+}
+
+@theme inline {
+  --color-ink: var(--ttp-ink);
+  --color-slate: var(--ttp-slate);
+  --color-surface: var(--ttp-surface);
+  --color-surface-raised: var(--ttp-surface-raised);
+  --color-border: var(--ttp-border);
+  --color-text: var(--ttp-text);
+  --color-muted: var(--ttp-text-muted);
+  --color-faint: var(--ttp-text-faint);
+  --color-teal: var(--ttp-teal);
+  --color-teal-dim: var(--ttp-teal-dim);
+  --color-ember: var(--ttp-ember);
+  --color-ember-hover: var(--ttp-ember-hover);
+  --color-focus: var(--ttp-focus);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--ttp-ink);
+  color: var(--ttp-text);
+}
+
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100%;
+}
+
+.bg-wash {
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 70% 20%,
+      rgba(46, 196, 182, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 10% 80%,
+      rgba(224, 122, 61, 0.06),
+      transparent 50%
+    ),
+    linear-gradient(180deg, var(--ttp-ink), var(--ttp-slate));
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(46, 196, 182, 0.35);
+  color: var(--ttp-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ttp-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

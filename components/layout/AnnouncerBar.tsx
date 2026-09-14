@@ -1,0 +1,25 @@
+"use client";
+
+import Link from "next/link";
+import { cta, site } from "@/content/site";
+
+export function AnnouncerBar() {
+  return (
+    <div className="border-b border-border bg-ink/90 text-xs text-muted backdrop-blur-sm">
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-1 px-5 py-2 sm:flex-row sm:items-center sm:justify-between md:px-6 lg:px-8">
+        <p className="truncate">{site.tagline}</p>
+        <div className="flex items-center gap-4">
+          <a
+            href={`mailto:${site.email}`}
+            className="hover:text-teal transition-colors"
+          >
+            {site.email}
+          </a>
+          <Link href={cta.primary.href} className="text-teal hover:text-text transition-colors">
+            {cta.primary.label}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
