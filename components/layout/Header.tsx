@@ -29,13 +29,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-colors",
+        "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-200 ease-out",
         scrolled || open
-          ? "border-b border-border bg-ink/95 backdrop-blur-md"
-          : "bg-ink/40 backdrop-blur-sm",
+          ? "border-border bg-ink/95 backdrop-blur-md"
+          : "border-transparent bg-ink/40 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:px-8">
+      <div className="mx-auto flex h-[var(--ttp-header-h)] max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:px-8">
         <Logo size="nav" variant="mark" priority />
 
         <nav className="hidden items-center gap-6 lg:flex">

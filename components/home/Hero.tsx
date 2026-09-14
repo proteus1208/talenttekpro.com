@@ -6,10 +6,15 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionIndex } from "@/components/ui/SectionIndex";
 import { ParallaxLayer } from "@/components/effects/ParallaxLayer";
+import { ParallaxCopy } from "@/components/effects/ParallaxCopy";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cta } from "@/content/site";
 
+/**
+ * First viewport height = 100svh − announcer − header
+ * so the hero content baseline sits on the visible bottom edge.
+ */
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduced = useReducedMotion();
@@ -33,9 +38,13 @@ export function Hero() {
   }, [reduced]);
 
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden">
-      <ParallaxLayer className="absolute inset-0 -z-10" speed={0.12}>
-        <div className="absolute inset-0 scale-110">
+    <section className="relative isolate h-[calc(100svh-var(--ttp-chrome-h))] min-h-[28rem] overflow-hidden">
+      <ParallaxLayer
+        className="absolute inset-0 -z-10 h-[120%] w-full"
+        speed={0.48}
+        scale={1.2}
+      >
+        <div className="absolute inset-0">
           {reduced ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -60,31 +69,33 @@ export function Hero() {
         </div>
       </ParallaxLayer>
 
-      <div className="absolute inset-0 -z-[5] bg-gradient-to-b from-ink/70 via-ink/55 to-ink" />
+      <div className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-b from-ink/75 via-ink/50 to-ink" />
 
-      <Container className="relative flex min-h-[100svh] flex-col justify-end pb-20 pt-32 md:pb-28 md:pt-40">
-        <motion.div
-          initial={reduced ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <SectionIndex label={home.hero.index} className="text-muted" />
-          <p className="font-display mt-6 text-sm font-medium tracking-[0.2em] text-teal uppercase">
-            {home.hero.brand}
-          </p>
-          <h1 className="font-display mt-4 max-w-3xl text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.05] tracking-tight text-text">
-            {home.hero.headline}
-          </h1>
-          <p className="mt-5 max-w-xl text-base text-muted md:text-lg">
-            {home.hero.support}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={cta.primary.href}>{cta.primary.label}</Button>
-            <Button href={cta.secondary.href} variant="secondary">
-              {cta.secondary.label}
-            </Button>
-          </div>
-        </motion.div>
+      <Container className="relative flex h-full flex-col justify-end pb-6 pt-6 md:pb-8 md:pt-8">
+        <ParallaxCopy distance={80}>
+          <motion.div
+            initial={reduced ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <SectionIndex label={home.hero.index} className="text-muted" />
+            <p className="font-display mt-4 text-sm font-medium tracking-[0.2em] text-teal uppercase md:mt-5">
+              {home.hero.brand}
+            </p>
+            <h1 className="font-display mt-3 max-w-3xl text-[clamp(2.25rem,5.5vw,4.25rem)] font-semibold leading-[1.05] tracking-tight text-text md:mt-4">
+              {home.hero.headline}
+            </h1>
+            <p className="mt-4 max-w-xl text-base text-muted md:mt-5 md:text-lg">
+              {home.hero.support}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 md:mt-8">
+              <Button href={cta.primary.href}>{cta.primary.label}</Button>
+              <Button href={cta.secondary.href} variant="secondary">
+                {cta.secondary.label}
+              </Button>
+            </div>
+          </motion.div>
+        </ParallaxCopy>
       </Container>
     </section>
   );

@@ -32,7 +32,7 @@ export function Approach() {
               </div>
             </div>
 
-            <ParallaxLayer speed={0.05}>
+            <ParallaxLayer speed={0.38} scale={1.18} className="rounded-sm">
               <div className="relative aspect-[3/2] overflow-hidden rounded-sm">
                 <Image
                   src={media.approach.src}

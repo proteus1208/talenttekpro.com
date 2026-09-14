@@ -80,7 +80,7 @@ export function Platform() {
             <div>
               <PipelineSceneDynamic />
               <p className="mt-3 font-mono text-[0.7rem] tracking-wide text-faint uppercase">
-                talent → match → ship
+                talent → match → ship · tilt with pointer
               </p>
             </div>
           </div>

@@ -21,7 +21,7 @@ export function Manifesto() {
                 {home.manifesto.body}
               </p>
             </div>
-            <ParallaxLayer speed={0.06}>
+            <ParallaxLayer speed={0.4} scale={1.18} className="rounded-sm">
               <div className="relative aspect-[16/10] overflow-hidden rounded-sm">
                 <Image
                   src={media.manifesto.src}
