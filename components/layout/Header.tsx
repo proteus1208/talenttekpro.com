@@ -5,7 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
-import { cta, primaryNav, site } from "@/content/site";
+import { Logo } from "@/components/ui/Logo";
+import { cta, primaryNav } from "@/content/site";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,21 +35,8 @@ export function Header() {
           : "bg-ink/40 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <span
-            aria-hidden
-            className="relative grid size-8 place-items-center rounded-sm border border-border bg-surface"
-          >
-            <span className="font-display text-sm font-semibold text-text">
-              T
-            </span>
-            <span className="absolute bottom-1.5 right-1.5 size-1.5 rounded-full bg-teal" />
-          </span>
-          <span className="font-display text-base font-semibold tracking-tight text-text">
-            {site.name}
-          </span>
-        </Link>
+      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:px-8">
+        <Logo size="nav" variant="mark" priority />
 
         <nav className="hidden items-center gap-6 lg:flex">
           {primaryNav.map((item) => (

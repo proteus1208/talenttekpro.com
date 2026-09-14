@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: [{ url: "/logo/logo-no-text-512.png", type: "image/png", sizes: "883x883" }],
+    apple: [{ url: "/logo/logo-no-text-512.png", sizes: "180x180" }],
+  },
+  openGraph: {
+    title: `${site.name} | ${site.descriptor}`,
+    description: site.description,
+    images: [{ url: "/logo/logo-main-white-text.png", width: 1254, height: 1254 }],
+  },
 };
 
 export default function RootLayout({

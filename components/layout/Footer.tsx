@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 import { footerColumns, site } from "@/content/site";
 
 export function Footer() {
@@ -8,10 +9,8 @@ export function Footer() {
       <Container className="py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-display text-lg font-semibold text-text">
-              {site.name}
-            </p>
-            <p className="mt-2 text-sm text-muted">{site.descriptor}</p>
+            <Logo size="footer" variant="lockup" showWordmark={false} />
+            <p className="mt-3 text-sm text-muted">{site.descriptor}</p>
             <a
               href={`mailto:${site.email}`}
               className="mt-4 inline-block text-sm text-teal hover:underline"
