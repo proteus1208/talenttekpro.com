@@ -36,6 +36,7 @@ const heroStats = [
   },
 ];
 
+/** Wave that dissolves into the shared intro-band color (#F5F9FC). */
 function HeroWaveSvg({ className }: { className?: string }) {
   return (
     <svg
@@ -47,23 +48,24 @@ function HeroWaveSvg({ className }: { className?: string }) {
       preserveAspectRatio="none"
     >
       <defs>
-        <linearGradient id="hero-wave-grad" x1="0%" y1="40%" x2="100%" y2="60%">
-          <stop offset="0%" stopColor="#1E60FF" stopOpacity="0.5" />
-          <stop offset="45%" stopColor="#00B4FF" stopOpacity="0.38" />
-          <stop offset="100%" stopColor="#00D2FF" stopOpacity="0.32" />
-        </linearGradient>
-        <linearGradient id="hero-wave-soft" x1="10%" y1="0%" x2="90%" y2="100%">
-          <stop offset="0%" stopColor="#5AE0FF" stopOpacity="0.22" />
-          <stop offset="100%" stopColor="#1E60FF" stopOpacity="0.1" />
+        <linearGradient id="hero-wave-grad" x1="0%" y1="20%" x2="100%" y2="80%">
+          <stop offset="0%" stopColor="#1E60FF" stopOpacity="0.35" />
+          <stop offset="50%" stopColor="#00B4FF" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="#00D2FF" stopOpacity="0.22" />
         </linearGradient>
       </defs>
+      {/* Solid band color so the seam matches Solutions */}
       <path
-        d="M0 150 C180 40 360 200 540 110 C720 20 900 170 1080 90 C1260 10 1380 80 1440 50 L1440 220 L0 220 Z"
-        fill="url(#hero-wave-soft)"
+        d="M0 130 C220 40 420 190 640 110 C860 30 1080 160 1440 70 L1440 220 L0 220 Z"
+        fill="#F5F9FC"
       />
       <path
-        d="M0 175 C200 70 380 210 560 130 C740 50 920 190 1100 115 C1280 40 1380 100 1440 75 L1440 220 L0 220 Z"
+        d="M0 155 C240 60 440 200 660 125 C880 50 1100 170 1440 95 L1440 220 L0 220 Z"
         fill="url(#hero-wave-grad)"
+      />
+      <path
+        d="M0 185 C260 95 480 210 700 145 C920 80 1140 185 1440 120 L1440 220 L0 220 Z"
+        fill="#F5F9FC"
       />
     </svg>
   );
@@ -73,12 +75,9 @@ export function Hero() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="relative z-10 overflow-visible bg-white">
-      <div className="relative flex min-h-[min(780px,calc(100svh-var(--ttp-chrome-h)-3.5rem))] flex-col overflow-hidden pb-28 md:min-h-[min(720px,calc(100svh-var(--ttp-chrome-h)-4.5rem))] md:pb-32">
-        {/* Right photo — 60vw × 100% height; left edge masked so no hard vertical seam */}
-        <div
-          className="absolute top-0 right-0 bottom-0 z-0 h-full w-[60vw] [mask-image:linear-gradient(to_right,transparent_0%,#000_12%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_12%)]"
-        >
+    <section className="relative z-20 overflow-visible bg-white">
+      <div className="relative flex min-h-[min(780px,calc(100svh-var(--ttp-chrome-h)-3.5rem))] flex-col overflow-hidden pb-32 md:min-h-[min(720px,calc(100svh-var(--ttp-chrome-h)-4.5rem))] md:pb-36">
+        <div className="absolute top-0 right-0 bottom-0 z-0 h-full w-[60vw] [mask-image:linear-gradient(to_right,transparent_0%,#000_12%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_12%)]">
           <Image
             src="/assets/imgs/Landing.png"
             alt="TalentTekPro teammates collaborating at a laptop in a bright office"
@@ -89,10 +88,14 @@ export function Hero() {
           />
         </div>
 
-        {/* Full-width SVG wave under content */}
-        <HeroWaveSvg className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[150px] w-full md:h-[200px]" />
+        {/* Continuous wash into services band */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-[#F5F9FC] via-[#F5F9FC]/85 to-transparent"
+          aria-hidden
+        />
 
-        {/* Floating copy layer — sits above background */}
+        <HeroWaveSvg className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[160px] w-full md:h-[210px]" />
+
         <Container className="relative z-20 flex flex-1 items-center py-16 md:py-20">
           <motion.div
             className="relative max-w-[34rem] lg:max-w-[36rem]"
@@ -126,14 +129,18 @@ export function Hero() {
         </Container>
       </div>
 
-      {/* Stats — v-centered on the border between this section and the next */}
+      {/* Stats centered on the single shared divider */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 translate-y-1/2">
         <Container>
           <motion.div
             className="pointer-events-auto rounded-[1.75rem] border border-black/5 bg-white px-4 py-5 shadow-[0_24px_70px_rgba(5,25,55,0.14)] sm:px-6 md:rounded-[2rem] md:px-2 md:py-6"
             initial={reduced ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.65,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
             <dl className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-0">
               {heroStats.map((stat, i) => {

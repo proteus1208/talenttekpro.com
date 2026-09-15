@@ -91,31 +91,33 @@ const icons: LucideIcon[] = [
 
 export function Solutions() {
   return (
-    <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-24 pb-20 md:pt-28 md:pb-28">
-      {/* Clear organic section shapes (no blur) */}
+    <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-28 pb-24 md:pt-32 md:pb-28">
+      {/* Distinct shapes: rounded triangle + hexagon + ring (not circles/blobs) */}
       <svg
-        className="pointer-events-none absolute -top-16 -right-10 h-[22rem] w-[22rem] text-[#B8D4FF] md:h-[28rem] md:w-[28rem]"
-        viewBox="0 0 400 400"
+        className="pointer-events-none absolute top-[38%] -right-10 h-[17rem] w-[17rem] text-[#B8D4FF] md:h-[22rem] md:w-[22rem]"
+        viewBox="0 0 200 200"
         fill="currentColor"
         aria-hidden
       >
-        <path d="M320 40C380 90 410 170 390 240C370 310 300 360 220 370C140 380 60 340 30 260C0 180 30 90 100 50C170 10 260 -10 320 40Z" />
+        <path d="M100 18 C108 18 116 22 120 30 L172 128 C176 136 174 146 166 152 C162 155 157 156 152 156 L48 156 C40 156 33 151 30 144 C27 137 29 129 34 124 L86 30 C90 22 96 18 100 18 Z" />
       </svg>
       <svg
-        className="pointer-events-none absolute -bottom-24 -left-16 h-[24rem] w-[24rem] text-[#A8E8F5] md:h-[30rem] md:w-[30rem]"
-        viewBox="0 0 400 400"
+        className="pointer-events-none absolute top-[52%] -left-14 h-[14rem] w-[14rem] text-[#A8E8F5] md:h-[18rem] md:w-[18rem]"
+        viewBox="0 0 200 200"
         fill="currentColor"
         aria-hidden
       >
-        <path d="M80 360C20 300 -10 210 20 140C50 70 130 20 210 20C290 20 360 70 380 150C400 230 360 320 280 360C200 400 140 420 80 360Z" />
+        <path d="M100 12 L168 52 L168 148 L100 188 L32 148 L32 52 Z" />
       </svg>
       <svg
-        className="pointer-events-none absolute top-[38%] right-[18%] hidden h-40 w-40 text-[#C5F0FF] lg:block"
-        viewBox="0 0 160 160"
-        fill="currentColor"
+        className="pointer-events-none absolute top-[28%] left-[48%] hidden h-28 w-28 text-[#C5E7FF] lg:block"
+        viewBox="0 0 120 120"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="14"
         aria-hidden
       >
-        <circle cx="80" cy="80" r="72" />
+        <circle cx="60" cy="60" r="42" />
       </svg>
 
       <Container className="relative z-10">
@@ -187,7 +189,6 @@ export function Solutions() {
                     ))}
                   </ul>
 
-                  {/* Clear quarter-circle corner + arrow */}
                   <div
                     className={cn(
                       "pointer-events-none absolute right-0 bottom-0 size-[5.5rem] rounded-tl-full",
@@ -210,6 +211,12 @@ export function Solutions() {
           </div>
         </RevealOnScroll>
       </Container>
+
+      {/* Soft handoff into Manifesto (white) */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white"
+        aria-hidden
+      />
     </section>
   );
 }

@@ -20,7 +20,8 @@ export const home = {
   },
   impact: {
     index: "003 / Impact",
-    headline: "We listen across placements and deliveries for signs of impact.",
+    eyebrow: "By the numbers",
+    headline: "Built for measurable impact.",
     metrics: [
       { label: "client satisfaction", value: 98, suffix: "%", detail: "across 50+ delivered projects" },
       { label: "projects & placements", value: 50, suffix: "+", detail: "since founding" },
