@@ -36,35 +36,57 @@ const heroStats = [
   },
 ];
 
-/** Wave that dissolves into the shared intro-band color (#F5F9FC). */
+/** Clean professional dissolve — tall, soft opacity, single refined curve language. */
 function HeroWaveSvg({ className }: { className?: string }) {
   return (
     <svg
       className={className}
-      viewBox="0 0 1440 220"
+      viewBox="0 0 1440 400"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
       preserveAspectRatio="none"
     >
       <defs>
-        <linearGradient id="hero-wave-grad" x1="0%" y1="20%" x2="100%" y2="80%">
-          <stop offset="0%" stopColor="#1E60FF" stopOpacity="0.35" />
-          <stop offset="50%" stopColor="#00B4FF" stopOpacity="0.28" />
-          <stop offset="100%" stopColor="#00D2FF" stopOpacity="0.22" />
+        <linearGradient id="hero-wave-veil" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#F5F9FC" stopOpacity="0" />
+          <stop offset="35%" stopColor="#F5F9FC" stopOpacity="0.35" />
+          <stop offset="70%" stopColor="#F5F9FC" stopOpacity="0.82" />
+          <stop offset="100%" stopColor="#F5F9FC" stopOpacity="1" />
+        </linearGradient>
+        <linearGradient id="hero-wave-tint" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1E60FF" stopOpacity="0" />
+          <stop offset="40%" stopColor="#1E60FF" stopOpacity="0.06" />
+          <stop offset="100%" stopColor="#00B4FF" stopOpacity="0.1" />
         </linearGradient>
       </defs>
-      {/* Solid band color so the seam matches Solutions */}
+
+      {/* Tall atmospheric veil — no hard crest */}
+      <rect width="1440" height="400" fill="url(#hero-wave-veil)" />
+
+      {/* Soft brand tint under the curve */}
       <path
-        d="M0 130 C220 40 420 190 640 110 C860 30 1080 160 1440 70 L1440 220 L0 220 Z"
+        d="M0 168 C360 88 720 248 1080 148 C1260 98 1380 128 1440 118 L1440 400 L0 400 Z"
+        fill="url(#hero-wave-tint)"
+      />
+
+      {/* Primary wave — wide, calm amplitude */}
+      <path
+        d="M0 198 C300 118 540 278 840 188 C1080 118 1280 218 1440 168 L1440 400 L0 400 Z"
         fill="#F5F9FC"
+        fillOpacity="0.55"
       />
+
+      {/* Secondary wave — slight offset for depth */}
       <path
-        d="M0 155 C240 60 440 200 660 125 C880 50 1100 170 1440 95 L1440 220 L0 220 Z"
-        fill="url(#hero-wave-grad)"
+        d="M0 248 C280 178 560 308 880 228 C1120 168 1300 258 1440 218 L1440 400 L0 400 Z"
+        fill="#F5F9FC"
+        fillOpacity="0.78"
       />
+
+      {/* Solid settle into services band */}
       <path
-        d="M0 185 C260 95 480 210 700 145 C920 80 1140 185 1440 120 L1440 220 L0 220 Z"
+        d="M0 292 C320 242 640 332 960 282 C1180 248 1340 298 1440 278 L1440 400 L0 400 Z"
         fill="#F5F9FC"
       />
     </svg>
@@ -76,7 +98,7 @@ export function Hero() {
 
   return (
     <section className="relative z-20 overflow-visible bg-white">
-      <div className="relative flex min-h-[min(780px,calc(100svh-var(--ttp-chrome-h)-3.5rem))] flex-col overflow-hidden pb-32 md:min-h-[min(720px,calc(100svh-var(--ttp-chrome-h)-4.5rem))] md:pb-36">
+      <div className="hero-viewport relative flex flex-col overflow-hidden pb-32 md:pb-40">
         <div className="absolute top-0 right-0 bottom-0 z-0 h-full w-[60vw] [mask-image:linear-gradient(to_right,transparent_0%,#000_12%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_12%)]">
           <Image
             src="/assets/imgs/Landing.png"
@@ -88,13 +110,13 @@ export function Hero() {
           />
         </div>
 
-        {/* Continuous wash into services band */}
+        {/* Soft atmospheric fade into services */}
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-[#F5F9FC] via-[#F5F9FC]/85 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-48 bg-gradient-to-t from-[#F5F9FC] via-[#F5F9FC]/40 to-transparent md:h-64"
           aria-hidden
         />
 
-        <HeroWaveSvg className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[160px] w-full md:h-[210px]" />
+        <HeroWaveSvg className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[280px] w-full md:h-[360px] lg:h-[420px]" />
 
         <Container className="relative z-20 flex flex-1 items-center py-16 md:py-20">
           <motion.div

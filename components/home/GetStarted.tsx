@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
 import { cta, site } from "@/content/site";
+import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function GetStarted() {
   return (
-    <section className="relative isolate overflow-hidden border-t border-border section-pad">
-      <div className="absolute inset-0 -z-10">
+    <section className="relative z-[1] isolate overflow-visible section-pad bg-white">
+      <SectionEdge fill="#ffffff" variant="soft" position="top" />
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/assets/imgs/Landing.png"
           alt=""

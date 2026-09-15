@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { SectionEdge } from "@/components/ui/SectionShell";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 
 export function Manifesto() {
   return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-20 md:pt-20 md:pb-28">
+    <section className="relative z-[1] overflow-visible bg-white pt-20 pb-24 md:pt-24 md:pb-28">
+      <SectionEdge fill="#ffffff" variant="wave" position="top" />
+
       {/* Different vocabulary from Services: rounded square, diamond, arc */}
       <svg
         className="pointer-events-none absolute top-[36%] -left-16 h-52 w-52 text-[#E8F1FF] md:h-64 md:w-64"

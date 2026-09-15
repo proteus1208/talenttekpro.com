@@ -14,6 +14,7 @@ import { CountUp } from "@/components/effects/CountUp";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
+import { SectionEdge } from "@/components/ui/SectionShell";
 
 const metricIcons: LucideIcon[] = [
   Star,
@@ -35,7 +36,8 @@ const metricAccents = [
 
 export function Impact() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F7FBFF] to-[#EEF6FF] pt-20 pb-20 md:pt-28 md:pb-28">
+    <section className="relative z-[1] overflow-visible bg-[#F7FBFF] pt-24 pb-24 md:pt-28 md:pb-28">
+      <SectionEdge fill="#F7FBFF" variant="bump" position="top" />
       {/* Subtle clear accent shapes */}
       <svg
         className="pointer-events-none absolute top-16 right-[8%] h-24 w-24 text-[#D6E8FF]"

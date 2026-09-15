@@ -7,12 +7,14 @@ import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
+import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function FaqTeaser() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section-dark section-pad border-t border-border">
+    <section className="relative z-[1] overflow-visible bg-white section-pad">
+      <SectionEdge fill="#ffffff" variant="bump" position="top" />
       <Container className="max-w-3xl">
         <RevealOnScroll>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">

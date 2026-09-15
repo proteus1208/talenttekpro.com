@@ -6,6 +6,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { PipelineSceneDynamic } from "@/components/effects/PipelineSceneDynamic";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
+import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function Platform() {
   const tabs = home.platform.tabs;
@@ -13,7 +14,8 @@ export function Platform() {
   const tab = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
-    <section className="section-elevated section-pad border-t border-border">
+    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
+      <SectionEdge fill="#F5F9FC" variant="valley" position="top" />
       <Container>
         <RevealOnScroll>
           <h2 className="font-display max-w-2xl text-3xl font-semibold tracking-tight text-text md:text-4xl">

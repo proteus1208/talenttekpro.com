@@ -1,10 +1,12 @@
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
+import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function Industries() {
   return (
-    <section className="section-dark section-pad border-t border-border">
+    <section className="relative z-[1] overflow-visible bg-white section-pad">
+      <SectionEdge fill="#ffffff" variant="slant" position="top" />
       <Container>
         <RevealOnScroll>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">

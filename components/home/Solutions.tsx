@@ -211,12 +211,6 @@ export function Solutions() {
           </div>
         </RevealOnScroll>
       </Container>
-
-      {/* Soft handoff into Manifesto (white) */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white"
-        aria-hidden
-      />
     </section>
   );
 }

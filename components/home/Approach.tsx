@@ -4,10 +4,12 @@ import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
+import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function Approach() {
   return (
-    <section className="section-elevated section-pad border-t border-border">
+    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
+      <SectionEdge fill="#F5F9FC" variant="wave" position="top" />
       <Container>
         <RevealOnScroll>
           <div className="grid items-start gap-10 lg:grid-cols-12">

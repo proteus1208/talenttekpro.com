@@ -66,6 +66,12 @@
   color-scheme: light;
 }
 
+/* First-viewport hero: fills the screen below the sticky header */
+.hero-viewport {
+  min-height: calc(100vh - var(--ttp-header-h));
+  min-height: calc(100dvh - var(--ttp-header-h));
+}
+
 html {
   scroll-behavior: smooth;
 }
