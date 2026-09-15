@@ -7,8 +7,8 @@ import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function CareersTeaser() {
   return (
-    <section className="relative z-[1] overflow-visible bg-white section-pad">
-      <SectionEdge fill="#ffffff" variant="soft" position="top" />
+    <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">
+      <SectionEdge fill="#F0F7FC" variant="soft" position="top" />
       <Container>
         <RevealOnScroll>
           <div className="flex flex-wrap items-end justify-between gap-4">

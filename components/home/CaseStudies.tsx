@@ -175,8 +175,8 @@ export function CaseStudies() {
   const secondary = rest.slice(0, 4);
 
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F8FBFF] section-pad">
-      <SectionEdge fill="#F8FBFF" variant="soft" position="top" />
+    <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">
+      <SectionEdge fill="#F0F7FC" variant="soft" position="top" />
       <Container>
         <RevealOnScroll>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

@@ -7,8 +7,8 @@ import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function BlogTeaser() {
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
-      <SectionEdge fill="#F5F9FC" variant="wave" position="top" />
+    <section className="relative z-[1] overflow-visible bg-white section-pad">
+      <SectionEdge fill="#ffffff" variant="wave" position="top" />
       <Container>
         <RevealOnScroll>
           <div className="flex flex-wrap items-end justify-between gap-4">

@@ -56,8 +56,8 @@ const industryMeta: Record<string, { icon: LucideIcon; iconBg: string }> = {
 
 export function Industries() {
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F7FAFC] section-pad">
-      <SectionEdge fill="#F7FAFC" variant="slant" position="top" />
+    <section className="relative z-[1] overflow-visible bg-white section-pad">
+      <SectionEdge fill="#ffffff" variant="slant" position="top" />
 
       <div
         className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-[#DBEAFE]/70 blur-3xl"

@@ -13,8 +13,8 @@ export function FaqTeaser() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative z-[1] overflow-visible bg-white section-pad">
-      <SectionEdge fill="#ffffff" variant="bump" position="top" />
+    <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
+      <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
       <Container className="max-w-3xl">
         <RevealOnScroll>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">

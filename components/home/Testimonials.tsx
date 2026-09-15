@@ -5,8 +5,8 @@ import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function Testimonials() {
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">
-      <SectionEdge fill="#F0F7FC" variant="valley" position="top" />
+    <section className="relative z-[1] overflow-visible bg-white section-pad">
+      <SectionEdge fill="#ffffff" variant="valley" position="top" />
       <Container>
         <RevealOnScroll>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-light-ink md:text-4xl">

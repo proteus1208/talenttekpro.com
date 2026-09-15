@@ -8,8 +8,8 @@ import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function GetStarted() {
   return (
-    <section className="relative z-[1] isolate overflow-visible section-pad bg-white">
-      <SectionEdge fill="#ffffff" variant="soft" position="top" />
+    <section className="relative z-[1] isolate overflow-visible section-pad bg-[#F5F9FC]">
+      <SectionEdge fill="#F5F9FC" variant="soft" position="top" />
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/assets/imgs/Landing.png"

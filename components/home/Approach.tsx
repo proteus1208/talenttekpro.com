@@ -8,8 +8,8 @@ import { SectionEdge } from "@/components/ui/SectionShell";
 
 export function Approach() {
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
-      <SectionEdge fill="#F5F9FC" variant="wave" position="top" />
+    <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
+      <SectionEdge fill="#EAF3FB" variant="wave" position="top" />
       <Container>
         <RevealOnScroll>
           <div className="grid items-start gap-10 lg:grid-cols-12">

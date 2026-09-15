@@ -8,8 +8,8 @@ export function PartnersTrust() {
   const loop = [...home.partners.marquee, ...home.partners.marquee];
 
   return (
-    <section className="relative z-[1] overflow-visible bg-white section-pad">
-      <SectionEdge fill="#ffffff" variant="bump" position="top" />
+    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
+      <SectionEdge fill="#F5F9FC" variant="bump" position="top" />
       <Container>
         <RevealOnScroll>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">

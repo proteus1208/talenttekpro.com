@@ -36,8 +36,8 @@ const metricAccents = [
 
 export function Impact() {
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F7FBFF] pt-24 pb-24 md:pt-28 md:pb-28">
-      <SectionEdge fill="#F7FBFF" variant="bump" position="top" />
+    <section className="relative z-[1] overflow-visible bg-[#EAF3FB] pt-24 pb-24 md:pt-28 md:pb-28">
+      <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
       {/* Subtle clear accent shapes */}
       <svg
         className="pointer-events-none absolute top-16 right-[8%] h-24 w-24 text-[#D6E8FF]"
