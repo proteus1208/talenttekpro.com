@@ -76,7 +76,7 @@ export function Impact() {
               return (
                 <div
                   key={metric.label}
-                  className="group relative overflow-hidden rounded-3xl border border-[#051937]/06 bg-white/90 p-7 shadow-[0_14px_40px_rgba(5,25,55,0.06)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(5,25,55,0.1)]"
+                  className="group relative overflow-hidden rounded-3xl bg-white/95 p-7 shadow-[0_16px_48px_rgba(5,25,55,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(5,25,55,0.12)]"
                 >
                   <div
                     className="pointer-events-none absolute -right-8 -top-8 size-24 rounded-full bg-[#E8F3FF]"

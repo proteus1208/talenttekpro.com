@@ -190,3 +190,76 @@ export function getProject(slug: string) {
 export function projectMedia(c: ProjectCase) {
   return caseMedia(c.mediaIndex);
 }
+
+/** Landing / shared project showcase — single source for cards & teasers. */
+export type Project = {
+  title: string;
+  year: string;
+  description: string;
+  image: { src: string; alt: string };
+  href: string;
+  type: string;
+};
+
+export const projects: Project[] = [
+  {
+    title: "Dating Web App",
+    year: "2024",
+    type: "Digital Product + Squad",
+    description:
+      "Real-time matching product with an embedded FE/BE squad — live updates that stay responsive at scale.",
+    href: "/projects/dating-web-app",
+    image: {
+      src: caseMedia(0).src,
+      alt: caseMedia(0).alt,
+    },
+  },
+  {
+    title: "Healthcare Management System",
+    year: "2023",
+    type: "Digital Product",
+    description:
+      "Live ops panel for appointments and metrics — secure backend streaming into a calm control surface.",
+    href: "/projects/healthcare-management",
+    image: {
+      src: caseMedia(1).src,
+      alt: caseMedia(1).alt,
+    },
+  },
+  {
+    title: "Food Delivery Headless Shopify",
+    year: "2025",
+    type: "Platform",
+    description:
+      "Headless storefront engineered for performance and conversion for a modern commerce brand.",
+    href: "/projects/food-delivery-shopify",
+    image: {
+      src: caseMedia(2).src,
+      alt: caseMedia(2).alt,
+    },
+  },
+  {
+    title: "Office Booking Platform",
+    year: "2025",
+    type: "Digital Product",
+    description: "Real-time booking connecting professionals to flexible workspaces.",
+    href: "/projects/office-booking",
+    image: {
+      src: caseMedia(3).src,
+      alt: caseMedia(3).alt,
+    },
+  },
+  {
+    title: "Pipeline Inspection Platform",
+    year: "2025",
+    type: "Digital Product",
+    description:
+      "Bridge from raw industrial data to human decisions — maps, streams, and operator-ready views.",
+    href: "/projects/pipeline-inspection",
+    image: {
+      src: caseMedia(4).src,
+      alt: caseMedia(4).alt,
+    },
+  },
+];
+

@@ -256,3 +256,30 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* Project card — traveling beam along rounded rect */
+@keyframes project-beam {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.project-card-beam {
+  stroke-dasharray: 18 82;
+  animation: project-beam 2.8s linear infinite;
+}
+
+.project-card {
+  isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card-beam {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-opacity: 0.35;
+  }
+}

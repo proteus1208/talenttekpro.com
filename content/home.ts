@@ -2,8 +2,6 @@
  * Landing page copy & fixtures — replace metrics/clients before production launch.
  */
 
-import { caseMedia } from "./media";
-
 export const home = {
   hero: {
     index: "001 / TalentTekPro / Est. 2021",
@@ -14,9 +12,8 @@ export const home = {
   },
   manifesto: {
     index: "002 / Manifesto",
-    headline:
-      "TalentTekPro charts how enterprises hire and build —",
-    body: "consulting-led talent strategy, AI-powered matching, squads that stay through launch. We measure every engagement by time-to-productivity and systems that hold in production.",
+    headline: "TalentTekPro charts how enterprises hire and build.",
+    body: "Consulting-led talent strategy, AI-powered matching, squads that stay through launch. We measure every engagement by time-to-productivity and systems that hold in production.",
   },
   impact: {
     index: "003 / Impact",
@@ -77,57 +74,6 @@ export const home = {
   cases: {
     index: "005 / Case Studies",
     headline: "Work that hired and shipped.",
-    items: [
-      {
-        title: "Dating Web App",
-        type: "Digital Product + Squad",
-        year: "2024",
-        summary:
-          "Real-time matching product with an embedded FE/BE squad — live updates that stay responsive at scale.",
-        href: "/projects/dating-web-app",
-        media: caseMedia(0),
-        tags: ["React", "NestJS", "WebSockets"],
-      },
-      {
-        title: "Healthcare Management System",
-        type: "Digital Product",
-        year: "2023",
-        summary:
-          "Live ops panel for appointments and metrics — secure backend streaming into a calm control surface.",
-        href: "/projects/healthcare-management",
-        media: caseMedia(1),
-        tags: ["React", "Laravel"],
-      },
-      {
-        title: "Food Delivery Headless Shopify",
-        type: "Platform",
-        year: "2025",
-        summary:
-          "Headless storefront engineered for performance and conversion for a modern commerce brand.",
-        href: "/projects/food-delivery-shopify",
-        media: caseMedia(2),
-        tags: ["Hydrogen", "React"],
-      },
-      {
-        title: "Office Booking Platform",
-        type: "Digital Product",
-        year: "2025",
-        summary: "Real-time booking connecting professionals to flexible workspaces.",
-        href: "/projects/office-booking",
-        media: caseMedia(3),
-        tags: ["Next.js", "TypeScript"],
-      },
-      {
-        title: "Pipeline Inspection Platform",
-        type: "Digital Product",
-        year: "2025",
-        summary:
-          "Bridge from raw industrial data to human decisions — maps, streams, and operator-ready views.",
-        href: "/projects/pipeline-inspection",
-        media: caseMedia(4),
-        tags: ["Vue", "Nuxt"],
-      },
-    ],
   },
   solutions: {
     index: "006 / Solutions",
