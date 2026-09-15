@@ -136,7 +136,10 @@ export const home = {
   },
   industries: {
     index: "007 / Industries",
+    eyebrow: "Industries",
     headline: "Deep expertise across sectors.",
+    support:
+      "We've delivered digital solutions across sectors — helping teams hire, build, and ship with measurable results.",
     items: [
       "Banking & Finance",
       "Healthcare & Life Sciences",
