@@ -1,85 +1,167 @@
-"use client";
-
-import { useState } from "react";
+import {
+  Gauge,
+  Network,
+  Rocket,
+  type LucideIcon,
+} from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
-import { PipelineSceneDynamic } from "@/components/effects/PipelineSceneDynamic";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 import { SectionEdge } from "@/components/ui/SectionShell";
 
+const pillarIcons: LucideIcon[] = [Gauge, Network, Rocket];
+
+const pillarAccents = [
+  {
+    icon: "bg-[#EFF6FF] text-[#1E60FF]",
+    shape: "text-[#DBEAFE]",
+    stat: "from-[#1E60FF] to-[#00D2FF]",
+    /** diamond */
+    decor: (
+      <svg viewBox="0 0 120 120" className="size-full" fill="currentColor" aria-hidden>
+        <path d="M60 8 L112 60 L60 112 L8 60 Z" />
+      </svg>
+    ),
+    decorPos: "absolute -right-6 top-8 size-28 rotate-12",
+  },
+  {
+    icon: "bg-[#ECFEFF] text-[#0891B2]",
+    shape: "text-[#CFFAFE]",
+    stat: "from-[#0891B2] to-[#00D2FF]",
+    /** hexagon */
+    decor: (
+      <svg viewBox="0 0 120 120" className="size-full" fill="currentColor" aria-hidden>
+        <path d="M60 10 L102 34 L102 86 L60 110 L18 86 L18 34 Z" />
+      </svg>
+    ),
+    decorPos: "absolute -left-8 bottom-10 size-32 -rotate-6",
+  },
+  {
+    icon: "bg-[#EEF2FF] text-[#4F46E5]",
+    shape: "text-[#E0E7FF]",
+    stat: "from-[#4F46E5] to-[#1E60FF]",
+    /** soft triangle */
+    decor: (
+      <svg viewBox="0 0 120 120" className="size-full" fill="currentColor" aria-hidden>
+        <path d="M60 14 C66 14 72 17 75 23 L108 88 C111 94 109 102 103 106 C100 108 96 109 92 109 L28 109 C22 109 16 105 14 99 C12 93 14 86 18 82 L51 23 C54 17 57 14 60 14 Z" />
+      </svg>
+    ),
+    decorPos: "absolute -right-4 -bottom-4 size-36 rotate-[18deg]",
+  },
+] as const;
+
 export function Platform() {
-  const tabs = home.platform.tabs;
-  const [active, setActive] = useState<string>(tabs[0].id);
-  const tab = tabs.find((t) => t.id === active) ?? tabs[0];
+  const pillars = home.platform.tabs;
 
   return (
     <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
       <SectionEdge fill="#F5F9FC" variant="valley" position="top" />
-      <Container>
-        <RevealOnScroll>
-          <h2 className="font-display max-w-2xl text-3xl font-semibold tracking-tight text-text md:text-4xl">
-            {home.platform.headline}
-          </h2>
-          <p className="mt-4 max-w-2xl text-muted">{home.platform.support}</p>
 
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-start">
-            <div>
-              <div
-                role="tablist"
-                aria-label="Platform views"
-                className="flex flex-wrap gap-2"
-              >
-                {tabs.map((item) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={active === item.id}
-                    onClick={() => setActive(item.id)}
+      {/* Section accents — distinct from Impact/Services */}
+      <svg
+        className="pointer-events-none absolute top-[18%] -left-12 h-40 w-40 text-[#B8D4FF] md:h-52 md:w-52"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+        aria-hidden
+      >
+        <path d="M100 12 L168 52 L168 148 L100 188 L32 148 L32 52 Z" />
+      </svg>
+      <svg
+        className="pointer-events-none absolute -right-10 bottom-[22%] h-44 w-44 text-[#A8E8F5] md:h-56 md:w-56"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+        aria-hidden
+      >
+        <path d="M100 18 C108 18 116 22 120 30 L172 128 C176 136 174 146 166 152 C162 155 157 156 152 156 L48 156 C40 156 33 151 30 144 C27 137 29 129 34 124 L86 30 C90 22 96 18 100 18 Z" />
+      </svg>
+      <svg
+        className="pointer-events-none absolute top-[12%] right-[18%] hidden h-24 w-24 text-[#C5E7FF] lg:block"
+        viewBox="0 0 120 120"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="14"
+        aria-hidden
+      >
+        <circle cx="60" cy="60" r="42" />
+      </svg>
+
+      <Container className="relative z-10">
+        <RevealOnScroll>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.18em] text-[#1E60FF] uppercase">
+              <span className="inline-block h-px w-5 bg-[#1E60FF]" aria-hidden />
+              {home.platform.eyebrow}
+              <span className="inline-block h-px w-5 bg-[#1E60FF]" aria-hidden />
+            </p>
+            <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
+              {home.platform.headline}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-[#64748B] md:text-lg">
+              {home.platform.support}
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-5 md:grid-cols-3 md:gap-6">
+            {pillars.map((pillar, i) => {
+              const Icon = pillarIcons[i % pillarIcons.length];
+              const accent = pillarAccents[i % pillarAccents.length];
+              return (
+                <article
+                  key={pillar.id}
+                  className="group relative overflow-hidden rounded-3xl bg-white p-7 shadow-[0_16px_48px_rgba(5,25,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(5,25,55,0.12)]"
+                >
+                  <div
                     className={cn(
-                      "rounded-sm border px-4 py-2 text-sm transition-colors",
-                      active === item.id
-                        ? "border-border-strong bg-surface text-teal"
-                        : "border-border text-muted hover:border-border-strong hover:text-text",
+                      "pointer-events-none opacity-90 transition-transform duration-500 group-hover:scale-105",
+                      accent.shape,
+                      accent.decorPos,
                     )}
                   >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+                    {accent.decor}
+                  </div>
 
-              <div
-                role="tabpanel"
-                className="mt-6 rounded-sm border border-border border-t-2 border-t-teal/60 bg-surface p-6 shadow-[inset_0_1px_0_rgba(0,210,255,0.18)]"
-              >
-                <h3 className="font-display text-xl font-semibold text-text">
-                  {tab.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {tab.description}
-                </p>
-                <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5">
-                  {tab.stats.map((stat) => (
-                    <div key={stat.label}>
-                      <dt className="text-[0.7rem] tracking-wide text-faint uppercase">
-                        {stat.label}
-                      </dt>
-                      <dd className="font-mono mt-1 text-lg text-teal">
-                        {stat.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
+                  <div className="relative">
+                    <span
+                      className={cn(
+                        "grid size-12 place-items-center rounded-2xl",
+                        accent.icon,
+                      )}
+                    >
+                      <Icon className="size-5" strokeWidth={1.75} aria-hidden />
+                    </span>
 
-            <div>
-              <PipelineSceneDynamic />
-              <p className="mt-3 font-mono text-[0.7rem] tracking-wide text-faint uppercase">
-                orbital lattice · talent network → delivery core
-              </p>
-            </div>
+                    <p className="mt-5 text-[0.7rem] font-semibold tracking-[0.14em] text-[#94A3B8] uppercase">
+                      {pillar.label}
+                    </p>
+                    <h3 className="font-display mt-2 text-xl font-bold tracking-tight text-[#051937] md:text-2xl">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#64748B]">
+                      {pillar.description}
+                    </p>
+
+                    <dl className="mt-8 grid grid-cols-3 gap-3 border-t border-[#051937]/06 pt-6">
+                      {pillar.stats.map((stat) => (
+                        <div key={stat.label}>
+                          <dt className="text-[0.65rem] tracking-wide text-[#94A3B8] uppercase">
+                            {stat.label}
+                          </dt>
+                          <dd
+                            className={cn(
+                              "font-display mt-1 bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent",
+                              accent.stat,
+                            )}
+                          >
+                            {stat.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </RevealOnScroll>
       </Container>

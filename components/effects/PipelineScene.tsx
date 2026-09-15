@@ -11,39 +11,7 @@ import {
 } from "react";
 import type { Group, Mesh } from "three";
 import * as THREE from "three";
-
-function canCreateWebGL(): boolean {
-  if (typeof document === "undefined") return false;
-  try {
-    const canvas = document.createElement("canvas");
-    const gl = (canvas.getContext("webgl2") ||
-      canvas.getContext("webgl") ||
-      canvas.getContext("experimental-webgl")) as WebGLRenderingContext | null;
-    if (!gl) return false;
-
-    const dbg = gl.getExtension("WEBGL_debug_renderer_info");
-    const renderer = dbg
-      ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) || "")
-      : "";
-    const vendor = dbg
-      ? String(gl.getParameter(dbg.UNMASKED_VENDOR_WEBGL) || "")
-      : "";
-    const blob = `${renderer} ${vendor}`.toLowerCase();
-
-    if (
-      blob.includes("vmware") ||
-      blob.includes("svga") ||
-      blob.includes("llvmpipe") ||
-      blob.includes("softpipe")
-    ) {
-      return false;
-    }
-
-    return true;
-  } catch {
-    return false;
-  }
-}
+import { canCreateWebGL } from "@/lib/webgl";
 
 class WebGLErrorBoundary extends Component<
   { fallback: ReactNode; children: ReactNode },
@@ -341,7 +309,7 @@ function WebGLLattice() {
           antialias: false,
           alpha: true,
           powerPreference: "default",
-          failIfMajorPerformanceCaveat: false,
+          failIfMajorPerformanceCaveat: true,
         }}
         onCreated={({ gl }) => {
           gl.setClearColor("#051937", 1);
@@ -360,22 +328,15 @@ function WebGLLattice() {
 }
 
 export function PipelineScene() {
-  const [mode, setMode] = useState<"loading" | "webgl" | "css">("loading");
+  // Default to CSS so we never attempt WebGL during SSR / first paint on weak GPUs.
+  const [mode, setMode] = useState<"webgl" | "css">("css");
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced || !canCreateWebGL()) {
-      setMode("css");
-      return;
+    if (!reduced && canCreateWebGL()) {
+      setMode("webgl");
     }
-    setMode("webgl");
   }, []);
-
-  if (mode === "loading") {
-    return (
-      <div className="h-80 w-full animate-pulse rounded-sm border border-border bg-surface md:h-[26rem]" />
-    );
-  }
 
   if (mode === "css") {
     return <CssLattice3D />;

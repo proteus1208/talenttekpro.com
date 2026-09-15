@@ -80,6 +80,8 @@ export function Logo({
       width={asset.width}
       height={asset.height}
       priority={priority}
+      placeholder="empty"
+      style={{ color: "transparent" }}
       className={cn(box, "object-contain", !withWordmark && className)}
     />
   );

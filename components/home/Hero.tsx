@@ -105,6 +105,7 @@ export function Hero() {
             alt="TalentTekPro teammates collaborating at a laptop in a bright office"
             fill
             priority
+            placeholder="empty"
             className="border-0 object-cover object-[center_28%] outline-none ring-0"
             sizes="60vw"
           />

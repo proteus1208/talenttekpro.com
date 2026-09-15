@@ -276,6 +276,12 @@ body {
   isolation: isolate;
 }
 
+/* Hide Spline “Built with” badge inside platform scene */
+.platform-spline a[href*="spline.design"] {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-card-beam {
     animation: none;

@@ -30,10 +30,10 @@ export const home = {
   },
   platform: {
     index: "004 / Platform",
-    eyebrow: "Platform / TalentTekPro",
+    eyebrow: "Command surface",
     headline: "Real-time talent & delivery",
     support:
-      "The same command surface our recruiters and delivery leads use — funnel health, match routing, sprint velocity.",
+      "The same surface our recruiters and delivery leads use — funnel health, match routing, and sprint velocity in one place.",
     tabs: [
       {
         id: "talent-os",
@@ -73,7 +73,10 @@ export const home = {
   },
   cases: {
     index: "005 / Case Studies",
+    eyebrow: "Featured projects",
     headline: "Work that hired and shipped.",
+    support:
+      "Talent placements and production systems — the engagements where we hired the team and shipped the product.",
   },
   solutions: {
     index: "006 / Solutions",

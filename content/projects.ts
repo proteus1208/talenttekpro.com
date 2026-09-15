@@ -199,6 +199,9 @@ export type Project = {
   image: { src: string; alt: string };
   href: string;
   type: string;
+  /** Short category for the image badge */
+  category: string;
+  tags: string[];
 };
 
 export const projects: Project[] = [
@@ -206,6 +209,8 @@ export const projects: Project[] = [
     title: "Dating Web App",
     year: "2024",
     type: "Digital Product + Squad",
+    category: "Web App",
+    tags: ["React", "NestJS", "WebSockets"],
     description:
       "Real-time matching product with an embedded FE/BE squad — live updates that stay responsive at scale.",
     href: "/projects/dating-web-app",
@@ -218,6 +223,8 @@ export const projects: Project[] = [
     title: "Healthcare Management System",
     year: "2023",
     type: "Digital Product",
+    category: "Healthcare",
+    tags: ["React", "Laravel"],
     description:
       "Live ops panel for appointments and metrics — secure backend streaming into a calm control surface.",
     href: "/projects/healthcare-management",
@@ -230,6 +237,8 @@ export const projects: Project[] = [
     title: "Food Delivery Headless Shopify",
     year: "2025",
     type: "Platform",
+    category: "E-commerce",
+    tags: ["Hydrogen", "React"],
     description:
       "Headless storefront engineered for performance and conversion for a modern commerce brand.",
     href: "/projects/food-delivery-shopify",
@@ -242,6 +251,8 @@ export const projects: Project[] = [
     title: "Office Booking Platform",
     year: "2025",
     type: "Digital Product",
+    category: "SaaS",
+    tags: ["Next.js", "TypeScript"],
     description: "Real-time booking connecting professionals to flexible workspaces.",
     href: "/projects/office-booking",
     image: {
@@ -253,6 +264,8 @@ export const projects: Project[] = [
     title: "Pipeline Inspection Platform",
     year: "2025",
     type: "Digital Product",
+    category: "Industrial",
+    tags: ["Vue", "Nuxt"],
     description:
       "Bridge from raw industrial data to human decisions — maps, streams, and operator-ready views.",
     href: "/projects/pipeline-inspection",
