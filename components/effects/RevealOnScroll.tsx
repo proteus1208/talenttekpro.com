@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/cn";
 
 type RevealOnScrollProps = {
@@ -12,18 +12,15 @@ type RevealOnScrollProps = {
 /**
  * Subtle rise only — never starts at opacity 0 (that hid whole sections
  * when in-view detection failed under smooth-scroll / VMs).
+ *
+ * Always the same `motion.div` tree (no reduced-motion element swaps)
+ * so SSR and client HTML stay in sync.
  */
 export function RevealOnScroll({
   children,
   className,
   delay = 0,
 }: RevealOnScrollProps) {
-  const reduced = useReducedMotion();
-
-  if (reduced) {
-    return <div className={className}>{children}</div>;
-  }
-
   return (
     <motion.div
       className={cn(className)}

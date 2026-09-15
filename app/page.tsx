@@ -15,7 +15,7 @@ import { GetStarted } from "@/components/home/GetStarted";
 
 export default function HomePage() {
   return (
-    <main className="relative z-0 flex-1">
+    <main className="relative z-0 flex-1 overflow-x-clip">
       {/* Continuous intro band: Hero → stats → Services share #F5F9FC */}
       <div className="relative bg-[#F5F9FC]">
         <Hero />

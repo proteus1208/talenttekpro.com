@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -19,7 +19,8 @@ type ParallaxLayerProps = {
 };
 
 /**
- * Scroll-linked Y parallax. Uses Framer Motion so it stays in sync with Lenis.
+ * Scroll-linked Y parallax. Same DOM on server and client —
+ * motion activates after mount so hydration stays clean.
  */
 export function ParallaxLayer({
   children,
@@ -29,6 +30,11 @@ export function ParallaxLayer({
 }: ParallaxLayerProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    setActive(!reduced);
+  }, [reduced]);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -38,13 +44,12 @@ export function ParallaxLayer({
     `${speed * 140}px`,
   ]);
 
-  if (reduced) {
-    return <div className={className}>{children}</div>;
-  }
-
   return (
     <div ref={ref} className={cn("overflow-hidden", className)}>
-      <motion.div style={{ y, scale }} className="h-full w-full will-change-transform">
+      <motion.div
+        style={active ? { y, scale } : { scale }}
+        className="h-full w-full will-change-transform"
+      >
         {children}
       </motion.div>
     </div>

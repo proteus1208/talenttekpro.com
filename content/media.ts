@@ -31,10 +31,10 @@ export const media = {
   } satisfies MediaAsset,
   approach: {
     id: "approach",
-    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
+    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
     prompt:
-      "Strategy session, two consultants and a client CTO at a table with notebooks and a tablet showing abstract charts, Atlanta-modern glass office at dusk, cyan #00D2FF rim light on navy #051937 interiors, documentary editorial style, 3:2, no text overlays",
-    alt: "Strategy session with consultants and a client reviewing plans.",
+      "Two professionals high-fiving in a bright modern office, collaborative energy, soft natural light, photoreal 3:2, no text overlays",
+    alt: "Teammates celebrating with a high-five in a bright office.",
   } satisfies MediaAsset,
   getStarted: {
     id: "get-started",

@@ -121,12 +121,7 @@ export function HomeScrollCover({ children }: { children: React.ReactNode }) {
   }, [reduced]);
 
   return (
-    <motion.div
-      className="relative"
-      initial={reduced ? false : { opacity: 0.001 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-    >
+    <motion.div className="relative" initial={false} animate={{ opacity: 1 }}>
       {children}
     </motion.div>
   );

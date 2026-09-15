@@ -1,122 +1,186 @@
 "use client";
 
 import {
+  ArrowRight,
   Building2,
   Factory,
   HeartPulse,
-  Landmark,
-  Radio,
   ShoppingCart,
   Truck,
   Zap,
-  LayoutGrid,
-  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
-import { home } from "@/content/home";
 import { SectionEdge } from "@/components/ui/SectionShell";
+import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 
-const industryMeta: Record<string, { icon: LucideIcon; iconBg: string }> = {
-  "Banking & Finance": {
-    icon: Landmark,
-    iconBg: "bg-[#1E60FF]",
+const tones: Record<
+  string,
+  { iconWrap: string; icon: string; dot: string; tag: string }
+> = {
+  blue: {
+    iconWrap: "bg-[#EFF6FF]",
+    icon: "text-[#1E60FF]",
+    dot: "bg-[#1E60FF]",
+    tag: "text-[#1E60FF]",
   },
-  "Healthcare & Life Sciences": {
-    icon: HeartPulse,
-    iconBg: "bg-[#14B8A6]",
+  teal: {
+    iconWrap: "bg-[#ECFDF5]",
+    icon: "text-[#0D9488]",
+    dot: "bg-[#0D9488]",
+    tag: "text-[#0D9488]",
   },
-  Manufacturing: {
-    icon: Factory,
-    iconBg: "bg-[#8B5CF6]",
+  violet: {
+    iconWrap: "bg-[#F5F3FF]",
+    icon: "text-[#7C3AED]",
+    dot: "bg-[#7C3AED]",
+    tag: "text-[#7C3AED]",
   },
-  "Retail & CPG": {
-    icon: ShoppingCart,
-    iconBg: "bg-[#F43F5E]",
+  orange: {
+    iconWrap: "bg-[#FFF7ED]",
+    icon: "text-[#EA580C]",
+    dot: "bg-[#EA580C]",
+    tag: "text-[#EA580C]",
   },
-  "Energy & Utilities": {
-    icon: Zap,
-    iconBg: "bg-[#EAB308]",
-  },
-  "Telecom & Media": {
-    icon: Radio,
-    iconBg: "bg-[#06B6D4]",
-  },
-  "Public Sector": {
-    icon: Building2,
-    iconBg: "bg-[#4338CA]",
-  },
-  "Travel & Logistics": {
-    icon: Truck,
-    iconBg: "bg-[#3B82F6]",
+  sky: {
+    iconWrap: "bg-[#F0F9FF]",
+    icon: "text-[#0284C7]",
+    dot: "bg-[#0284C7]",
+    tag: "text-[#0284C7]",
   },
 };
 
+const icons: Record<string, LucideIcon> = {
+  Logistics: Truck,
+  Healthcare: HeartPulse,
+  Manufacturing: Factory,
+  Retail: ShoppingCart,
+  Energy: Zap,
+};
+
+function MarqueePills({
+  items,
+  trackKey,
+}: {
+  items: typeof home.industries.items;
+  trackKey: string;
+}) {
+  return (
+    <div className="flex shrink-0 items-center gap-3 pr-3" aria-hidden={trackKey === "b"}>
+      {items.map((item, i) => {
+        const Icon = icons[item.title] ?? Building2;
+        return (
+          <span
+            key={`${trackKey}-${item.title}-${i}`}
+            className="inline-flex shrink-0 items-center gap-2.5 rounded-full bg-white px-4 py-2.5 text-sm font-medium whitespace-nowrap text-[#051937] shadow-[0_8px_22px_rgba(5,25,55,0.06)]"
+          >
+            <span className="grid size-7 place-items-center rounded-full bg-[#EFF6FF] text-[#1E60FF]">
+              <Icon className="size-3.5" strokeWidth={2} aria-hidden />
+            </span>
+            {item.title}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 export function Industries() {
+  const items = home.industries.items;
+  // Enough copies so one half is always wider than the viewport
+  const loopItems = [...items, ...items, ...items];
+
   return (
     <section className="relative z-[1] overflow-visible bg-white section-pad">
-      <SectionEdge fill="#ffffff" variant="slant" position="top" />
-
-      <div
-        className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-[#DBEAFE]/70 blur-3xl"
-        aria-hidden
-      />
+      {/* Solid curve into previous #F0F7FC — clear curved border */}
+      <SectionEdge fill="#ffffff" variant="soft" position="top" />
 
       <Container className="relative z-10">
         <RevealOnScroll>
-          <div className="max-w-2xl">
+          <div className="min-w-0">
             <p className="inline-flex items-center gap-2 rounded-full bg-[#EFF6FF] px-3 py-1.5 text-xs font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
-              <LayoutGrid className="size-3.5" aria-hidden />
+              <Building2 className="size-3.5" aria-hidden />
               {home.industries.eyebrow}
             </p>
-            <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
-              Deep expertise{" "}
-              <span className="hero-gradient-text">across sectors.</span>
+            <h2 className="font-display mt-4 whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)] font-bold tracking-tight text-[#051937]">
+              {home.industries.headline}{" "}
+              <span className="hero-gradient-text">
+                {home.industries.headlineAccent}
+              </span>
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-[#64748B] md:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#64748B] md:text-lg">
               {home.industries.support}
             </p>
           </div>
+        </RevealOnScroll>
+      </Container>
 
-          <ul className="mt-12 flex flex-wrap gap-3 md:gap-4">
-            {home.industries.items.map((item) => {
-              const meta = industryMeta[item] ?? {
-                icon: Building2,
-                iconBg: "bg-[#1E60FF]",
-              };
-              const Icon = meta.icon;
+      {/* Duplicated ring: two equal tracks, animate 0 → -50% */}
+      <div className="marquee-fade relative z-10 mt-10 overflow-x-clip">
+        <div className="animate-marquee flex w-max">
+          <MarqueePills items={loopItems} trackKey="a" />
+          <MarqueePills items={loopItems} trackKey="b" />
+        </div>
+      </div>
+
+      {/* Cards centered in container */}
+      <Container className="relative z-10 mt-12">
+        <RevealOnScroll>
+          <div className="flex flex-wrap justify-center gap-5">
+            {items.map((item) => {
+              const tone = tones[item.tone] ?? tones.blue;
+              const Icon = icons[item.title] ?? Building2;
               return (
-                <li key={item}>
-                  <button
-                    type="button"
+                <article
+                  key={item.title}
+                  className="flex w-full max-w-[17.5rem] flex-col rounded-[1.75rem] bg-white p-7 shadow-[0_18px_44px_rgba(5,25,55,0.09)] sm:w-[calc(50%-0.625rem)] lg:w-[17.5rem]"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <span
+                      className={cn(
+                        "grid size-12 place-items-center rounded-[0.9rem]",
+                        tone.iconWrap,
+                        tone.icon,
+                      )}
+                    >
+                      <Icon className="size-5" strokeWidth={1.75} aria-hidden />
+                    </span>
+                    <span
+                      className={cn(
+                        "grid size-9 place-items-center rounded-full",
+                        tone.iconWrap,
+                        tone.icon,
+                      )}
+                    >
+                      <ArrowRight className="size-4" strokeWidth={2} aria-hidden />
+                    </span>
+                  </div>
+
+                  <h3 className="font-display mt-7 text-[1.35rem] font-bold tracking-tight text-[#051937]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-[#64748B]">
+                    {item.description}
+                  </p>
+
+                  <p
                     className={cn(
-                      "group inline-flex items-center gap-3 rounded-2xl bg-white py-2.5 pl-2.5 pr-4 text-left shadow-[0_8px_24px_rgba(5,25,55,0.06)] transition-all duration-200",
-                      "hover:-translate-y-0.5 hover:border hover:border-[#1E60FF]/35 hover:bg-[#EFF6FF] hover:shadow-[0_12px_28px_rgba(30,96,255,0.12)]",
-                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E60FF]/40",
+                      "mt-8 flex items-center gap-2 text-[0.7rem] font-semibold tracking-[0.16em] uppercase",
+                      tone.tag,
                     )}
                   >
                     <span
-                      className={cn(
-                        "grid size-9 shrink-0 place-items-center rounded-full text-white shadow-sm",
-                        meta.iconBg,
-                      )}
-                    >
-                      <Icon className="size-4" strokeWidth={2} aria-hidden />
-                    </span>
-                    <span className="text-sm font-medium text-[#051937] transition-colors group-hover:text-[#1E60FF]">
-                      {item}
-                    </span>
-                    <ArrowRight
-                      className="ml-1 size-4 text-[#94A3B8] transition-colors group-hover:text-[#1E60FF]"
+                      className={cn("size-1.5 shrink-0 rounded-full", tone.dot)}
                       aria-hidden
                     />
-                  </button>
-                </li>
+                    {item.tag}
+                  </p>
+                </article>
               );
             })}
-          </ul>
+          </div>
         </RevealOnScroll>
       </Container>
     </section>

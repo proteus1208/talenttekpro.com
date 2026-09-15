@@ -55,8 +55,8 @@ export function Platform() {
   const pillars = home.platform.tabs;
 
   return (
-    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
-      <SectionEdge fill="#F5F9FC" variant="valley" position="top" />
+    <section className="relative z-[1] overflow-visible bg-white section-pad">
+      <SectionEdge fill="#ffffff" variant="valley" position="top" />
 
       {/* Section accents — distinct from Impact/Services */}
       <svg

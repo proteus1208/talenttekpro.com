@@ -91,7 +91,7 @@ const icons: LucideIcon[] = [
 
 export function Solutions() {
   return (
-    <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-28 pb-24 md:pt-32 md:pb-28">
+    <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-20 pb-24 md:pt-24 md:pb-28">
       {/* Distinct shapes: rounded triangle + hexagon + ring (not circles/blobs) */}
       <svg
         className="pointer-events-none absolute top-[38%] -right-10 h-[17rem] w-[17rem] text-[#B8D4FF] md:h-[22rem] md:w-[22rem]"

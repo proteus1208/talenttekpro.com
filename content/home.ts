@@ -137,36 +137,100 @@ export const home = {
   industries: {
     index: "007 / Industries",
     eyebrow: "Industries",
-    headline: "Deep expertise across sectors.",
+    headline: "Trusted across industries",
+    headlineAccent: "that ship.",
     support:
-      "We've delivered digital solutions across sectors — helping teams hire, build, and ship with measurable results.",
+      "From logistics to healthcare, we help industry leaders solve complex problems with reliable, scalable technology.",
     items: [
-      "Banking & Finance",
-      "Healthcare & Life Sciences",
-      "Manufacturing",
-      "Retail & CPG",
-      "Energy & Utilities",
-      "Telecom & Media",
-      "Public Sector",
-      "Travel & Logistics",
+      {
+        title: "Logistics",
+        description:
+          "Optimize supply chains and fleet operations with real-time visibility and AI-driven routing.",
+        tag: "Supply Chain",
+        tone: "blue",
+      },
+      {
+        title: "Healthcare",
+        description:
+          "Secure patient platforms and clinical workflows that meet compliance without slowing delivery.",
+        tag: "Healthcare",
+        tone: "teal",
+      },
+      {
+        title: "Manufacturing",
+        description:
+          "Connect plant systems, quality data, and planning so production stays predictable.",
+        tag: "Industrial",
+        tone: "violet",
+      },
+      {
+        title: "Retail",
+        description:
+          "Unify commerce, inventory, and personalization for experiences that convert.",
+        tag: "Commerce",
+        tone: "orange",
+      },
+      {
+        title: "Energy",
+        description:
+          "Modernize grid, asset, and customer systems with secure cloud-native platforms.",
+        tag: "Utilities",
+        tone: "sky",
+      },
     ],
   },
   approach: {
     index: "008 / Approach",
-    headline: "Unlock capacity — people and platforms.",
+    badge: "Our Process",
+    headline: "Unlock capacity.",
+    headlineAccent: "People and platforms.",
+    body: "From discovery to scale, we align talent, architecture, and delivery so your teams ship with confidence.",
     bullets: [
-      "Customized solutions",
-      "Quality & reliability",
-      "AI-native matching & delivery",
-      "Global delivery",
+      {
+        title: "Customized solutions",
+        body: "Tailored to your goals",
+      },
+      {
+        title: "Quality & reliability",
+        body: "Built to last",
+      },
+      {
+        title: "AI-native matching & delivery",
+        body: "Smart & efficient",
+      },
+      {
+        title: "Global delivery",
+        body: "Wherever you are",
+      },
     ],
     phases: [
-      { num: "00", label: "discover", title: "Discover", body: "Map constraints, stakeholders and success metrics." },
-      { num: "01", label: "match-design", title: "Match & Design", body: "Scorecards, ADRs and a delivery roadmap." },
-      { num: "02", label: "build-embed", title: "Build & Embed", body: "Two-week sprints; talent ramps beside the squad." },
-      { num: "03", label: "scale", title: "Scale", body: "Harden, hand off and optimize for growth." },
+      {
+        num: "01",
+        label: "phase",
+        title: "Discover",
+        body: "Map constraints, stakeholders and success metrics.",
+      },
+      {
+        num: "02",
+        label: "phase",
+        title: "Match & Design",
+        body: "Scorecards, ADRs and a delivery roadmap.",
+      },
+      {
+        num: "03",
+        label: "phase",
+        title: "Build & Embed",
+        body: "Two-week sprints; talent ramps beside the squad.",
+      },
+      {
+        num: "04",
+        label: "phase",
+        title: "Scale",
+        body: "Harden, hand off and optimize for growth.",
+      },
     ],
-    cta: { label: "See our process →", href: "/process" },
+    imageBadge: "Build better together",
+    cta: { label: "See our process", href: "/process" },
   },
   partners: {
     index: "009 / Trust",
@@ -192,11 +256,14 @@ export const home = {
   },
   testimonials: {
     index: "010 / Voices",
-    headline: "Client success stories",
+    eyebrow: "Client success stories",
+    headline: "Real teams. Real results.",
+    support:
+      "See how forward-thinking companies are building the future with TalentTekPro.",
     items: [
       {
         quote:
-          "TalentTekPro translated our hiring plan into a production-ready squad in under a quarter — and stayed through launch.",
+          "TalentTekPro translated our hiring plan into a production-ready squad in under a quarter, and stayed through launch.",
         name: "James Caldwell",
         title: "CTO",
         company: "Vertex Financial",
@@ -212,7 +279,7 @@ export const home = {
       },
       {
         quote:
-          "They turned our GenAI roadmap into a guarded production feature set — with the engineers to own it.",
+          "They turned our GenAI roadmap into a guarded production feature set, with the engineers to own it.",
         name: "Robert Hayes",
         title: "CDO",
         company: "Quantix Capital",

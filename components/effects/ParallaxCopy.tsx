@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -23,6 +23,12 @@ export function ParallaxCopy({
 }: ParallaxCopyProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
+  // Gate after mount so SSR HTML matches the first client render
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    setActive(!reduced);
+  }, [reduced]);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -30,15 +36,11 @@ export function ParallaxCopy({
   const y = useTransform(scrollYProgress, [0, 1], [0, distance]);
   const opacity = useTransform(scrollYProgress, [0, 0.55, 1], [1, 0.85, 0.2]);
 
-  if (reduced) {
-    return <div className={className}>{children}</div>;
-  }
-
   return (
     <motion.div
       ref={ref}
-      style={{ y, opacity }}
-      className={cn("will-change-transform", className)}
+      style={active ? { y, opacity } : undefined}
+      className={cn(active && "will-change-transform", className)}
     >
       {children}
     </motion.div>
