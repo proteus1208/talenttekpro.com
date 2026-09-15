@@ -26,7 +26,7 @@ Full-bleed background (or background plane) for `/` hero. Site UI supplies all c
 | Aspect | 16:9 master; protect center for 9:16 / 1:1 crops |
 | Resolution | 4K preferred (3840×2160); deliver 1080p web encode |
 | Framerate | 24 or 30 fps |
-| Grade | Charcoal ink shadows, teal `#2EC4B6` practicals, warm ember rim sparingly |
+| Grade | Charcoal ink shadows, cyan `#00D2FF` practicals, royal `#1E60FF` rim sparingly |
 | Text in frame | None |
 | Loop | Last 8 frames can hold dark negative space for seamless loop under UI |
 
@@ -49,7 +49,7 @@ Full-bleed background (or background plane) for `/` hero. Site UI supplies all c
 Use for Runway, Luma, Kling, or as a live-action board:
 
 ```text
-Cinematic brand film, 12 seconds, 16:9, for a hybrid tech talent and software delivery company. Dark editorial lighting, charcoal shadows, soft teal practical lights (#2EC4B6), subtle warm ember rim light. Sequence: (1) slow dolly interview between a hiring lead and a senior engineer in a modern Atlanta-style office at dusk, authentic focused expressions, laptop open; (2) match cut to pair programming at dual monitors with shallow depth of field, deploy terminal softly blurred; (3) abstract geometric three-node pipeline animating talent to match to ship in teal, then dissolving into empty deep ink negative space. No text, no logos, no watermarks, no handshake cliché, no purple neon, no sci-fi HUD clutter. Photoreal + restrained motion graphics, confident precise human mood, loop-friendly ending on dark frame.
+Cinematic brand film, 12 seconds, 16:9, for a hybrid tech talent and software delivery company. Dark editorial lighting, charcoal shadows, soft cyan practical lights (#00D2FF), subtle royal blue rim light. Sequence: (1) slow dolly interview between a hiring lead and a senior engineer in a modern Atlanta-style office at dusk, authentic focused expressions, laptop open; (2) match cut to pair programming at dual monitors with shallow depth of field, deploy terminal softly blurred; (3) abstract geometric three-node pipeline animating talent to match to ship in cyan, then dissolving into empty deep ink negative space. No text, no logos, no watermarks, no handshake cliché, no purple neon, no sci-fi HUD clutter. Photoreal + restrained motion graphics, confident precise human mood, loop-friendly ending on dark frame.
 ```
 
 ### Shorter AI video prompt (single take style)

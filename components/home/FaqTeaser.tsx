@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { SectionIndex } from "@/components/ui/SectionIndex";
 import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
@@ -13,14 +12,13 @@ export function FaqTeaser() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="border-t border-border py-24 md:py-28">
+    <section className="section-dark section-pad border-t border-border">
       <Container className="max-w-3xl">
         <RevealOnScroll>
-          <SectionIndex label={home.faq.index} />
-          <h2 className="font-display mt-6 text-3xl font-semibold tracking-tight text-text md:text-4xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
             {home.faq.headline}
           </h2>
-          <div className="mt-10 divide-y divide-border border-y border-border">
+          <div className="mt-10 divide-y divide-border-strong/40 border-y border-border-strong/40">
             {home.faq.items.map((item, i) => {
               const isOpen = open === i;
               return (
@@ -36,8 +34,8 @@ export function FaqTeaser() {
                     </span>
                     <ChevronDown
                       className={cn(
-                        "size-5 shrink-0 text-muted transition-transform",
-                        isOpen && "rotate-180",
+                        "size-5 shrink-0 transition-transform",
+                        isOpen ? "rotate-180 text-teal" : "text-muted",
                       )}
                     />
                   </button>

@@ -1,7 +1,6 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, RoundedBox } from "@react-three/drei";
 import {
   Component,
   useMemo,
@@ -31,7 +30,6 @@ function canCreateWebGL(): boolean {
       : "";
     const blob = `${renderer} ${vendor}`.toLowerCase();
 
-    // VMware / SVGA / software GL often probes OK then fails on real contexts.
     if (
       blob.includes("vmware") ||
       blob.includes("svga") ||
@@ -67,224 +65,269 @@ class WebGLErrorBoundary extends Component<
   }
 }
 
-function Node({
-  position,
-  color,
-  accent = false,
-}: {
-  position: [number, number, number];
-  color: string;
-  accent?: boolean;
-}) {
-  const mesh = useRef<Mesh>(null);
-
-  useFrame(({ clock }) => {
-    if (!mesh.current || !accent) return;
-    const t = clock.getElapsedTime();
-    mesh.current.scale.setScalar(1 + Math.sin(t * 2.4) * 0.1);
-  });
-
-  return (
-    <Float speed={1.4} rotationIntensity={0.35} floatIntensity={0.55}>
-      <mesh ref={mesh} position={position} castShadow>
-        <icosahedronGeometry args={[accent ? 0.42 : 0.32, 1]} />
-        <meshStandardMaterial
-          color={color}
-          emissive={accent ? "#2EC4B6" : "#1a3040"}
-          emissiveIntensity={accent ? 0.85 : 0.15}
-          roughness={0.25}
-          metalness={0.55}
-        />
-      </mesh>
-      {accent ? (
-        <mesh position={position}>
-          <sphereGeometry args={[0.62, 24, 24]} />
-          <meshBasicMaterial color="#2EC4B6" transparent opacity={0.12} />
-        </mesh>
-      ) : null}
-    </Float>
-  );
-}
-
-function Beam({
-  start,
-  end,
-}: {
-  start: [number, number, number];
-  end: [number, number, number];
-}) {
-  const geo = useMemo(() => {
-    const a = new THREE.Vector3(...start);
-    const b = new THREE.Vector3(...end);
-    const dir = new THREE.Vector3().subVectors(b, a);
-    const len = dir.length();
-    const mid = new THREE.Vector3().addVectors(a, b).multiplyScalar(0.5);
-    const quat = new THREE.Quaternion();
-    quat.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
-    return { mid, len, quat };
-  }, [start, end]);
-
-  return (
-    <mesh position={geo.mid} quaternion={geo.quat}>
-      <cylinderGeometry args={[0.028, 0.028, geo.len, 12]} />
-      <meshStandardMaterial
-        color="#2EC4B6"
-        emissive="#2EC4B6"
-        emissiveIntensity={0.6}
-        roughness={0.3}
-        metalness={0.4}
-        transparent
-        opacity={0.85}
-      />
-    </mesh>
-  );
-}
-
-function PipelineWorld({
+/** Dense orbital lattice — not three lonely spheres. */
+function LatticeWorld({
   mouse,
 }: {
   mouse: React.MutableRefObject<{ x: number; y: number }>;
 }) {
-  const group = useRef<Group>(null);
-  const nodes: [number, number, number][] = useMemo(
-    () => [
-      [-1.85, -0.15, 0.2],
-      [0, 0.55, 0.05],
-      [1.85, -0.1, -0.15],
-    ],
-    [],
-  );
+  const root = useRef<Group>(null);
+  const core = useRef<Mesh>(null);
+  const ringA = useRef<Mesh>(null);
+  const ringB = useRef<Mesh>(null);
+  const ringC = useRef<Mesh>(null);
 
-  useFrame((_state, delta) => {
-    if (!group.current) return;
-    group.current.rotation.y += delta * 0.22;
-    group.current.rotation.x = THREE.MathUtils.lerp(
-      group.current.rotation.x,
-      mouse.current.y * 0.25,
-      0.06,
-    );
-    group.current.rotation.z = THREE.MathUtils.lerp(
-      group.current.rotation.z,
-      mouse.current.x * 0.18,
-      0.06,
-    );
+  const points = useMemo(() => {
+    const arr: THREE.Vector3[] = [];
+    const count = 48;
+    const phi = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < count; i++) {
+      const y = 1 - (i / (count - 1)) * 2;
+      const radius = Math.sqrt(1 - y * y);
+      const theta = phi * i;
+      arr.push(
+        new THREE.Vector3(
+          Math.cos(theta) * radius * 1.85,
+          y * 1.85,
+          Math.sin(theta) * radius * 1.85,
+        ),
+      );
+    }
+    return arr;
+  }, []);
+
+  const lines = useMemo(() => {
+    const segs: [THREE.Vector3, THREE.Vector3][] = [];
+    for (let i = 0; i < points.length; i++) {
+      let nearest = -1;
+      let dMin = Infinity;
+      for (let j = 0; j < points.length; j++) {
+        if (i === j) continue;
+        const d = points[i].distanceTo(points[j]);
+        if (d < dMin && d < 1.15) {
+          dMin = d;
+          nearest = j;
+        }
+      }
+      if (nearest > i) segs.push([points[i], points[nearest]]);
+    }
+    return segs;
+  }, [points]);
+
+  useFrame((state, delta) => {
+    const t = state.clock.getElapsedTime();
+    if (root.current) {
+      root.current.rotation.y += delta * 0.28;
+      root.current.rotation.x = THREE.MathUtils.lerp(
+        root.current.rotation.x,
+        mouse.current.y * 0.35,
+        0.05,
+      );
+      root.current.rotation.z = THREE.MathUtils.lerp(
+        root.current.rotation.z,
+        mouse.current.x * 0.22,
+        0.05,
+      );
+    }
+    if (core.current) {
+      core.current.rotation.x = t * 0.4;
+      core.current.rotation.y = t * 0.55;
+      core.current.scale.setScalar(1 + Math.sin(t * 2) * 0.04);
+    }
+    if (ringA.current) ringA.current.rotation.z = t * 0.6;
+    if (ringB.current) ringB.current.rotation.x = t * 0.45;
+    if (ringC.current) ringC.current.rotation.y = -t * 0.5;
   });
 
   return (
-    <group ref={group}>
-      <Float speed={0.8} floatIntensity={0.2} rotationIntensity={0.1}>
-        <RoundedBox args={[4.6, 2.4, 0.12]} radius={0.08} position={[0, 0.1, -0.7]}>
-          <meshStandardMaterial
-            color="#15202B"
-            roughness={0.55}
-            metalness={0.35}
-            transparent
-            opacity={0.55}
-          />
-        </RoundedBox>
-      </Float>
-
-      <Beam start={nodes[0]} end={nodes[1]} />
-      <Beam start={nodes[1]} end={nodes[2]} />
-
-      <Node position={nodes[0]} color="#E8EEF2" />
-      <Node position={nodes[1]} color="#2EC4B6" accent />
-      <Node position={nodes[2]} color="#E8EEF2" />
-
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.15, 0]} receiveShadow>
-        <circleGeometry args={[3.2, 48]} />
-        <meshStandardMaterial color="#0B1218" roughness={0.9} metalness={0.1} />
+    <group ref={root}>
+      <mesh ref={core}>
+        <icosahedronGeometry args={[0.55, 1]} />
+        <meshStandardMaterial
+          color="#00D2FF"
+          emissive="#0096FF"
+          emissiveIntensity={1.1}
+          metalness={0.7}
+          roughness={0.18}
+          wireframe
+        />
       </mesh>
+      <mesh>
+        <icosahedronGeometry args={[0.42, 0]} />
+        <meshStandardMaterial
+          color="#1E60FF"
+          emissive="#1E60FF"
+          emissiveIntensity={0.35}
+          metalness={0.5}
+          roughness={0.3}
+          transparent
+          opacity={0.55}
+        />
+      </mesh>
+
+      <mesh ref={ringA} rotation={[Math.PI / 2.2, 0.2, 0]}>
+        <torusGeometry args={[1.55, 0.018, 12, 96]} />
+        <meshStandardMaterial
+          color="#00D2FF"
+          emissive="#00D2FF"
+          emissiveIntensity={0.7}
+          metalness={0.6}
+          roughness={0.25}
+        />
+      </mesh>
+      <mesh ref={ringB} rotation={[0.4, Math.PI / 3, 0.6]}>
+        <torusGeometry args={[1.95, 0.014, 12, 96]} />
+        <meshStandardMaterial
+          color="#A8B5C2"
+          emissive="#00D2FF"
+          emissiveIntensity={0.25}
+          metalness={0.5}
+          roughness={0.35}
+          transparent
+          opacity={0.7}
+        />
+      </mesh>
+      <mesh ref={ringC} rotation={[1.1, 0.5, -0.3]}>
+        <torusGeometry args={[2.25, 0.01, 12, 120]} />
+        <meshStandardMaterial
+          color="#1E60FF"
+          emissive="#1E60FF"
+          emissiveIntensity={0.35}
+          transparent
+          opacity={0.55}
+        />
+      </mesh>
+
+      {points.map((p, i) => (
+        <mesh key={i} position={p}>
+          <sphereGeometry args={[i % 7 === 0 ? 0.055 : 0.035, 10, 10]} />
+          <meshStandardMaterial
+            color={i % 7 === 0 ? "#00D2FF" : "#E8F7FF"}
+            emissive={i % 7 === 0 ? "#00D2FF" : "#000000"}
+            emissiveIntensity={i % 7 === 0 ? 0.8 : 0}
+            metalness={0.4}
+            roughness={0.3}
+          />
+        </mesh>
+      ))}
+
+      {lines.map(([a, b], i) => {
+        const mid = new THREE.Vector3().addVectors(a, b).multiplyScalar(0.5);
+        const dir = new THREE.Vector3().subVectors(b, a);
+        const len = dir.length();
+        const quat = new THREE.Quaternion().setFromUnitVectors(
+          new THREE.Vector3(0, 1, 0),
+          dir.clone().normalize(),
+        );
+        return (
+          <mesh key={`l-${i}`} position={mid} quaternion={quat}>
+            <cylinderGeometry args={[0.006, 0.006, len, 4]} />
+            <meshBasicMaterial color="#00D2FF" transparent opacity={0.35} />
+          </mesh>
+        );
+      })}
     </group>
   );
 }
 
-/** CSS/SVG faux-3D pipeline — used when WebGL is unavailable (e.g. VMware). */
-function CssPipeline3D() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+/** CSS multi-layer orbital lattice (default on VMware). */
+function CssLattice3D() {
+  const [tilt, setTilt] = useState({ x: -12, y: 18 });
 
   return (
     <div
-      ref={ref}
-      className="relative h-72 w-full overflow-hidden rounded-sm border border-border bg-ink md:h-[22rem]"
+      className="relative h-80 w-full overflow-hidden rounded-2xl border border-border bg-[#0A1F3D] md:h-[26rem]"
       onPointerMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 18;
-        const y = ((e.clientY - rect.top) / rect.height - 0.5) * -14;
-        setTilt({ x: y, y: x });
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 28;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * -22;
+        setTilt({ x: y - 8, y: x + 10 });
       }}
-      onPointerLeave={() => setTilt({ x: 0, y: 0 })}
+      onPointerLeave={() => setTilt({ x: -12, y: 18 })}
     >
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(46,196,182,0.18),transparent_55%)]"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 flex items-center justify-center transition-transform duration-200 ease-out"
+        className="pointer-events-none absolute inset-0 opacity-80"
         style={{
-          transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-          transformStyle: "preserve-3d",
+          background:
+            "radial-gradient(circle at 55% 45%, rgba(0,210,255,0.22), transparent 42%), radial-gradient(circle at 30% 70%, rgba(30,96,255,0.1), transparent 40%)",
         }}
-      >
+      />
+
+      <div className="absolute inset-0 flex items-center justify-center [perspective:1100px]">
         <div
-          className="relative h-[70%] w-[88%] max-w-xl"
-          style={{ transformStyle: "preserve-3d" }}
+          className="relative size-[min(72%,22rem)] transition-transform duration-200 ease-out"
+          style={{
+            transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+            transformStyle: "preserve-3d",
+          }}
         >
+          {/* Slow spin wrapper */}
           <div
-            className="absolute inset-x-[8%] top-[42%] h-px origin-left animate-[pipeline-draw_2.4s_ease-out_forwards]"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent, #2EC4B6 20%, #2EC4B6 80%, transparent)",
-              boxShadow: "0 0 18px rgba(46,196,182,0.55)",
-              transform: "translateZ(20px) rotate(-8deg)",
-            }}
-          />
-
-          {[
-            { left: "8%", label: "talent", accent: false, delay: "0s" },
-            { left: "46%", label: "match", accent: true, delay: "0.25s" },
-            { left: "84%", label: "ship", accent: false, delay: "0.5s" },
-          ].map((n) => (
+            className="absolute inset-0 animate-[lattice-spin_18s_linear_infinite]"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            {/* Core */}
             <div
-              key={n.label}
-              className="absolute top-[28%] -translate-x-1/2"
-              style={{
-                left: n.left,
-                transform: `translateZ(${n.accent ? 56 : 36}px)`,
-                animation: `pipeline-float 3.2s ease-in-out ${n.delay} infinite`,
-              }}
-            >
-              <div
-                className={
-                  n.accent
-                    ? "size-14 rounded-full bg-teal shadow-[0_0_28px_rgba(46,196,182,0.65)] ring-4 ring-teal/25 md:size-16"
-                    : "size-11 rounded-full bg-text/90 shadow-[0_12px_28px_rgba(0,0,0,0.45)] ring-2 ring-white/10 md:size-12"
-                }
-              />
-              <p className="mt-3 text-center font-mono text-[0.65rem] tracking-widest text-faint uppercase">
-                {n.label}
-              </p>
-            </div>
-          ))}
+              className="absolute left-1/2 top-1/2 size-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal/90 shadow-[0_0_40px_rgba(0,210,255,0.75)] md:size-20"
+              style={{ transform: "translateZ(0px)" }}
+            />
+            <div
+              className="absolute left-1/2 top-1/2 size-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-royal/80 md:size-12"
+              style={{ transform: "translateZ(12px)" }}
+            />
 
-          <div
-            className="absolute inset-x-[12%] bottom-[12%] h-24 rounded-[50%] bg-slate/80 blur-md"
-            style={{ transform: "translateZ(0) rotateX(70deg)" }}
-            aria-hidden
-          />
+            {/* Orbital rings */}
+            <div
+              className="absolute left-1/2 top-1/2 size-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-teal/70 shadow-[0_0_20px_rgba(0,210,255,0.35)]"
+              style={{ transform: "rotateX(72deg) translateZ(0)" }}
+            />
+            <div
+              className="absolute left-1/2 top-1/2 size-[100%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-muted/40"
+              style={{ transform: "rotateX(72deg) rotateZ(35deg) translateZ(8px)" }}
+            />
+            <div
+              className="absolute left-1/2 top-1/2 size-[115%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-royal/50"
+              style={{ transform: "rotateY(65deg) rotateZ(-20deg)" }}
+            />
+            <div
+              className="absolute left-1/2 top-1/2 size-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-teal/40"
+              style={{ transform: "rotateY(-55deg) rotateX(20deg)" }}
+            />
+
+            {/* Satellite nodes on a sphere */}
+            {Array.from({ length: 16 }).map((_, i) => {
+              const angle = (i / 16) * Math.PI * 2;
+              const elev = ((i % 5) - 2) * 18;
+              const r = 42 + (i % 3) * 6;
+              return (
+                <div
+                  key={i}
+                  className={
+                    i % 4 === 0
+                      ? "absolute left-1/2 top-1/2 size-2.5 -ml-1.5 -mt-1.5 rounded-full bg-teal shadow-[0_0_12px_rgba(0,210,255,0.9)]"
+                      : "absolute left-1/2 top-1/2 size-1.5 -ml-0.5 -mt-0.5 rounded-full bg-text/80"
+                  }
+                  style={{
+                    transform: `rotateY(${(angle * 180) / Math.PI}deg) rotateX(${elev}deg) translateZ(${r}px)`,
+                  }}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A1F3D] to-transparent" />
     </div>
   );
 }
 
-function WebGLPipeline() {
+function WebGLLattice() {
   const mouse = useRef({ x: 0, y: 0 });
 
   return (
     <div
-      className="h-72 w-full overflow-hidden rounded-sm border border-border bg-ink md:h-[22rem]"
+      className="h-80 w-full overflow-hidden rounded-2xl border border-border bg-[#0A1F3D] md:h-[26rem]"
       onPointerMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         mouse.current.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
@@ -292,7 +335,7 @@ function WebGLPipeline() {
       }}
     >
       <Canvas
-        camera={{ position: [0, 1.1, 5.2], fov: 40 }}
+        camera={{ position: [0, 0.6, 5.8], fov: 38 }}
         dpr={[1, 1.5]}
         gl={{
           antialias: false,
@@ -300,18 +343,17 @@ function WebGLPipeline() {
           powerPreference: "default",
           failIfMajorPerformanceCaveat: false,
         }}
-        shadows={false}
         onCreated={({ gl }) => {
-          gl.setClearColor("#0B1218", 1);
+          gl.setClearColor("#051937", 1);
         }}
       >
-        <color attach="background" args={["#0B1218"]} />
-        <fog attach="fog" args={["#0B1218", 6, 14]} />
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[4, 6, 3]} intensity={1.2} color="#F2F5F7" />
-        <pointLight position={[-3, 2, 2]} intensity={1} color="#2EC4B6" />
-        <pointLight position={[3, -1, 1]} intensity={0.45} color="#E07A3D" />
-        <PipelineWorld mouse={mouse} />
+        <color attach="background" args={["#051937"]} />
+        <fog attach="fog" args={["#051937", 5.5, 12]} />
+        <ambientLight intensity={0.35} />
+        <directionalLight position={[4, 5, 3]} intensity={1.3} color="#E8F7FF" />
+        <pointLight position={[-2, 2, 3]} intensity={1.4} color="#00D2FF" />
+        <pointLight position={[3, -1, 2]} intensity={0.55} color="#1E60FF" />
+        <LatticeWorld mouse={mouse} />
       </Canvas>
     </div>
   );
@@ -331,17 +373,17 @@ export function PipelineScene() {
 
   if (mode === "loading") {
     return (
-      <div className="h-72 w-full animate-pulse rounded-sm border border-border bg-surface md:h-[22rem]" />
+      <div className="h-80 w-full animate-pulse rounded-sm border border-border bg-surface md:h-[26rem]" />
     );
   }
 
   if (mode === "css") {
-    return <CssPipeline3D />;
+    return <CssLattice3D />;
   }
 
   return (
-    <WebGLErrorBoundary fallback={<CssPipeline3D />}>
-      <WebGLPipeline />
+    <WebGLErrorBoundary fallback={<CssLattice3D />}>
+      <WebGLLattice />
     </WebGLErrorBoundary>
   );
 }

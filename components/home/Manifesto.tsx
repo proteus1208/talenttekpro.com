@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { SectionIndex } from "@/components/ui/SectionIndex";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ParallaxLayer } from "@/components/effects/ParallaxLayer";
 import { home } from "@/content/home";
@@ -8,21 +7,24 @@ import { media } from "@/content/media";
 
 export function Manifesto() {
   return (
-    <section className="border-t border-border py-24 md:py-32">
+    <section className="section-dark section-pad border-t border-border">
       <Container>
         <RevealOnScroll>
-          <SectionIndex label={home.manifesto.index} />
-          <div className="mt-8 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-6">
+              <h2 className="font-display text-3xl font-semibold leading-[1.15] tracking-tight text-text md:text-[2.75rem]">
                 {home.manifesto.headline}
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-muted">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                 {home.manifesto.body}
               </p>
             </div>
-            <ParallaxLayer speed={0.4} scale={1.18} className="rounded-sm">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-sm">
+            <ParallaxLayer
+              speed={0.28}
+              scale={1.12}
+              className="rounded-sm lg:col-span-6"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-border">
                 <Image
                   src={media.manifesto.src}
                   alt={media.manifesto.alt}

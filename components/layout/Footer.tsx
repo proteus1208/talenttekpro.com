@@ -5,15 +5,29 @@ import { footerColumns, site } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-ink">
-      <Container className="py-14 md:py-16">
+    <footer className="relative overflow-hidden border-t border-black/8 bg-white">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          backgroundImage: "url(/assets/imgs/Frame.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        aria-hidden
+      />
+      <Container className="relative py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Logo size="footer" variant="lockup" showWordmark={false} />
-            <p className="mt-3 text-sm text-muted">{site.descriptor}</p>
+            <Logo
+              size="footer"
+              variant="mark"
+              showWordmark
+              wordmarkClassName="text-[#051937]"
+            />
+            <p className="mt-3 text-sm text-[#64748B]">{site.descriptor}</p>
             <a
               href={`mailto:${site.email}`}
-              className="mt-4 inline-block text-sm text-teal hover:underline"
+              className="mt-4 inline-block text-sm font-medium text-[#1E60FF] hover:underline"
             >
               {site.email}
             </a>
@@ -25,8 +39,8 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-border">
-        <Container className="flex flex-col gap-3 py-5 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative border-t border-black/8">
+        <Container className="flex flex-col gap-3 py-5 text-sm text-[#94A3B8] sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {site.copyrightYear} {site.legalName} All rights reserved.
           </p>
@@ -35,7 +49,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="hover:text-muted transition-colors"
+                className="transition-colors hover:text-[#051937]"
               >
                 {item.label}
               </Link>
@@ -56,13 +70,13 @@ function FooterCol({
 }) {
   return (
     <div>
-      <p className="text-sm font-medium text-text">{title}</p>
+      <p className="text-sm font-semibold text-[#051937]">{title}</p>
       <ul className="mt-4 space-y-2">
         {items.map((item) => (
           <li key={item.href}>
             <Link
               href={item.href}
-              className="text-sm text-muted transition-colors hover:text-teal"
+              className="text-sm text-[#64748B] transition-colors hover:text-[#1E60FF]"
             >
               {item.label}
             </Link>

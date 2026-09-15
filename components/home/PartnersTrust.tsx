@@ -1,6 +1,5 @@
 import { ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { SectionIndex } from "@/components/ui/SectionIndex";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
 
@@ -8,22 +7,21 @@ export function PartnersTrust() {
   const loop = [...home.partners.marquee, ...home.partners.marquee];
 
   return (
-    <section className="border-t border-border py-24 md:py-28">
+    <section className="section-dark section-pad border-t border-border">
       <Container>
         <RevealOnScroll>
-          <SectionIndex label={home.partners.index} />
-          <h2 className="font-display mt-6 text-3xl font-semibold tracking-tight text-text md:text-4xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
             {home.partners.headline}
           </h2>
         </RevealOnScroll>
       </Container>
 
-      <div className="mt-10 overflow-hidden border-y border-border py-4">
-        <div className="animate-marquee flex w-max gap-10 px-5">
+      <div className="mt-10 overflow-hidden border-y border-border py-5">
+        <div className="animate-marquee flex w-max gap-12 px-5">
           {loop.map((label, i) => (
             <span
               key={`${label}-${i}`}
-              className="font-display text-sm font-medium tracking-wide text-faint whitespace-nowrap"
+              className="font-display text-sm font-medium tracking-wide text-muted/50 whitespace-nowrap"
             >
               {label}
             </span>
@@ -33,11 +31,11 @@ export function PartnersTrust() {
 
       <Container className="mt-12">
         <RevealOnScroll>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {home.partners.certifications.map((cert) => (
               <div
                 key={cert.label}
-                className="rounded-sm border border-border bg-surface/60 p-5"
+                className="border-t border-border-strong/50 pt-5"
               >
                 <ShieldCheck className="size-5 text-teal" aria-hidden />
                 <p className="mt-3 text-sm font-medium text-text">{cert.label}</p>

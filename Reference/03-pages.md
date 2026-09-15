@@ -30,7 +30,7 @@ Image prompts assume editorial photography / Midjourney-style generation: dark i
 
 **Image prompt — manifesto:**
 ```text
-Editorial photo, cross-functional workshop in a modern dark-toned office, senior engineers and hiring lead reviewing a laptop and whiteboard, soft teal accent lighting #2EC4B6, charcoal shadows, shallow depth of field, cinematic 16:9, no text, no logos, diverse professionals, confident collaborative mood
+Editorial photo, cross-functional workshop in a modern dark-toned office, senior engineers and hiring lead reviewing a laptop and whiteboard, soft cyan accent lighting #00D2FF, charcoal shadows, shallow depth of field, cinematic 16:9, no text, no logos, diverse professionals, confident collaborative mood
 ```
 
 ### Impact (003)
@@ -56,7 +56,7 @@ No hero-style image; optional faint dashboard crop as background wash only.
 
 **Image prompt — case cover template:**
 ```text
-Premium product UI mockup of [APP TYPE] on a laptop in a dim studio, edge lighting teal and warm ember, charcoal backdrop #0B1218, shallow depth, 16:9, no readable brand names, photoreal
+Premium product UI mockup of [APP TYPE] on a laptop in a dim studio, edge lighting teal and royal blue, charcoal backdrop #051937, shallow depth, 16:9, no readable brand names, photoreal
 ```
 
 ### Solutions (006)
@@ -158,7 +158,7 @@ Optional small icon art per discipline — geometric line icons in teal, not emo
 
 **Icon set prompt (optional):**
 ```text
-Set of 8 minimal line icons, single weight, teal #2EC4B6 on transparent, subjects: people network, team nodes, contract handshake abstract, AI node, code brackets, cloud, compass strategy, heartbeat monitor — flat vector, consistent 24px grid, no fill, no text
+Set of 8 minimal line icons, single weight, cyan #00D2FF on transparent, subjects: people network, team nodes, contract handshake abstract, AI node, code brackets, cloud, compass strategy, heartbeat monitor — flat vector, consistent 24px grid, no fill, no text
 ```
 
 ### Engagement models
@@ -316,7 +316,7 @@ Consulting session with enterprise leadership, confident gestures, dark modern b
 
 **Image prompt:**
 ```text
-Product design review with stakeholders around a large monitor, Figma-like UI blurred, collaborative leaning-in posture, warm ember + teal lights, 3:2
+Product design review with stakeholders around a large monitor, Figma-like UI blurred, collaborative leaning-in posture, royal blue + teal lights, 3:2
 ```
 
 ### Metrics band
@@ -377,7 +377,7 @@ Fixture posts should alternate talent and engineering topics, e.g.:
 
 **Featured image prompt template:**
 ```text
-Editorial blog header illustration, abstract but grounded: [TOPIC SYMBOL], flat/editorial hybrid, ink #0B1218 background, teal #2EC4B6 and ember #E07A3D accents, no text, 16:9, not purple, not generic AI brain cliché
+Editorial blog header illustration, abstract but grounded: [TOPIC SYMBOL], flat/editorial hybrid, ink #051937 background, teal #00D2FF and ember #1E60FF accents, no text, 16:9, not purple, not generic AI brain cliché
 ```
 
 ---

@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { AnnouncerBar } from "@/components/layout/AnnouncerBar";
+import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
@@ -25,6 +24,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,9 +38,8 @@ export default function RootLayout({
       lang="en"
       className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body className="bg-wash flex min-h-full flex-col font-sans text-text">
+      <body className="bg-wash flex min-h-full flex-col font-sans text-[#051937]">
         <SmoothScroll>
-          <AnnouncerBar />
           <Header />
           {children}
           <Footer />

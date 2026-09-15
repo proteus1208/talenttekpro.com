@@ -20,6 +20,7 @@ type LogoProps = {
   size?: "nav" | "footer" | "hero";
   priority?: boolean;
   showWordmark?: boolean;
+  wordmarkClassName?: string;
 };
 
 const assets = {
@@ -59,6 +60,7 @@ export function Logo({
   size = "nav",
   priority = false,
   showWordmark,
+  wordmarkClassName,
 }: LogoProps) {
   const resolvedVariant: LogoVariant =
     variant ?? (size === "nav" ? "mark" : "lockup");
@@ -85,7 +87,12 @@ export function Logo({
   const content = withWordmark ? (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       {image}
-      <span className="font-display text-base font-semibold tracking-tight text-text md:text-[1.05rem]">
+      <span
+        className={cn(
+          "font-display text-base font-semibold tracking-tight text-text md:text-[1.05rem]",
+          wordmarkClassName,
+        )}
+      >
         {site.name}
       </span>
     </span>

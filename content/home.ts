@@ -83,7 +83,7 @@ export const home = {
         year: "2024",
         summary:
           "Real-time matching product with an embedded FE/BE squad — live updates that stay responsive at scale.",
-        href: "/projects",
+        href: "/projects/dating-web-app",
         media: caseMedia(0),
         tags: ["React", "NestJS", "WebSockets"],
       },
@@ -93,7 +93,7 @@ export const home = {
         year: "2023",
         summary:
           "Live ops panel for appointments and metrics — secure backend streaming into a calm control surface.",
-        href: "/projects",
+        href: "/projects/healthcare-management",
         media: caseMedia(1),
         tags: ["React", "Laravel"],
       },
@@ -103,7 +103,7 @@ export const home = {
         year: "2025",
         summary:
           "Headless storefront engineered for performance and conversion for a modern commerce brand.",
-        href: "/projects",
+        href: "/projects/food-delivery-shopify",
         media: caseMedia(2),
         tags: ["Hydrogen", "React"],
       },
@@ -112,7 +112,7 @@ export const home = {
         type: "Digital Product",
         year: "2025",
         summary: "Real-time booking connecting professionals to flexible workspaces.",
-        href: "/projects",
+        href: "/projects/office-booking",
         media: caseMedia(3),
         tags: ["Next.js", "TypeScript"],
       },
@@ -122,7 +122,7 @@ export const home = {
         year: "2025",
         summary:
           "Bridge from raw industrial data to human decisions — maps, streams, and operator-ready views.",
-        href: "/projects",
+        href: "/projects/pipeline-inspection",
         media: caseMedia(4),
         tags: ["Vue", "Nuxt"],
       },

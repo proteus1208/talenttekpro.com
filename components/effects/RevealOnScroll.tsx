@@ -9,6 +9,10 @@ type RevealOnScrollProps = {
   delay?: number;
 };
 
+/**
+ * Subtle rise only — never starts at opacity 0 (that hid whole sections
+ * when in-view detection failed under smooth-scroll / VMs).
+ */
 export function RevealOnScroll({
   children,
   className,
@@ -23,10 +27,10 @@ export function RevealOnScroll({
   return (
     <motion.div
       className={cn(className)}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 1, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px" }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
+      viewport={{ once: true, amount: 0.12, margin: "0px" }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
     </motion.div>

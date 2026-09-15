@@ -1,9 +1,9 @@
 import { Hero } from "@/components/home/Hero";
+import { Solutions } from "@/components/home/Solutions";
 import { Manifesto } from "@/components/home/Manifesto";
 import { Impact } from "@/components/home/Impact";
 import { Platform } from "@/components/home/Platform";
 import { CaseStudies } from "@/components/home/CaseStudies";
-import { Solutions } from "@/components/home/Solutions";
 import { Industries } from "@/components/home/Industries";
 import { Approach } from "@/components/home/Approach";
 import { PartnersTrust } from "@/components/home/PartnersTrust";
@@ -15,13 +15,13 @@ import { GetStarted } from "@/components/home/GetStarted";
 
 export default function HomePage() {
   return (
-    <main className="flex-1">
+    <main className="relative z-0 flex-1">
       <Hero />
+      <Solutions />
       <Manifesto />
       <Impact />
       <Platform />
       <CaseStudies />
-      <Solutions />
       <Industries />
       <Approach />
       <PartnersTrust />

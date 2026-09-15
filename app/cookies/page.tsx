@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
-import { StubPage } from "@/components/ui/StubPage";
+import { PageHero } from "@/components/page/PageHero";
+import { LegalSections } from "@/components/page/LegalSections";
+import { legalPage } from "@/content/legal";
 
 export const metadata: Metadata = {
-  title: "Cookies",
+  title: legalPage.cookies.metaTitle,
 };
 
-export default function Page() {
-  return <StubPage title="Cookies" />;
+export default function CookiesPage() {
+  const { hero, sections } = legalPage.cookies;
+  return (
+    <main className="flex-1">
+      <PageHero
+        crumbs={[{ label: "Cookies" }]}
+        eyebrow={hero.eyebrow}
+        title={hero.title}
+        support={hero.support}
+      />
+      <LegalSections sections={sections} />
+    </main>
+  );
 }

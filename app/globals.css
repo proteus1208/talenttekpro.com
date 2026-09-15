@@ -1,51 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --ttp-ink: #0b1218;
-  --ttp-slate: #15202b;
-  --ttp-surface: #1a2633;
-  --ttp-surface-raised: #243447;
-  --ttp-border: rgba(242, 245, 247, 0.08);
-  --ttp-text: #f2f5f7;
-  --ttp-text-muted: #a8b5c2;
-  --ttp-text-faint: #6b7a8a;
-  --ttp-teal: #2ec4b6;
-  --ttp-teal-dim: #1a8f85;
-  --ttp-ember: #e07a3d;
-  --ttp-ember-hover: #f08a4d;
-  --ttp-focus: #2ec4b6;
-  --ttp-danger: #e25c5c;
+/* Logo palette — navy → royal → cyan. Literal hex in @theme so utilities always resolve. */
+@theme {
+  --color-ink: #051937;
+  --color-slate: #f5f9fc;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f8fafc;
 
-  /* Chrome heights — keep in sync with AnnouncerBar + Header */
-  --ttp-announcer-h: 2.5rem; /* 40px */
-  --ttp-header-h: 4.5rem; /* 72px */
-  --ttp-chrome-h: calc(var(--ttp-announcer-h) + var(--ttp-header-h));
-}
+  --color-border: #05193714;
+  --color-border-strong: #1e60ff66;
 
-@media (max-width: 639px) {
-  :root {
-    /* Stacked announcer (tagline + links) */
-    --ttp-announcer-h: 3.75rem; /* 60px */
-  }
-}
+  --color-text: #051937;
+  --color-muted: #64748b;
+  --color-faint: #94a3b8;
 
-@theme inline {
-  --color-ink: var(--ttp-ink);
-  --color-slate: var(--ttp-slate);
-  --color-surface: var(--ttp-surface);
-  --color-surface-raised: var(--ttp-surface-raised);
-  --color-border: var(--ttp-border);
-  --color-text: var(--ttp-text);
-  --color-muted: var(--ttp-text-muted);
-  --color-faint: var(--ttp-text-faint);
-  --color-teal: var(--ttp-teal);
-  --color-teal-dim: var(--ttp-teal-dim);
-  --color-ember: var(--ttp-ember);
-  --color-ember-hover: var(--ttp-ember-hover);
-  --color-focus: var(--ttp-focus);
+  /* "teal" utilities = royal / signal accents on bright UI */
+  --color-teal: #1e60ff;
+  --color-teal-dim: #0096ff;
+  --color-royal: #1e60ff;
+
+  --color-ember: #1e60ff;
+  --color-ember-hover: #3b7aff;
+  --color-focus: #1e60ff;
+
+  --color-light: #f0f7fc;
+  --color-light-ink: #051937;
+  --color-light-muted: #64748b;
+  --color-light-border: #0519371f;
+
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+:root {
+  --ttp-ink: #051937;
+  --ttp-slate: #f5f9fc;
+  --ttp-surface: #ffffff;
+  --ttp-surface-raised: #f8fafc;
+
+  --ttp-border: rgba(5, 25, 55, 0.1);
+  --ttp-border-strong: rgba(30, 96, 255, 0.4);
+
+  --ttp-text: #051937;
+  --ttp-text-muted: #64748b;
+  --ttp-text-faint: #94a3b8;
+
+  --ttp-teal: #1e60ff;
+  --ttp-teal-dim: #0096ff;
+  --ttp-royal: #1e60ff;
+
+  --ttp-ember: #1e60ff;
+  --ttp-ember-hover: #3b7aff;
+  --ttp-focus: #1e60ff;
+  --ttp-danger: #e25c5c;
+
+  --ttp-light: #f0f7fc;
+  --ttp-light-ink: #051937;
+  --ttp-light-muted: #64748b;
+  --ttp-light-border: rgba(5, 25, 55, 0.12);
+
+  --ttp-header-h: 4.5rem;
+  --ttp-chrome-h: var(--ttp-header-h);
+
+  color-scheme: light;
 }
 
 html {
@@ -54,8 +72,8 @@ html {
 
 html,
 body {
-  background-color: var(--ttp-ink);
-  color: var(--ttp-text);
+  background-color: #ffffff;
+  color: #051937;
 }
 
 body {
@@ -64,18 +82,80 @@ body {
 }
 
 .bg-wash {
-  background-image:
-    radial-gradient(
-      ellipse 80% 60% at 70% 20%,
-      rgba(46, 196, 182, 0.12),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 60% 50% at 10% 80%,
-      rgba(224, 122, 61, 0.06),
-      transparent 50%
-    ),
-    linear-gradient(180deg, var(--ttp-ink), var(--ttp-slate));
+  background-color: #ffffff;
+  background-image: url("/assets/imgs/Frame.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.section-dark {
+  background-color: #ffffff;
+  color: #051937;
+  border-color: rgba(5, 25, 55, 0.08);
+}
+
+.section-elevated {
+  background-color: #f5f9fc;
+  color: #051937;
+  border-color: rgba(5, 25, 55, 0.08);
+}
+
+.section-light {
+  background-color: #f0f7fc;
+  color: #051937;
+  border-color: rgba(5, 25, 55, 0.12);
+}
+
+.section-dark .text-text,
+.section-elevated .text-text {
+  color: #051937;
+}
+
+.section-dark .text-muted,
+.section-elevated .text-muted {
+  color: #64748b;
+}
+
+.section-dark .text-faint,
+.section-elevated .text-faint {
+  color: #94a3b8;
+}
+
+.section-dark .border-border,
+.section-elevated .border-border {
+  border-color: rgba(5, 25, 55, 0.1);
+}
+
+.section-dark .border-t,
+.section-elevated .border-t {
+  border-top-color: rgba(5, 25, 55, 0.1);
+}
+
+.section-rule {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin-top: 0.75rem;
+  background: #1e60ff;
+  box-shadow: none;
+}
+
+.section-light .section-rule {
+  background: #1e60ff;
+  box-shadow: none;
 }
 
 .font-display {
@@ -83,12 +163,12 @@ body {
 }
 
 ::selection {
-  background: rgba(46, 196, 182, 0.35);
-  color: var(--ttp-text);
+  background: rgba(0, 210, 255, 0.4);
+  color: #051937;
 }
 
 :focus-visible {
-  outline: 2px solid var(--ttp-focus);
+  outline: 2px solid #00d2ff;
   outline-offset: 2px;
 }
 
@@ -116,22 +196,12 @@ body {
   }
 }
 
-@keyframes pipeline-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -10px;
-  }
-}
-
-@keyframes pipeline-draw {
+@keyframes lattice-spin {
   from {
-    transform: translateZ(20px) rotate(-8deg) scaleX(0);
+    transform: rotateY(0deg);
   }
   to {
-    transform: translateZ(20px) rotate(-8deg) scaleX(1);
+    transform: rotateY(360deg);
   }
 }
 
@@ -143,4 +213,40 @@ body {
   .animate-marquee {
     animation: none;
   }
+}
+
+/* Primary CTA — royal blue (light landing / mockup) */
+.ttp-btn-primary {
+  background-color: #1e60ff !important;
+  color: #ffffff !important;
+}
+.ttp-btn-primary:hover {
+  background-color: #3b7aff !important;
+}
+.ttp-btn-secondary {
+  background-color: #ffffff !important;
+  color: #051937 !important;
+  border: 1px solid rgba(5, 25, 55, 0.14) !important;
+}
+.ttp-btn-secondary:hover {
+  color: #1e60ff !important;
+  border-color: #1e60ff !important;
+  background-color: #ffffff !important;
+}
+.ttp-btn-ghost {
+  background-color: transparent !important;
+  color: #1e60ff !important;
+}
+.ttp-btn-ghost:hover {
+  color: #051937 !important;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(90deg, #1e60ff 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+  z-index: 1;
 }

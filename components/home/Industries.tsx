@@ -1,22 +1,20 @@
 import { Container } from "@/components/ui/Container";
-import { SectionIndex } from "@/components/ui/SectionIndex";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { home } from "@/content/home";
 
 export function Industries() {
   return (
-    <section className="border-t border-border py-24 md:py-28">
+    <section className="section-dark section-pad border-t border-border">
       <Container>
         <RevealOnScroll>
-          <SectionIndex label={home.industries.index} />
-          <h2 className="font-display mt-6 text-3xl font-semibold tracking-tight text-text md:text-4xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
             {home.industries.headline}
           </h2>
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 flex flex-wrap gap-3">
             {home.industries.items.map((item) => (
               <li
                 key={item}
-                className="border-l border-teal/40 pl-4 text-sm text-muted"
+                className="rounded-sm border border-border px-4 py-2.5 text-sm text-muted transition-colors hover:border-border-strong hover:text-teal"
               >
                 {item}
               </li>

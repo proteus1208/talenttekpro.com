@@ -1,27 +1,24 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { SectionIndex } from "@/components/ui/SectionIndex";
 import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
-import { ParallaxLayer } from "@/components/effects/ParallaxLayer";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 
 export function Approach() {
   return (
-    <section className="border-t border-border py-24 md:py-32">
+    <section className="section-elevated section-pad border-t border-border">
       <Container>
         <RevealOnScroll>
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <SectionIndex label={home.approach.index} />
-              <h2 className="font-display mt-6 text-3xl font-semibold tracking-tight text-text md:text-4xl">
+          <div className="grid items-start gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
                 {home.approach.headline}
               </h2>
               <ul className="mt-6 space-y-2">
                 {home.approach.bullets.map((b) => (
                   <li key={b} className="text-muted">
-                    → {b}
+                    <span className="text-teal">→</span> {b}
                   </li>
                 ))}
               </ul>
@@ -32,24 +29,29 @@ export function Approach() {
               </div>
             </div>
 
-            <ParallaxLayer speed={0.38} scale={1.18} className="rounded-sm">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-sm">
-                <Image
-                  src={media.approach.src}
-                  alt={media.approach.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                />
-              </div>
-            </ParallaxLayer>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-sm border border-border-strong/40 lg:col-span-7">
+              <Image
+                src={media.approach.src}
+                alt={media.approach.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 640px"
+              />
+            </div>
           </div>
 
-          <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {home.approach.phases.map((phase) => (
-              <li key={phase.num} className="border-t border-border pt-5">
-                <p className="font-mono text-xs text-faint">
-                  {phase.num} · phase // {phase.label}
+          <ol className="mt-16 grid gap-0 border-t-2 border-teal/30 sm:grid-cols-2 lg:grid-cols-4">
+            {home.approach.phases.map((phase, i) => (
+              <li
+                key={phase.num}
+                className="border-border py-6 pr-6 sm:border-r lg:[&:nth-child(4)]:border-r-0"
+              >
+                <p className="font-mono text-xs text-teal">
+                  {phase.num}
+                  {i < home.approach.phases.length - 1 ? " →" : ""}
+                </p>
+                <p className="mt-2 font-mono text-[0.65rem] tracking-wide text-faint uppercase">
+                  phase // {phase.label}
                 </p>
                 <h3 className="font-display mt-2 text-xl font-semibold text-text">
                   {phase.title}

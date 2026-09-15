@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
@@ -13,7 +13,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -29,34 +29,51 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-200 ease-out",
+        "sticky top-0 z-50 border-b bg-white transition-[box-shadow,border-color] duration-200",
         scrolled || open
-          ? "border-border bg-ink/95 backdrop-blur-md"
-          : "border-transparent bg-ink/40 backdrop-blur-sm",
+          ? "border-black/8 shadow-[0_8px_30px_rgba(5,25,55,0.06)]"
+          : "border-transparent",
       )}
     >
       <div className="mx-auto flex h-[var(--ttp-header-h)] max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:px-8">
-        <Logo size="nav" variant="mark" priority />
+        <Logo
+          size="nav"
+          variant="mark"
+          priority
+          wordmarkClassName="text-[#051937]"
+        />
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
           {primaryNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-muted transition-colors hover:text-teal"
+              className="inline-flex items-center gap-1 text-[0.9375rem] font-medium text-[#334155] transition-colors hover:text-[#1E60FF]"
             >
               {item.label}
+              {item.href === "/services" ? (
+                <ChevronDown className="size-3.5 opacity-60" aria-hidden />
+              ) : null}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href={cta.quote.href}>{cta.quote.label}</Button>
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href="/blog"
+            aria-label="Search articles"
+            className="grid size-10 place-items-center rounded-full text-[#64748B] transition-colors hover:bg-[#F1F5F9] hover:text-[#051937]"
+          >
+            <Search className="size-5" />
+          </Link>
+          <Button href={cta.quote.href} className="rounded-full px-5">
+            {cta.quote.label} →
+          </Button>
         </div>
 
         <button
           type="button"
-          className="grid size-10 place-items-center rounded-sm border border-border text-text lg:hidden"
+          className="grid size-10 place-items-center rounded-xl border border-black/10 text-[#051937] lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
@@ -65,21 +82,21 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-border bg-ink lg:hidden">
+        <div className="border-t border-black/8 bg-white lg:hidden">
           <nav className="mx-auto flex max-w-[1200px] flex-col gap-1 px-5 py-4">
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-sm px-3 py-3 text-base text-text hover:bg-surface"
+                className="rounded-xl px-3 py-3 text-base font-medium text-[#051937] hover:bg-[#F1F5F9]"
               >
                 {item.label}
               </Link>
             ))}
             <div className="mt-2 px-3">
-              <Button href={cta.quote.href} className="w-full">
-                {cta.quote.label}
+              <Button href={cta.quote.href} className="w-full rounded-full">
+                {cta.quote.label} →
               </Button>
             </div>
           </nav>

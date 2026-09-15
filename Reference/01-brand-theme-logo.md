@@ -36,50 +36,45 @@
 
 ## Visual direction
 
-**Concept:** “Talent pipeline meets production console.”
+**Concept:** Logo-aligned navy → royal → cyan (TP ribbon mark).
 
-Deep ink backgrounds, signal teal for match/talent moments, warm ember for CTAs. Real workplaces and pairing — not purple gradients, cream+terracotta serif kitsch, or broadsheet newspaper layouts.
+Deep navy backgrounds, signal cyan for links/borders/indexes, royal blue for secondary accents. Primary CTAs use cyan (no orange). Not purple neon, cream+terracotta, or broadsheet newspaper looks.
 
 ### Imagery mood
 
-- Interview rooms with soft teal practical light
-- Pair-programming / war-room laptops
-- Live dashboards (hiring funnel + deploy velocity)
+- Interview / delivery rooms with cyan practical light
+- Pair-programming and live dashboards
 - Diverse senior professionals; no stock handshake clichés
-- Atmospheric depth; avoid abstract neon blobs as the main visual idea
 
 ---
 
 ## Color tokens
 
+**Logo palette** (shipped in `app/globals.css`):
+
 ```css
 :root {
-  /* Backgrounds */
-  --ttp-ink: #0B1218;
-  --ttp-slate: #15202B;
-  --ttp-wash: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(46, 196, 182, 0.12), transparent 55%),
-              radial-gradient(ellipse 60% 50% at 10% 80%, rgba(224, 122, 61, 0.06), transparent 50%),
-              var(--ttp-ink);
+  --ttp-ink: #051937;
+  --ttp-slate: #0A1F3D;
+  --ttp-surface: #0E2748;
+  --ttp-surface-raised: #13315A;
 
-  /* Surfaces (interactive panels only — default is no cards) */
-  --ttp-surface: #1A2633;
-  --ttp-surface-raised: #243447;
-  --ttp-border: rgba(242, 245, 247, 0.08);
+  --ttp-border: rgba(0, 210, 255, 0.14);
+  --ttp-border-strong: rgba(0, 210, 255, 0.45);
 
-  /* Text */
-  --ttp-text: #F2F5F7;
-  --ttp-text-muted: #A8B5C2;
-  --ttp-text-faint: #6B7A8A;
+  --ttp-text: #E8F7FF;
+  --ttp-text-muted: #A8C5D8;
+  --ttp-text-faint: #6B8AA0;
 
-  /* Accents */
-  --ttp-teal: #2EC4B6;      /* talent / match / success */
-  --ttp-teal-dim: #1A8F85;
-  --ttp-ember: #E07A3D;     /* CTA / urgency */
-  --ttp-ember-hover: #F08A4D;
+  --ttp-teal: #00D2FF;       /* signal cyan (class name teal) */
+  --ttp-teal-dim: #0096FF;
+  --ttp-royal: #1E60FF;
+  --ttp-ember: #00D2FF;      /* primary CTA (class name ember) */
+  --ttp-ember-hover: #5AE0FF;
 
-  /* Semantic */
-  --ttp-focus: #2EC4B6;
-  --ttp-danger: #E25C5C;
+  --ttp-light: #F0F7FC;
+  --ttp-light-ink: #051937;
+  --ttp-light-muted: #4A5A6A;
 }
 ```
 
@@ -88,10 +83,12 @@ Deep ink backgrounds, signal teal for match/talent moments, warm ember for CTAs.
 | Token | Use |
 |-------|-----|
 | `--ttp-ink` / wash | Page background |
-| `--ttp-teal` | Links, match scores, active nav, pipeline nodes |
-| `--ttp-ember` | Primary buttons, key CTAs only |
-| `--ttp-surface` | Command-center mock UIs, form fields — not decorative cards |
-| Muted text | Supporting sentences, section indexes (`001 / …`) |
+| `--ttp-slate` | Elevated section bands |
+| `--ttp-teal` | Links, indexes, signal rules, borders-strong |
+| `--ttp-royal` | Secondary accents / lattice mid tones |
+| `--ttp-ember` | Primary buttons (cyan fill) |
+| `--ttp-surface` | Cards / interactive panels |
+| Light band | Testimonials / trust only |
 
 ---
 
@@ -161,19 +158,19 @@ Deep ink backgrounds, signal teal for match/talent moments, warm ember for CTAs.
 ### Mark (primary)
 
 ```text
-Minimal logo mark for "TalentTekPro", interlocking capital T with a three-node pipeline glyph (talent to match to ship), geometric, flat vector, single-weight strokes, charcoal ink #0B1218 background, off-white strokes #F2F5F7, one teal #2EC4B6 accent on the center match node, no gradients, no glow, no 3D, no text in the mark, square composition, high clarity at 32px favicon size, professional tech staffing and engineering brand
+Minimal logo mark for "TalentTekPro", interlocking capital T with a three-node pipeline glyph (talent to match to ship), geometric, flat vector, single-weight strokes, deep navy #051937 background, sky-white strokes #E8F7FF, one cyan #00D2FF accent on the center match node, no gradients, no glow, no 3D, no text in the mark, square composition, high clarity at 32px favicon size, professional tech staffing and engineering brand
 ```
 
 ### Wordmark
 
 ```text
-Clean wordmark logo "TalentTekPro" in a modern geometric sans similar to Sora, semi-bold, tight letter-spacing, solid off-white #F2F5F7 on deep charcoal #0B1218, optional subtle teal #2EC4B6 underline only under "Tek", flat vector, no shadows, no 3D, no icons, horizontal lockup, enterprise technology brand
+Clean wordmark logo "TalentTekPro" in a modern geometric sans similar to Sora, semi-bold, tight letter-spacing, solid sky-white #E8F7FF on deep navy #051937, optional subtle cyan #00D2FF underline only under "Tek", flat vector, no shadows, no 3D, no icons, horizontal lockup, enterprise technology brand
 ```
 
 ### App icon / OG
 
 ```text
-App icon: TalentTekPro pipeline-T mark centered on rounded-square deep slate #15202B, teal center node #2EC4B6, off-white strokes, generous padding, flat vector, no photo, no text, iOS-style simple icon
+App icon: TalentTekPro pipeline-T mark centered on rounded-square mid navy #0A1F3D, cyan center node #00D2FF, sky-white strokes, generous padding, flat vector, no photo, no text, iOS-style simple icon
 ```
 
 ---
