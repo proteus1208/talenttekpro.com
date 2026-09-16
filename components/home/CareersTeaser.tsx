@@ -13,8 +13,11 @@ export function CareersTeaser() {
         <RevealOnScroll>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
-                {home.careers.headline}
+              <h2 className="section-title">
+                {home.careers.headline}{" "}
+                <span className="hero-gradient-text">
+                  {home.careers.headlineAccent}
+                </span>
               </h2>
             </div>
             <LinkArrow href="/careers">All roles →</LinkArrow>
@@ -30,7 +33,7 @@ export function CareersTeaser() {
                     <p className="text-xs tracking-wide text-faint uppercase">
                       {role.track}
                     </p>
-                    <p className="mt-1 text-base font-medium text-text transition-colors group-hover:text-teal">
+                    <p className="card-title mt-1 transition-colors group-hover:text-teal">
                       {role.title}
                     </p>
                   </div>

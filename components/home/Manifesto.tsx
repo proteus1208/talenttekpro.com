@@ -43,7 +43,7 @@ export function Manifesto() {
         <RevealOnScroll>
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
             <div className="max-w-xl">
-              <h2 className="font-display text-[clamp(1.85rem,3.2vw,2.75rem)] font-bold leading-[1.2] tracking-tight text-[#051937]">
+              <h2 className="section-title">
                 {home.manifesto.headline}{" "}
                 <span className="hero-gradient-text">
                   {home.manifesto.headlineAccent}

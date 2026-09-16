@@ -127,8 +127,7 @@ function ProjectCard({
 
         <h3
           className={cn(
-            "font-display mt-3 font-bold tracking-tight text-[#051937] transition-colors group-hover:text-[#1E60FF]",
-            featured ? "text-xl md:text-2xl" : "text-base md:text-lg",
+            "card-title mt-3 transition-colors group-hover:text-[#1E60FF]",
           )}
         >
           {project.title}
@@ -185,7 +184,7 @@ export function CaseStudies() {
                 <Sparkles className="size-3.5" aria-hidden />
                 {home.cases.eyebrow}
               </p>
-              <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
+              <h2 className="section-title mt-4">
                 Work that{" "}
                 <span className="hero-gradient-text">hired</span> and{" "}
                 <span className="hero-gradient-text">shipped.</span>

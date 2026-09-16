@@ -12,7 +12,7 @@ export function PartnersTrust() {
       <SectionEdge fill="#ffffff" variant="bump" position="top" />
       <Container>
         <RevealOnScroll>
-          <h2 className="font-display whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.5rem)] font-semibold tracking-tight text-text">
+          <h2 className="section-title whitespace-nowrap">
             {home.partners.headline}{" "}
             <span className="hero-gradient-text">
               {home.partners.headlineAccent}

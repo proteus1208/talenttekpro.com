@@ -104,7 +104,7 @@ export function Industries() {
               <Building2 className="size-3.5" aria-hidden />
               {home.industries.eyebrow}
             </p>
-            <h2 className="font-display mt-4 whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.75rem)] font-bold tracking-tight text-[#051937]">
+            <h2 className="section-title mt-4 whitespace-nowrap">
               {home.industries.headline}{" "}
               <span className="hero-gradient-text">
                 {home.industries.headlineAccent}
@@ -160,7 +160,7 @@ export function Industries() {
                     </span>
                   </div>
 
-                  <h3 className="font-display mt-7 text-[1.35rem] font-bold tracking-tight text-[#051937]">
+                  <h3 className="card-title mt-7">
                     {item.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-[#64748B]">

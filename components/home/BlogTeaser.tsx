@@ -13,7 +13,7 @@ export function BlogTeaser() {
         <RevealOnScroll>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
+              <h2 className="section-title">
                 {home.blog.headline}{" "}
                 <span className="hero-gradient-text">
                   {home.blog.headlineAccent}
@@ -32,7 +32,7 @@ export function BlogTeaser() {
                 <p className="text-xs font-medium tracking-wide text-teal uppercase">
                   {post.category}
                 </p>
-                <h3 className="font-display mt-2 text-lg font-semibold text-text transition-colors group-hover:text-teal">
+                <h3 className="card-title mt-2 transition-colors group-hover:text-teal">
                   {post.title}
                 </h3>
                 <p className="mt-3 font-mono text-xs text-faint">

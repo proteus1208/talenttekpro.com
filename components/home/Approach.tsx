@@ -46,7 +46,7 @@ export function Approach() {
                 {home.approach.badge}
               </p>
 
-              <h2 className="font-display mt-5 text-[clamp(1.85rem,3.2vw,2.75rem)] font-bold leading-[1.15] tracking-tight text-[#051937]">
+              <h2 className="section-title mt-5">
                 {home.approach.headline}{" "}
                 <span className="hero-gradient-text">
                   {home.approach.headlineAccent}
@@ -140,7 +140,7 @@ export function Approach() {
                           <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
                             {phase.num} · {phase.label}
                           </p>
-                          <h3 className="font-display mt-1.5 text-lg font-bold tracking-tight text-[#051937]">
+                          <h3 className="card-title mt-1.5">
                             {phase.title}
                           </h3>
                           <p className="mt-1.5 text-sm leading-relaxed text-[#64748B]">

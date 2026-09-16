@@ -27,7 +27,7 @@ export function Testimonials() {
               <span className="inline-block h-px w-6 bg-[#1E60FF]" aria-hidden />
               {home.testimonials.eyebrow}
             </p>
-            <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
+            <h2 className="section-title mt-4">
               {home.testimonials.headline}{" "}
               <span className="hero-gradient-text">
                 {home.testimonials.headlineAccent}

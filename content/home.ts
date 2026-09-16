@@ -294,7 +294,8 @@ export const home = {
   },
   careers: {
     index: "011 / Careers",
-    headline: "Join our team.",
+    headline: "Join our",
+    headlineAccent: "team.",
     roles: [
       { track: "Engineering", title: "Senior Full-Stack Engineer", location: "Remote · Global", href: "/careers" },
       { track: "Data & AI", title: "AI / ML Engineer", location: "Remote · Global", href: "/careers" },

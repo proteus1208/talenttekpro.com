@@ -94,7 +94,7 @@ export function Platform() {
               {home.platform.eyebrow}
               <span className="inline-block h-px w-5 bg-[#1E60FF]" aria-hidden />
             </p>
-            <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
+            <h2 className="section-title mt-4">
               {home.platform.headline}{" "}
               <span className="hero-gradient-text">
                 {home.platform.headlineAccent}
@@ -137,7 +137,7 @@ export function Platform() {
                     <p className="mt-5 text-[0.7rem] font-semibold tracking-[0.14em] text-[#94A3B8] uppercase">
                       {pillar.label}
                     </p>
-                    <h3 className="font-display mt-2 text-xl font-bold tracking-tight text-[#051937] md:text-2xl">
+                    <h3 className="card-title mt-2">
                       {pillar.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-[#64748B]">

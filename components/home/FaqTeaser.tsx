@@ -17,7 +17,7 @@ export function FaqTeaser() {
       <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
       <Container className="max-w-3xl">
         <RevealOnScroll>
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
+          <h2 className="section-title">
             {home.faq.headline}{" "}
             <span className="hero-gradient-text">
               {home.faq.headlineAccent}

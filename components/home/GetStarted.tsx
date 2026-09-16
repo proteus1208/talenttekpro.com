@@ -80,7 +80,7 @@ export function GetStarted() {
               {home.getStarted.eyebrow}
             </p>
 
-            <h2 className="font-display mt-6 text-[clamp(1.85rem,3.4vw,2.85rem)] font-bold leading-[1.15] tracking-tight text-[#051937]">
+            <h2 className="section-title mt-6">
               {home.getStarted.headline}{" "}
               <span className="hero-gradient-text">
                 {home.getStarted.headlineAccent}
