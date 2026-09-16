@@ -21,7 +21,7 @@ type ScrollShapeProps = {
 
 /**
  * Exactly one decorative shape per section.
- * Opacity ~17% (15–20% band); scroll-linked drift + rotation.
+ * Opacity ~4% (3–5% band); scroll-linked drift + rotation.
  */
 export function ScrollShape({
   children,
@@ -58,7 +58,7 @@ export function ScrollShape({
     <motion.div
       ref={ref}
       className={cn(
-        "pointer-events-none absolute z-0 opacity-[0.2] will-change-transform",
+        "pointer-events-none absolute z-0 opacity-[0.04] will-change-transform",
         className,
       )}
       style={active ? { y, rotate: rotateZ } : undefined}

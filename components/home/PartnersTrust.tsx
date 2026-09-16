@@ -15,9 +15,10 @@ export function PartnersTrust() {
     <section className="relative z-[1] overflow-visible bg-white section-pad">
       <SectionEdge fill="#ffffff" variant="bump" position="top" />
       <ScrollShape
-        className="top-16 -right-8 h-44 w-44 text-[#1E60FF] md:h-56 md:w-56"
+        className="-bottom-6 left-[18%] h-40 w-56 text-[#1E60FF] md:h-52 md:w-64"
+        reverse
       >
-        <SoftRegion variant="softSquare" />
+        <SoftRegion variant="cloud" />
       </ScrollShape>
 
       <Container>

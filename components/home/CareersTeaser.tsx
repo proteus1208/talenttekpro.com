@@ -15,7 +15,7 @@ export function CareersTeaser() {
       <SectionEdge fill="#F0F7FC" variant="soft" position="top" />
       {/* Soft twin-lobe region */}
       <ScrollShape
-        className="top-12 -right-10 h-44 w-52 text-[#1E60FF] md:h-56 md:w-64"
+        className="top-[30%] right-[12%] h-32 w-44 text-[#1E60FF] md:h-40 md:w-52"
         reverse
       >
         <SoftRegion variant="bean" />

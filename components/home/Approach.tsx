@@ -40,8 +40,7 @@ export function Approach() {
       <SectionEdge fill="#EAF3FB" variant="wave" position="top" />
       {/* Soft wave region */}
       <ScrollShape
-        className="top-28 -right-4 h-40 w-48 text-[#1E60FF] md:h-52 md:w-60"
-        reverse
+        className="top-[55%] right-[2%] h-32 w-48 text-[#1E60FF] md:h-40 md:w-56"
       >
         <SoftRegion variant="wave" />
       </ScrollShape>

@@ -18,10 +18,9 @@ export function FaqTeaser() {
     <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
       <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
       <ScrollShape
-        className="top-16 -right-4 h-40 w-40 text-[#1E60FF] md:h-52 md:w-52"
-        reverse
+        className="right-[28%] bottom-[15%] h-36 w-48 text-[#1E60FF] md:h-44 md:w-56"
       >
-        <SoftRegion variant="droplet" />
+        <SoftRegion variant="swirl" />
       </ScrollShape>
       <Container className="max-w-3xl">
         <RevealOnScroll>

@@ -42,10 +42,9 @@ export function Impact() {
       <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
       {/* Soft amoeba region */}
       <ScrollShape
-        className="top-16 right-[6%] h-40 w-44 text-[#1E60FF] md:h-52 md:w-56"
-        reverse
+        className="top-[22%] left-[8%] h-48 w-40 text-[#1E60FF] md:h-60 md:w-48"
       >
-        <SoftRegion variant="amoeba" />
+        <SoftRegion variant="kidney" />
       </ScrollShape>
 
       <Container className="relative z-10">

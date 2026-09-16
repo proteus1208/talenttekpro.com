@@ -100,7 +100,8 @@ export function Industries() {
       <SectionEdge fill="#ffffff" variant="soft" position="top" />
       {/* Soft petal region */}
       <ScrollShape
-        className="top-[30%] -right-12 h-48 w-48 text-[#00B4FF] md:h-60 md:w-60"
+        className="bottom-[12%] -left-14 h-52 w-44 text-[#00B4FF] md:h-64 md:w-56"
+        reverse
       >
         <SoftRegion variant="petal" />
       </ScrollShape>

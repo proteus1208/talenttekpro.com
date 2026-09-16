@@ -38,14 +38,15 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 border-b bg-white transition-[box-shadow,border-color] duration-200",
-        scrolled || open
-          ? "border-black/8 shadow-[0_8px_30px_rgba(5,25,55,0.06)]"
-          : "border-transparent",
-      )}
-    >
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 border-b bg-white transition-[box-shadow,border-color] duration-300",
+          scrolled || open
+            ? "border-black/8 shadow-[0_8px_32px_rgba(5,25,55,0.08)]"
+            : "border-black/8 shadow-none",
+        )}
+      >
       <div className="mx-auto flex h-[var(--ttp-header-h)] max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:px-8">
         <Logo
           size="nav"
@@ -99,7 +100,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-black/8 bg-white lg:hidden">
+        <div className="border-t border-black/8 bg-white/80 backdrop-blur-xl lg:hidden">
           <nav className="mx-auto flex max-w-[1200px] flex-col gap-1 px-5 py-4">
             {primaryNav.map((item) => {
               const active = navActive(pathname, item.href);
@@ -128,6 +129,9 @@ export function Header() {
           </nav>
         </div>
       ) : null}
-    </header>
+      </header>
+      {/* Reserve space so fixed header doesn’t cover page content */}
+      <div className="h-[var(--ttp-header-h)] shrink-0" aria-hidden />
+    </>
   );
 }

@@ -21,10 +21,9 @@ export function GetStarted() {
       </svg>
 
       <ScrollShape
-        className="bottom-8 left-[36%] hidden h-40 w-44 text-[#1E60FF] lg:block"
-        reverse
+        className="top-[18%] left-[42%] hidden h-28 w-40 text-[#1E60FF] lg:block"
       >
-        <SoftRegion variant="swirl" />
+        <SoftRegion variant="softSquare" />
       </ScrollShape>
 
       {/* Right photo plane */}

@@ -15,9 +15,10 @@ export function Manifesto() {
       <SectionEdge fill="#ffffff" variant="wave" position="top" />
 
       <ScrollShape
-        className="top-[36%] -left-16 h-56 w-56 text-[#1E60FF] md:h-72 md:w-72"
+        className="top-[12%] right-[22%] h-44 w-36 text-[#1E60FF] md:h-56 md:w-44"
+        reverse
       >
-        <SoftRegion variant="pebble" />
+        <SoftRegion variant="droplet" />
       </ScrollShape>
 
       <Container className="relative z-10">

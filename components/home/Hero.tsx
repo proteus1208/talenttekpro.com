@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { Clock3, Play, Rocket, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { ScrollShape } from "@/components/effects/ScrollShape";
-import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { cta } from "@/content/site";
 import { cn } from "@/lib/cn";
@@ -104,13 +102,6 @@ export function Hero() {
             style={{ clipPath: "url(#hero-left-curve)" }}
           />
         </div>
-
-        {/* Soft ribbon region */}
-        <ScrollShape
-          className="right-[8%] bottom-[28%] hidden h-36 w-40 text-[#1E60FF] md:block lg:right-[12%] lg:h-44 lg:w-48"
-        >
-          <SoftRegion variant="ribbon" />
-        </ScrollShape>
 
         <div
           className="pointer-events-none absolute -top-6 -left-4 z-[1] opacity-[0.06] md:top-2 md:left-2"

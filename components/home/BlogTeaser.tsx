@@ -14,9 +14,10 @@ export function BlogTeaser() {
     <section className="relative z-[1] overflow-visible bg-white section-pad">
       <SectionEdge fill="#ffffff" variant="wave" position="top" />
       <ScrollShape
-        className="top-20 -right-6 h-44 w-44 text-[#00B4FF] md:h-56 md:w-56"
+        className="-left-8 top-[45%] h-52 w-40 text-[#00B4FF] md:h-64 md:w-48"
+        reverse
       >
-        <SoftRegion variant="bean" />
+        <SoftRegion variant="pebble" />
       </ScrollShape>
 
       <Container>

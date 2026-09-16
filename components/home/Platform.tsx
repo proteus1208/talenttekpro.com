@@ -64,9 +64,10 @@ export function Platform() {
 
       {/* Soft pebble region */}
       <ScrollShape
-        className="top-[14%] -right-8 h-48 w-48 text-[#00B4FF] md:h-60 md:w-60"
+        className="-right-16 bottom-[20%] h-56 w-48 text-[#00B4FF] md:h-72 md:w-60"
+        reverse
       >
-        <SoftRegion variant="pebble" />
+        <SoftRegion variant="amoeba" />
       </ScrollShape>
 
       <Container className="relative z-10">

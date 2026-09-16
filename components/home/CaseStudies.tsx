@@ -180,8 +180,7 @@ export function CaseStudies() {
       <SectionEdge fill="#F0F7FC" variant="soft" position="top" />
       {/* One shape: soft ribbon region */}
       <ScrollShape
-        className="top-24 -right-6 h-40 w-44 text-[#1E60FF] md:h-52 md:w-56"
-        reverse
+        className="left-[6%] top-[40%] h-36 w-52 text-[#1E60FF] md:h-44 md:w-60"
       >
         <SoftRegion variant="ribbon" />
       </ScrollShape>

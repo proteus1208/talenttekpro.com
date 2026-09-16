@@ -96,9 +96,9 @@ export function Solutions() {
     <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-20 pb-24 md:pt-24 md:pb-28">
       {/* Soft cloud region */}
       <ScrollShape
-        className="top-[36%] -right-10 h-[16rem] w-[16rem] text-[#1E60FF] md:h-[20rem] md:w-[20rem]"
+        className="top-[8%] left-[4%] h-36 w-40 text-[#1E60FF] md:h-48 md:w-52"
       >
-        <SoftRegion variant="cloud" />
+        <SoftRegion variant="softSquare" />
       </ScrollShape>
 
       <Container className="relative z-10">

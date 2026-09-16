@@ -20,8 +20,7 @@ export function Testimonials() {
       <SectionEdge fill="#F0F4F8" variant="valley" position="top" />
 
       <ScrollShape
-        className="-top-4 right-[4%] h-52 w-52 text-[#1E60FF] md:h-64 md:w-64"
-        reverse
+        className="bottom-[8%] -left-10 h-44 w-52 text-[#1E60FF] md:h-56 md:w-64"
       >
         <SoftRegion variant="softFacet" />
       </ScrollShape>
