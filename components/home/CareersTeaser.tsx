@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { SectionEdge } from "@/components/ui/SectionShell";
 
@@ -9,6 +13,14 @@ export function CareersTeaser() {
   return (
     <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">
       <SectionEdge fill="#F0F7FC" variant="soft" position="top" />
+      {/* Soft twin-lobe region */}
+      <ScrollShape
+        className="top-12 -right-10 h-44 w-52 text-[#1E60FF] md:h-56 md:w-64"
+        reverse
+      >
+        <SoftRegion variant="bean" />
+      </ScrollShape>
+
       <Container>
         <RevealOnScroll>
           <div className="flex flex-wrap items-end justify-between gap-4">

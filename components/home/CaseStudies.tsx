@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { projects, type Project } from "@/content/projects";
 import { SectionEdge } from "@/components/ui/SectionShell";
@@ -176,6 +178,13 @@ export function CaseStudies() {
   return (
     <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">
       <SectionEdge fill="#F0F7FC" variant="soft" position="top" />
+      {/* One shape: soft ribbon region */}
+      <ScrollShape
+        className="top-24 -right-6 h-40 w-44 text-[#1E60FF] md:h-52 md:w-56"
+        reverse
+      >
+        <SoftRegion variant="ribbon" />
+      </ScrollShape>
       <Container>
         <RevealOnScroll>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

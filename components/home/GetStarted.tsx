@@ -3,6 +3,8 @@ import { Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cta, site } from "@/content/site";
@@ -13,11 +15,17 @@ export function GetStarted() {
       <svg width="0" height="0" className="absolute" aria-hidden>
         <defs>
             <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
-              {/* Edge sits further right; arc bows gently into the photo */}
               <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
             </clipPath>
         </defs>
       </svg>
+
+      <ScrollShape
+        className="bottom-8 left-[36%] hidden h-40 w-44 text-[#1E60FF] lg:block"
+        reverse
+      >
+        <SoftRegion variant="swirl" />
+      </ScrollShape>
 
       {/* Right photo plane */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">

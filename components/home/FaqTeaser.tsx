@@ -5,6 +5,8 @@ import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 import { SectionEdge } from "@/components/ui/SectionShell";
@@ -15,6 +17,12 @@ export function FaqTeaser() {
   return (
     <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
       <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
+      <ScrollShape
+        className="top-16 -right-4 h-40 w-40 text-[#1E60FF] md:h-52 md:w-52"
+        reverse
+      >
+        <SoftRegion variant="droplet" />
+      </ScrollShape>
       <Container className="max-w-3xl">
         <RevealOnScroll>
           <h2 className="section-title">

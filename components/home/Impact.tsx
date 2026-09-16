@@ -12,6 +12,8 @@ import {
 import { Container } from "@/components/ui/Container";
 import { CountUp } from "@/components/effects/CountUp";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 import { SectionEdge } from "@/components/ui/SectionShell";
@@ -38,23 +40,13 @@ export function Impact() {
   return (
     <section className="relative z-[1] overflow-visible bg-[#EAF3FB] pt-24 pb-24 md:pt-28 md:pb-28">
       <SectionEdge fill="#EAF3FB" variant="bump" position="top" />
-      {/* Subtle clear accent shapes */}
-      <svg
-        className="pointer-events-none absolute top-16 right-[8%] h-24 w-24 text-[#D6E8FF]"
-        viewBox="0 0 96 96"
-        fill="currentColor"
-        aria-hidden
+      {/* Soft amoeba region */}
+      <ScrollShape
+        className="top-16 right-[6%] h-40 w-44 text-[#1E60FF] md:h-52 md:w-56"
+        reverse
       >
-        <circle cx="48" cy="48" r="40" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute bottom-20 left-[6%] h-20 w-20 text-[#CFF5FF]"
-        viewBox="0 0 80 80"
-        fill="currentColor"
-        aria-hidden
-      >
-        <rect x="8" y="8" width="64" height="64" rx="16" />
-      </svg>
+        <SoftRegion variant="amoeba" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>

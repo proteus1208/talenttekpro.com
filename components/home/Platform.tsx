@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Gauge,
   Network,
@@ -6,6 +8,8 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 import { SectionEdge } from "@/components/ui/SectionShell";
@@ -58,33 +62,12 @@ export function Platform() {
     <section className="relative z-[1] overflow-visible bg-white section-pad">
       <SectionEdge fill="#ffffff" variant="valley" position="top" />
 
-      {/* Section accents — distinct from Impact/Services */}
-      <svg
-        className="pointer-events-none absolute top-[18%] -left-12 h-40 w-40 text-[#B8D4FF] md:h-52 md:w-52"
-        viewBox="0 0 200 200"
-        fill="currentColor"
-        aria-hidden
+      {/* Soft pebble region */}
+      <ScrollShape
+        className="top-[14%] -right-8 h-48 w-48 text-[#00B4FF] md:h-60 md:w-60"
       >
-        <path d="M100 12 L168 52 L168 148 L100 188 L32 148 L32 52 Z" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute -right-10 bottom-[22%] h-44 w-44 text-[#A8E8F5] md:h-56 md:w-56"
-        viewBox="0 0 200 200"
-        fill="currentColor"
-        aria-hidden
-      >
-        <path d="M100 18 C108 18 116 22 120 30 L172 128 C176 136 174 146 166 152 C162 155 157 156 152 156 L48 156 C40 156 33 151 30 144 C27 137 29 129 34 124 L86 30 C90 22 96 18 100 18 Z" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute top-[12%] right-[18%] hidden h-24 w-24 text-[#C5E7FF] lg:block"
-        viewBox="0 0 120 120"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="14"
-        aria-hidden
-      >
-        <circle cx="60" cy="60" r="42" />
-      </svg>
+        <SoftRegion variant="pebble" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>

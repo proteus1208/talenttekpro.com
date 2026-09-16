@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
@@ -10,34 +14,11 @@ export function Manifesto() {
     <section className="relative z-[1] overflow-visible bg-white pt-20 pb-24 md:pt-24 md:pb-28">
       <SectionEdge fill="#ffffff" variant="wave" position="top" />
 
-      {/* Different vocabulary from Services: rounded square, diamond, arc */}
-      <svg
-        className="pointer-events-none absolute top-[36%] -left-16 h-52 w-52 text-[#E8F1FF] md:h-64 md:w-64"
-        viewBox="0 0 200 200"
-        fill="currentColor"
-        aria-hidden
+      <ScrollShape
+        className="top-[36%] -left-16 h-56 w-56 text-[#1E60FF] md:h-72 md:w-72"
       >
-        <rect x="28" y="28" width="144" height="144" rx="36" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute -right-10 bottom-8 h-48 w-48 text-[#DFF6FB] md:h-60 md:w-60"
-        viewBox="0 0 200 200"
-        fill="currentColor"
-        aria-hidden
-      >
-        <path d="M100 18 L182 100 L100 182 L18 100 Z" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute top-[18%] right-[22%] hidden h-36 w-36 text-[#CFE8FF] lg:block"
-        viewBox="0 0 160 160"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        aria-hidden
-      >
-        <path d="M28 110 A60 60 0 0 1 132 110" />
-      </svg>
+        <SoftRegion variant="pebble" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>
@@ -53,7 +34,6 @@ export function Manifesto() {
                 {home.manifesto.body}
               </p>
             </div>
-
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:rounded-3xl">
               <Image
                 src={media.manifesto.src}

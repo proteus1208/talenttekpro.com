@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 
@@ -92,33 +94,12 @@ const icons: LucideIcon[] = [
 export function Solutions() {
   return (
     <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-20 pb-24 md:pt-24 md:pb-28">
-      {/* Distinct shapes: rounded triangle + hexagon + ring (not circles/blobs) */}
-      <svg
-        className="pointer-events-none absolute top-[38%] -right-10 h-[17rem] w-[17rem] text-[#B8D4FF] md:h-[22rem] md:w-[22rem]"
-        viewBox="0 0 200 200"
-        fill="currentColor"
-        aria-hidden
+      {/* Soft cloud region */}
+      <ScrollShape
+        className="top-[36%] -right-10 h-[16rem] w-[16rem] text-[#1E60FF] md:h-[20rem] md:w-[20rem]"
       >
-        <path d="M100 18 C108 18 116 22 120 30 L172 128 C176 136 174 146 166 152 C162 155 157 156 152 156 L48 156 C40 156 33 151 30 144 C27 137 29 129 34 124 L86 30 C90 22 96 18 100 18 Z" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute top-[52%] -left-14 h-[14rem] w-[14rem] text-[#A8E8F5] md:h-[18rem] md:w-[18rem]"
-        viewBox="0 0 200 200"
-        fill="currentColor"
-        aria-hidden
-      >
-        <path d="M100 12 L168 52 L168 148 L100 188 L32 148 L32 52 Z" />
-      </svg>
-      <svg
-        className="pointer-events-none absolute top-[28%] left-[48%] hidden h-28 w-28 text-[#C5E7FF] lg:block"
-        viewBox="0 0 120 120"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="14"
-        aria-hidden
-      >
-        <circle cx="60" cy="60" r="42" />
-      </svg>
+        <SoftRegion variant="cloud" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>

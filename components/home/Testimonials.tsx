@@ -1,5 +1,9 @@
+"use client";
+
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
@@ -15,10 +19,12 @@ export function Testimonials() {
     <section className="relative z-[1] overflow-visible bg-[#F0F4F8] section-pad">
       <SectionEdge fill="#F0F4F8" variant="valley" position="top" />
 
-      <div
-        className="pointer-events-none absolute -top-8 right-0 h-72 w-72 translate-x-1/4 rounded-full bg-[#DBEAFE]/70 blur-3xl"
-        aria-hidden
-      />
+      <ScrollShape
+        className="-top-4 right-[4%] h-52 w-52 text-[#1E60FF] md:h-64 md:w-64"
+        reverse
+      >
+        <SoftRegion variant="softFacet" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>

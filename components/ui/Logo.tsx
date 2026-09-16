@@ -68,7 +68,8 @@ export function Logo({
   const box =
     resolvedVariant === "mark" ? markSizes[size] : lockupSizes[size];
 
-  // Native img — next/image blur placeholder styles mismatch SSR vs client.
+  // Native img — avoid next/image blur styles; suppressHydrationWarning
+  // ignores extension-injected filter:blur(0px) on <img>.
   const image = (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -83,6 +84,7 @@ export function Logo({
       decoding="async"
       fetchPriority={priority ? "high" : "auto"}
       className={cn(box, "object-contain", !withWordmark && className)}
+      suppressHydrationWarning
     />
   );
 

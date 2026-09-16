@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
@@ -96,6 +98,12 @@ export function Industries() {
     <section className="relative z-[1] overflow-visible bg-white section-pad">
       {/* Solid curve into previous #F0F7FC — clear curved border */}
       <SectionEdge fill="#ffffff" variant="soft" position="top" />
+      {/* Soft petal region */}
+      <ScrollShape
+        className="top-[30%] -right-12 h-48 w-48 text-[#00B4FF] md:h-60 md:w-60"
+      >
+        <SoftRegion variant="petal" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>

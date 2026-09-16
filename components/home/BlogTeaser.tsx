@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { SectionEdge } from "@/components/ui/SectionShell";
 
@@ -9,6 +13,12 @@ export function BlogTeaser() {
   return (
     <section className="relative z-[1] overflow-visible bg-white section-pad">
       <SectionEdge fill="#ffffff" variant="wave" position="top" />
+      <ScrollShape
+        className="top-20 -right-6 h-44 w-44 text-[#00B4FF] md:h-56 md:w-56"
+      >
+        <SoftRegion variant="bean" />
+      </ScrollShape>
+
       <Container>
         <RevealOnScroll>
           <div className="flex flex-wrap items-end justify-between gap-4">

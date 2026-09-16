@@ -2,13 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, Search, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { cta, primaryNav } from "@/content/site";
 
+function navActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -25,6 +32,10 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -44,18 +55,24 @@ export function Header() {
         />
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
-          {primaryNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="inline-flex items-center gap-1 text-[0.9375rem] font-medium text-[#334155] transition-colors hover:text-[#1E60FF]"
-            >
-              {item.label}
-              {item.href === "/services" ? (
-                <ChevronDown className="size-3.5 opacity-60" aria-hidden />
-              ) : null}
-            </Link>
-          ))}
+          {primaryNav.map((item) => {
+            const active = navActive(pathname, item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "text-[0.9375rem] font-medium transition-colors",
+                  active
+                    ? "text-[#1E60FF]"
+                    : "text-[#334155] hover:text-[#1E60FF]",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -84,16 +101,25 @@ export function Header() {
       {open ? (
         <div className="border-t border-black/8 bg-white lg:hidden">
           <nav className="mx-auto flex max-w-[1200px] flex-col gap-1 px-5 py-4">
-            {primaryNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 text-base font-medium text-[#051937] hover:bg-[#F1F5F9]"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {primaryNav.map((item) => {
+              const active = navActive(pathname, item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "rounded-xl px-3 py-3 text-base font-medium",
+                    active
+                      ? "bg-[#EFF6FF] text-[#1E60FF]"
+                      : "text-[#051937] hover:bg-[#F1F5F9]",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <div className="mt-2 px-3">
               <Button href={cta.quote.href} className="w-full rounded-full">
                 {cta.quote.label} →

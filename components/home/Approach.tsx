@@ -17,6 +17,8 @@ import {
 import { Container } from "@/components/ui/Container";
 import { LinkArrow } from "@/components/ui/LinkArrow";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
@@ -36,6 +38,13 @@ export function Approach() {
     <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
       {/* Contrasts Industries white so the wave reads as a clear border */}
       <SectionEdge fill="#EAF3FB" variant="wave" position="top" />
+      {/* Soft wave region */}
+      <ScrollShape
+        className="top-28 -right-4 h-40 w-48 text-[#1E60FF] md:h-52 md:w-60"
+        reverse
+      >
+        <SoftRegion variant="wave" />
+      </ScrollShape>
 
       <Container className="relative z-10">
         <RevealOnScroll>

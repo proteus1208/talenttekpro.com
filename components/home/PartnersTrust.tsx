@@ -1,6 +1,10 @@
+"use client";
+
 import { ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
+import { ScrollShape } from "@/components/effects/ScrollShape";
+import { SoftRegion } from "@/components/effects/SoftRegion";
 import { home } from "@/content/home";
 import { SectionEdge } from "@/components/ui/SectionShell";
 
@@ -10,6 +14,12 @@ export function PartnersTrust() {
   return (
     <section className="relative z-[1] overflow-visible bg-white section-pad">
       <SectionEdge fill="#ffffff" variant="bump" position="top" />
+      <ScrollShape
+        className="top-16 -right-8 h-44 w-44 text-[#1E60FF] md:h-56 md:w-56"
+      >
+        <SoftRegion variant="softSquare" />
+      </ScrollShape>
+
       <Container>
         <RevealOnScroll>
           <h2 className="section-title whitespace-nowrap">
@@ -21,7 +31,6 @@ export function PartnersTrust() {
         </RevealOnScroll>
       </Container>
 
-      {/* Mask + loop constrained to content width, not full viewport */}
       <Container className="mt-10">
         <div className="marquee-fade overflow-x-clip">
           <div className="animate-marquee flex w-max">
