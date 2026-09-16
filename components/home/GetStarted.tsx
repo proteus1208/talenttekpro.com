@@ -81,7 +81,10 @@ export function GetStarted() {
             </p>
 
             <h2 className="font-display mt-6 text-[clamp(1.85rem,3.4vw,2.85rem)] font-bold leading-[1.15] tracking-tight text-[#051937]">
-              {home.getStarted.headline}
+              {home.getStarted.headline}{" "}
+              <span className="hero-gradient-text">
+                {home.getStarted.headlineAccent}
+              </span>
             </h2>
 
             <p className="mt-4 text-base leading-relaxed text-[#64748B] md:text-lg">

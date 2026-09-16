@@ -18,7 +18,10 @@ export function FaqTeaser() {
       <Container className="max-w-3xl">
         <RevealOnScroll>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
-            {home.faq.headline}
+            {home.faq.headline}{" "}
+            <span className="hero-gradient-text">
+              {home.faq.headlineAccent}
+            </span>
           </h2>
           <div className="mt-10 divide-y divide-border-strong/40 border-y border-border-strong/40">
             {home.faq.items.map((item, i) => {

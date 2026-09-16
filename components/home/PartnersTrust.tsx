@@ -13,7 +13,10 @@ export function PartnersTrust() {
       <Container>
         <RevealOnScroll>
           <h2 className="font-display whitespace-nowrap text-[clamp(1.05rem,3.4vw,2.5rem)] font-semibold tracking-tight text-text">
-            {home.partners.headline}
+            {home.partners.headline}{" "}
+            <span className="hero-gradient-text">
+              {home.partners.headlineAccent}
+            </span>
           </h2>
         </RevealOnScroll>
       </Container>

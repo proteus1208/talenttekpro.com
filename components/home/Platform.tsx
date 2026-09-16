@@ -95,7 +95,10 @@ export function Platform() {
               <span className="inline-block h-px w-5 bg-[#1E60FF]" aria-hidden />
             </p>
             <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
-              {home.platform.headline}
+              {home.platform.headline}{" "}
+              <span className="hero-gradient-text">
+                {home.platform.headlineAccent}
+              </span>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[#64748B] md:text-lg">
               {home.platform.support}

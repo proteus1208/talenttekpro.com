@@ -28,7 +28,10 @@ export function Testimonials() {
               {home.testimonials.eyebrow}
             </p>
             <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-[#051937] md:text-4xl lg:text-[2.75rem]">
-              {home.testimonials.headline}
+              {home.testimonials.headline}{" "}
+              <span className="hero-gradient-text">
+                {home.testimonials.headlineAccent}
+              </span>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[#64748B] md:text-lg">
               {home.testimonials.support}

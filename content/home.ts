@@ -12,13 +12,15 @@ export const home = {
   },
   manifesto: {
     index: "002 / Manifesto",
-    headline: "TalentTekPro charts how enterprises hire and build.",
+    headline: "TalentTekPro charts how enterprises",
+    headlineAccent: "hire and build.",
     body: "Consulting-led talent strategy, AI-powered matching, squads that stay through launch. We measure every engagement by time-to-productivity and systems that hold in production.",
   },
   impact: {
     index: "003 / Impact",
     eyebrow: "By the numbers",
-    headline: "Built for measurable impact.",
+    headline: "Built for",
+    headlineAccent: "measurable impact.",
     metrics: [
       { label: "client satisfaction", value: 98, suffix: "%", detail: "across 50+ delivered projects" },
       { label: "projects & placements", value: 50, suffix: "+", detail: "since founding" },
@@ -31,7 +33,8 @@ export const home = {
   platform: {
     index: "004 / Platform",
     eyebrow: "Command surface",
-    headline: "Real-time talent & delivery",
+    headline: "Real-time",
+    headlineAccent: "talent & delivery",
     support:
       "The same surface our recruiters and delivery leads use — funnel health, match routing, and sprint velocity in one place.",
     tabs: [
@@ -234,7 +237,8 @@ export const home = {
   },
   partners: {
     index: "009 / Trust",
-    headline: "Trusted across industries that ship.",
+    headline: "Trusted across industries",
+    headlineAccent: "that ship.",
     marquee: [
       "FinTech",
       "HealthTech",
@@ -257,7 +261,8 @@ export const home = {
   testimonials: {
     index: "010 / Voices",
     eyebrow: "Client success stories",
-    headline: "Real teams. Real results.",
+    headline: "Real teams.",
+    headlineAccent: "Real results.",
     support:
       "See how forward-thinking companies are building the future with TalentTekPro.",
     items: [
@@ -299,7 +304,8 @@ export const home = {
   },
   blog: {
     index: "012 / Journal",
-    headline: "The latest articles.",
+    headline: "The latest",
+    headlineAccent: "articles.",
     posts: [
       {
         category: "AI & ML",
@@ -323,7 +329,8 @@ export const home = {
   },
   faq: {
     index: "013 / FAQ",
-    headline: "Common questions.",
+    headline: "Common",
+    headlineAccent: "questions.",
     items: [
       {
         q: "What engagement models do you offer?",
@@ -343,7 +350,8 @@ export const home = {
   getStarted: {
     index: "014 / Get Started",
     eyebrow: "Get started today",
-    headline: "Ready to explore your possibilities? Talk to us today.",
+    headline: "Ready to explore your possibilities?",
+    headlineAccent: "Talk to us today.",
     support: "Free consultancy — talent, delivery, or both. No obligation.",
   },
 } as const;

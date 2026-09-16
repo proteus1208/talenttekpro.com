@@ -14,7 +14,10 @@ export function BlogTeaser() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <h2 className="font-display text-3xl font-semibold tracking-tight text-text md:text-4xl">
-                {home.blog.headline}
+                {home.blog.headline}{" "}
+                <span className="hero-gradient-text">
+                  {home.blog.headlineAccent}
+                </span>
               </h2>
             </div>
             <LinkArrow href="/blog">Read all</LinkArrow>
