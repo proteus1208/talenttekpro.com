@@ -78,6 +78,13 @@ export const media = {
       "Person writing notes at a laptop in a bright modern workspace, soft natural light, editorial 16:9, no text overlays",
     alt: "Writing and research at a laptop in a bright workspace.",
   } satisfies MediaAsset,
+  projectsHero: {
+    id: "projects-hero",
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
+    prompt:
+      "Product analytics dashboard on a laptop in a bright workspace, soft natural light, editorial 16:9",
+    alt: "Product and analytics work on a laptop in a bright office.",
+  } satisfies MediaAsset,
   contactHero: {
     id: "contact-hero",
     src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",

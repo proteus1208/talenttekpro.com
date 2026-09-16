@@ -24,8 +24,9 @@ export const projectsPage = {
   metaDescription:
     "Filterable case studies spanning talent placements and digital product delivery.",
   hero: {
-    eyebrow: "Projects / Case Studies",
-    title: "Every team we placed. Every system we put into production.",
+    eyebrow: "Case Studies",
+    title: "Every team we placed. Every system we",
+    titleAccent: "put into production.",
     support:
       "Filter by type, then open the full story — hiring outcomes and shipped product.",
   },
@@ -36,8 +37,15 @@ export const projectsPage = {
     { label: "satisfaction", value: "98%" },
   ],
   filters: ["All", "Talent", "Digital Product", "Platform", "E-commerce"] as const,
+  list: {
+    headline: "Featured",
+    headlineAccent: "work.",
+    support: "Talent placements and production systems — filter to find your pattern.",
+  },
   cta: {
-    headline: "Have a challenge like these? Let’s build the team — and the product.",
+    headline: "Have a challenge like these?",
+    headlineAccent: "Let’s build.",
+    support: "We’ll assemble the team — and ship the product — under one partner.",
   },
 } as const;
 
