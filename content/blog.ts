@@ -3,10 +3,11 @@ export const blogPage = {
   metaDescription:
     "Essays and post-mortems from recruiters and engineers who shipped the work.",
   hero: {
-    eyebrow: "Journal / Entries",
-    title: "Field notes from the engine room — and the hiring floor.",
+    eyebrow: "Journal",
+    title: "Field notes from the",
+    titleAccent: "engine room.",
     support:
-      "Essays and post-mortems from recruiters and engineers who shipped the work.",
+      "Essays and post-mortems from recruiters and engineers who shipped the work — talent, delivery, and the systems between them.",
   },
   categories: [
     "All",
@@ -73,4 +74,9 @@ export const blogPage = {
       featured: false,
     },
   ],
+  cta: {
+    headline: "Want notes like these on",
+    headlineAccent: "your roadmap?",
+    support: "Talk to us about talent, delivery, or both.",
+  },
 } as const;
