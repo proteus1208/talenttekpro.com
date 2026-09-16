@@ -36,44 +36,25 @@ const heroStats = [
   },
 ];
 
-/**
- * Curved dissolve into Services. Paths only — no full-bleed rect/CSS band
- * (those read as a straight white bar under the stats).
- */
-function HeroWaveSvg({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 1440 280"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M0 72 C240 8 480 148 760 52 C1020 -12 1260 98 1440 38 L1440 280 L0 280 Z"
-        fill="#F5F9FC"
-        fillOpacity="0.45"
-      />
-      <path
-        d="M0 108 C280 42 560 178 860 98 C1100 38 1300 128 1440 88 L1440 280 L0 280 Z"
-        fill="#F5F9FC"
-        fillOpacity="0.78"
-      />
-      <path
-        d="M0 148 C300 78 620 210 940 132 C1160 78 1340 158 1440 128 L1440 280 L0 280 Z"
-        fill="#F5F9FC"
-      />
-    </svg>
-  );
-}
-
 export function Hero() {
   return (
-    // Same fill as Services — no white strip under the stats card
     <section className="relative z-20 overflow-visible bg-[#F5F9FC]">
-      <div className="hero-viewport relative flex flex-col overflow-hidden pb-[6.5rem] md:pb-[7.25rem]">
-        <div className="absolute top-0 right-0 bottom-0 z-0 h-full w-[60vw] [mask-image:linear-gradient(to_right,transparent_0%,#000_12%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_12%)]">
+      {/*
+        overflow-visible so drop-shadow along the curve can paint onto the photo.
+        box-shadow is rectangular; filter:drop-shadow follows the clipped shape.
+      */}
+      <div className="hero-viewport relative flex flex-col overflow-visible pb-[6.5rem] md:pb-[7.25rem]">
+        <svg width="0" height="0" className="absolute" aria-hidden>
+          <defs>
+            <clipPath id="hero-left-curve" clipPathUnits="objectBoundingBox">
+              {/* Edge sits further right; arc bows gently into the photo */}
+              <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+
+        {/* Photo sits under the curved left wash */}
+        <div className="absolute inset-y-0 right-0 z-0 hidden w-[50%] md:block lg:w-[48%]">
           <Image
             src="/assets/imgs/Landing.png"
             alt="TalentTekPro teammates collaborating at a laptop in a bright office"
@@ -81,11 +62,40 @@ export function Hero() {
             priority
             placeholder="empty"
             className="border-0 object-cover object-[center_28%] outline-none ring-0"
-            sizes="60vw"
+            sizes="50vw"
           />
         </div>
 
-        <HeroWaveSvg className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[180px] w-full md:h-[220px] lg:h-[260px]" />
+        {/*
+          Left wash pushed right; soft shadow only to the right onto the photo.
+        */}
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[68%] md:block lg:w-[70%]"
+          style={{
+            filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
+          }}
+          aria-hidden
+        >
+          <div
+            className="h-full w-full bg-[#F5F9FC]"
+            style={{ clipPath: "url(#hero-left-curve)" }}
+          />
+        </div>
+
+        {/* Watermark */}
+        <div
+          className="pointer-events-none absolute -top-6 -left-4 z-[1] opacity-[0.06] md:top-2 md:left-2"
+          aria-hidden
+        >
+          <Image
+            src="/logo/logo-no-text-512.png"
+            alt=""
+            width={400}
+            height={400}
+            className="h-52 w-52 md:h-64 md:w-64 lg:h-72 lg:w-72"
+            priority
+          />
+        </div>
 
         <Container className="relative z-20 flex flex-1 items-center py-12 md:py-16">
           <motion.div
@@ -120,10 +130,6 @@ export function Hero() {
         </Container>
       </div>
 
-      {/*
-        Stats outside overflow-hidden so the drop shadow paints over Services.
-        No bottom padding band — that was the white bar under the card.
-      */}
       <div className="relative z-30 -mt-[6.5rem] w-full md:-mt-[7.25rem]">
         <Container>
           <motion.div

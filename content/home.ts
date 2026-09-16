@@ -342,6 +342,7 @@ export const home = {
   },
   getStarted: {
     index: "014 / Get Started",
+    eyebrow: "Get started today",
     headline: "Ready to explore your possibilities? Talk to us today.",
     support: "Free consultancy — talent, delivery, or both. No obligation.",
   },

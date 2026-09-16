@@ -18,31 +18,33 @@ export function PartnersTrust() {
         </RevealOnScroll>
       </Container>
 
-      {/* Duplicated ring: two equal tracks, animate 0 → -50% */}
-      <div className="marquee-fade mt-10 overflow-x-clip">
-        <div className="animate-marquee flex w-max">
-          <div className="flex shrink-0 items-center gap-12 px-6">
-            {items.map((label) => (
-              <span
-                key={`a-${label}`}
-                className="font-display text-sm font-medium tracking-wide text-muted/50 whitespace-nowrap"
-              >
-                {label}
-              </span>
-            ))}
-          </div>
-          <div className="flex shrink-0 items-center gap-12 px-6" aria-hidden>
-            {items.map((label) => (
-              <span
-                key={`b-${label}`}
-                className="font-display text-sm font-medium tracking-wide text-muted/50 whitespace-nowrap"
-              >
-                {label}
-              </span>
-            ))}
+      {/* Mask + loop constrained to content width, not full viewport */}
+      <Container className="mt-10">
+        <div className="marquee-fade overflow-x-clip">
+          <div className="animate-marquee flex w-max">
+            <div className="flex shrink-0 items-center gap-12 pr-12">
+              {items.map((label) => (
+                <span
+                  key={`a-${label}`}
+                  className="font-display text-sm font-medium tracking-wide text-muted/50 whitespace-nowrap"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+            <div className="flex shrink-0 items-center gap-12 pr-12" aria-hidden>
+              {items.map((label) => (
+                <span
+                  key={`b-${label}`}
+                  className="font-display text-sm font-medium tracking-wide text-muted/50 whitespace-nowrap"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
 
       <Container className="mt-12">
         <RevealOnScroll>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { site } from "@/content/site";
@@ -69,8 +68,10 @@ export function Logo({
   const box =
     resolvedVariant === "mark" ? markSizes[size] : lockupSizes[size];
 
+  // Native img — next/image blur placeholder styles mismatch SSR vs client.
   const image = (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={asset.src}
       alt={
         resolvedVariant === "mark"
@@ -79,9 +80,8 @@ export function Logo({
       }
       width={asset.width}
       height={asset.height}
-      priority={priority}
-      placeholder="empty"
-      style={{ color: "transparent" }}
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
       className={cn(box, "object-contain", !withWordmark && className)}
     />
   );

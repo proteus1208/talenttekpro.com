@@ -12,6 +12,11 @@ export const site = {
   email: "contact@talenttekpro.com",
   copyrightYear: 2026,
   est: 2021,
+  social: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/talenttekpro" },
+    { label: "X", href: "https://x.com/talenttekpro" },
+    { label: "YouTube", href: "https://www.youtube.com/@talenttekpro" },
+  ],
 } as const;
 
 export type NavItem = {

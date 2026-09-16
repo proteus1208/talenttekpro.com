@@ -117,13 +117,15 @@ export function Industries() {
         </RevealOnScroll>
       </Container>
 
-      {/* Duplicated ring: two equal tracks, animate 0 → -50% */}
-      <div className="marquee-fade relative z-10 mt-10 overflow-x-clip">
-        <div className="animate-marquee flex w-max">
-          <MarqueePills items={loopItems} trackKey="a" />
-          <MarqueePills items={loopItems} trackKey="b" />
+      {/* Mask + loop constrained to content width, not full viewport */}
+      <Container className="relative z-10 mt-10">
+        <div className="marquee-fade overflow-x-clip">
+          <div className="animate-marquee flex w-max">
+            <MarqueePills items={loopItems} trackKey="a" />
+            <MarqueePills items={loopItems} trackKey="b" />
+          </div>
         </div>
-      </div>
+      </Container>
 
       {/* Cards centered in container */}
       <Container className="relative z-10 mt-12">
