@@ -59,7 +59,7 @@ export const media = {
   } satisfies MediaAsset,
   aboutHero: {
     id: "about-hero",
-    src: "https://images.unsplash.com/photo-1600880292089-90a7e886a1be?auto=format&fit=crop&w=1600&q=80",
+    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
     prompt:
       "Consulting session with enterprise leadership, dark modern boardroom, teal glass reflection, photoreal 16:9",
     alt: "Leadership consulting session in a modern boardroom.",
