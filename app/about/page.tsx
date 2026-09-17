@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page/PageHero";
-import { PageCta } from "@/components/page/PageCta";
+import { GetStarted } from "@/components/home/GetStarted";
 import { Container } from "@/components/ui/Container";
 import { CountUp } from "@/components/effects/CountUp";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
@@ -9,7 +9,6 @@ import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { aboutPage } from "@/content/about";
 import { media } from "@/content/media";
-import { cta } from "@/content/site";
 
 export const metadata: Metadata = {
   title: aboutPage.metaTitle,
@@ -175,13 +174,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <PageCta
-        headline={aboutPage.cta.headline}
-        headlineAccent={aboutPage.cta.headlineAccent}
-        support={aboutPage.cta.support}
-        primary={cta.primary}
-        secondary={cta.secondary}
-      />
+      <GetStarted />
     </main>
   );
 }
