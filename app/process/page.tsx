@@ -39,7 +39,6 @@ export default function ProcessPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Approach" }]}
         eyebrow={processPage.hero.eyebrow}
         title={processPage.hero.title}
         titleAccent={processPage.hero.titleAccent}

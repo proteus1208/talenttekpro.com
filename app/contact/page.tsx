@@ -16,7 +16,6 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Contact" }]}
         eyebrow={contactPage.hero.eyebrow}
         title={contactPage.hero.title}
         support={contactPage.hero.support}

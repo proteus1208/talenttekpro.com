@@ -20,7 +20,6 @@ export default function ProjectsPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Case Studies" }]}
         eyebrow={projectsPage.hero.eyebrow}
         title={projectsPage.hero.title}
         titleAccent={projectsPage.hero.titleAccent}

@@ -15,7 +15,6 @@ export default function PricingPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Pricing" }]}
         eyebrow={pricingPage.hero.eyebrow}
         title={pricingPage.hero.title}
         support={pricingPage.hero.support}

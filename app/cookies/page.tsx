@@ -12,7 +12,6 @@ export default function CookiesPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Cookies" }]}
         eyebrow={hero.eyebrow}
         title={hero.title}
         support={hero.support}

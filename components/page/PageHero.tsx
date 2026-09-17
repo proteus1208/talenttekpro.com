@@ -1,11 +1,9 @@
 import { Container } from "@/components/ui/Container";
-import { Breadcrumb, type Crumb } from "@/components/page/Breadcrumb";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { cn } from "@/lib/cn";
 
 type PageHeroProps = {
-  crumbs: Crumb[];
   eyebrow: string;
   title: string;
   /** Optional trailing phrase rendered with hero-gradient-text */
@@ -20,7 +18,6 @@ type PageHeroProps = {
  * light brand band, and optional curved photo edge.
  */
 export function PageHero({
-  crumbs,
   eyebrow,
   title,
   titleAccent,
@@ -31,22 +28,24 @@ export function PageHero({
   return (
     <header
       className={cn(
-        "relative z-[1] overflow-visible bg-[#F5F9FC] pt-10 pb-16 md:pt-12 md:pb-20",
+        "relative z-[1] overflow-visible bg-[#F5F9FC] pt-12 pb-16 md:pt-16 md:pb-20",
         className,
       )}
     >
       <SectionEdge fill="#F5F9FC" variant="soft" position="bottom" />
       <Container className="relative z-10">
         <RevealOnScroll>
-          <Breadcrumb items={[{ label: "Home", href: "/" }, ...crumbs]} />
-          <p className="mt-8 inline-flex items-center rounded-full bg-[#EFF6FF] px-3.5 py-1.5 text-[0.7rem] font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
-            {eyebrow}
-          </p>
+          <div>
+            <p className="text-[0.8125rem] font-medium tracking-[0.16em] text-[#475569] uppercase md:text-sm">
+              {eyebrow}
+            </p>
+            <span className="mt-3 block h-px w-10 bg-[#1E60FF]" aria-hidden />
+          </div>
           <div
             className={
               image
-                ? "mt-5 grid items-center gap-10 lg:grid-cols-12 lg:gap-12"
-                : "mt-5"
+                ? "mt-6 grid items-center gap-10 lg:grid-cols-12 lg:gap-12"
+                : "mt-6"
             }
           >
             <div className={image ? "lg:col-span-6" : "max-w-3xl"}>

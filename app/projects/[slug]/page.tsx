@@ -33,10 +33,6 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[
-          { label: "Projects", href: "/projects" },
-          { label: project.title },
-        ]}
         eyebrow={`${project.type} · ${project.year}`}
         title={project.title}
         support={project.summary}
