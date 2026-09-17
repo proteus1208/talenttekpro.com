@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { HeaderSearch } from "@/components/layout/HeaderSearch";
 import { cta, primaryNav } from "@/content/site";
 
 function navActive(pathname: string, href: string) {
@@ -77,26 +78,23 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            href="/blog"
-            aria-label="Search articles"
-            className="grid size-10 place-items-center rounded-full text-[#64748B] transition-colors hover:bg-[#F1F5F9] hover:text-[#051937]"
-          >
-            <Search className="size-5" />
-          </Link>
+          <HeaderSearch />
           <Button href={cta.quote.href} className="rounded-full px-5">
             {cta.quote.label} →
           </Button>
         </div>
 
-        <button
-          type="button"
-          className="grid size-10 place-items-center rounded-xl border border-black/10 text-[#051937] lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="flex items-center gap-1 lg:hidden">
+          <HeaderSearch forceClosed={open} onOpen={() => setOpen(false)} />
+          <button
+            type="button"
+            className="grid size-10 place-items-center rounded-xl border border-black/10 text-[#051937]"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open ? (

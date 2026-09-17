@@ -205,6 +205,13 @@ body {
   outline-offset: 2px;
 }
 
+.search-field:focus,
+.search-field:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
