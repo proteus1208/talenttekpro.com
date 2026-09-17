@@ -12,11 +12,13 @@ Contact: `contact@talenttekpro.com` · © 2026 TalentTekPro LLC
 
 ## How to use
 
-1. Read **brand** first — theme, logo, voice.
-2. Read **layout & effects** — composition rules and motion.
-3. Build pages from **03-pages** — titles, section aims, copy outlines, image prompts.
-4. Produce the hero from **04-landing-video**.
-5. Wire nav/footer from **05-footer-nav**.
+1. For a single agent brief, use **[06-master-build-prompt.md](./06-master-build-prompt.md)** (includes mandatory **3D landing hero** + active animation).
+2. Or step through the parts:
+   - Read **brand** first — theme, logo, voice.
+   - Read **layout & effects** — composition rules and motion.
+   - Build pages from **03-pages** — titles, section aims, copy outlines, image prompts.
+   - Optional brand film from **04-landing-video** (secondary to the 3D first fold).
+   - Wire nav/footer from **05-footer-nav**.
 
 This folder is the single source of truth for design and content intent. It does **not** include Next.js code, generated assets, or a CMS.
 
@@ -31,8 +33,9 @@ Scenario metrics, client names, and case studies are **fixtures** for design —
 | [01-brand-theme-logo.md](./01-brand-theme-logo.md) | Positioning, voice, color/type tokens, logo system + generation prompts |
 | [02-layout-effects.md](./02-layout-effects.md) | Page composition, section order, special effects, reduced motion |
 | [03-pages.md](./03-pages.md) | Every route: title, aim, sections, CTAs, image prompts |
-| [04-landing-video.md](./04-landing-video.md) | Hero video concept, shot list, prompts, poster, crops |
+| [04-landing-video.md](./04-landing-video.md) | Optional brand film (secondary to 3D hero), shot list, prompts |
 | [05-footer-nav.md](./05-footer-nav.md) | Primary nav, footer columns, route map |
+| [06-master-build-prompt.md](./06-master-build-prompt.md) | **Full master prompt** — brand + pages + IA + **3D hero + active animation** |
 
 ---
 
@@ -66,5 +69,7 @@ Scenario metrics, client names, and case studies are **fixtures** for design —
 - [ ] Designer can theme UI from `01` without inventing colors/fonts  
 - [ ] Developer can implement layout/motion from `02`  
 - [ ] Copywriter/dev can draft every page from `03`  
-- [ ] Video vendor can shoot/generate from `04`  
+- [ ] Video vendor can shoot/generate from `04` (optional / fallback)  
 - [ ] IA matches GeniusXLab-style footer/nav from `05`  
+- [ ] Agent can build from `06` alone, with home **001 = premium interactive 3D**  
+
