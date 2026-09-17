@@ -3,7 +3,7 @@ export const aboutPage = {
   metaDescription:
     "Recruiters, engineers, and innovation partners — founded 2021 to close the gap between hiring and shipping.",
   hero: {
-    eyebrow: "About · Est. 2021",
+    eyebrow: "About",
     title: "Recruiters, engineers, and",
     titleAccent: "innovation partners.",
     support:

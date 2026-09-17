@@ -16,7 +16,6 @@ export default function FaqPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "FAQ" }]}
         eyebrow={faqPage.hero.eyebrow}
         title={faqPage.hero.title}
         support={faqPage.hero.support}

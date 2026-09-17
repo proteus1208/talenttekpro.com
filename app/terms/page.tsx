@@ -12,7 +12,6 @@ export default function TermsPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Terms" }]}
         eyebrow={hero.eyebrow}
         title={hero.title}
         support={hero.support}

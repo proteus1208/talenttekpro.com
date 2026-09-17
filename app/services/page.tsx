@@ -94,7 +94,6 @@ export default function ServicesPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Services" }]}
         eyebrow={servicesPage.hero.eyebrow}
         title={servicesPage.hero.title}
         titleAccent={servicesPage.hero.titleAccent}

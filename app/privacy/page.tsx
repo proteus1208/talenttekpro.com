@@ -12,7 +12,6 @@ export default function PrivacyPage() {
   return (
     <main className="flex-1">
       <PageHero
-        crumbs={[{ label: "Privacy" }]}
         eyebrow={hero.eyebrow}
         title={hero.title}
         support={hero.support}
