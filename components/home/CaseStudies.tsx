@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -18,6 +17,7 @@ import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { projects, type Project } from "@/content/projects";
 import { SectionEdge } from "@/components/ui/SectionShell";
@@ -83,18 +83,12 @@ function ProjectCard({
           featured ? "aspect-[4/5] sm:aspect-[5/6] lg:aspect-auto lg:min-h-[280px] lg:flex-1" : "aspect-[16/11]",
         )}
       >
-        <Image
+        <SafeImage
           src={project.image.src}
           alt={project.image.alt}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-          sizes={
-            featured
-              ? "(max-width: 1024px) 100vw, 40vw"
-              : "(max-width: 640px) 100vw, 25vw"
-          }
           priority={featured}
-          placeholder="empty"
         />
         <span
           className={cn(
