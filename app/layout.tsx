@@ -37,8 +37,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="bg-wash flex min-h-full flex-col font-sans text-[#051937]">
+      <body
+        className="bg-wash flex min-h-full flex-col font-sans text-[#051937]"
+        suppressHydrationWarning
+      >
         <SmoothScroll>
           <Header />
           {children}
