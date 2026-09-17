@@ -37,7 +37,10 @@ export function BlogIndex() {
       </div>
 
       {featured ? (
-        <article className="mt-12 border-t-2 border-[#1E60FF]/40 pt-6">
+        <article
+          id={featured.slug}
+          className="mt-12 scroll-mt-28 border-t-2 border-[#1E60FF]/40 pt-6"
+        >
           <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
             Featured · {featured.category} · {featured.read}
           </p>
@@ -50,7 +53,7 @@ export function BlogIndex() {
 
       <ul className="mt-10 divide-y divide-[#051937]/10 border-y border-[#051937]/10">
         {rest.map((post) => (
-          <li key={post.slug} className="py-6">
+          <li key={post.slug} id={post.slug} className="scroll-mt-28 py-6">
             <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#94A3B8] uppercase">
               {post.category} · {post.read}
             </p>
