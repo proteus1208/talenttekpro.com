@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -20,6 +19,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cn } from "@/lib/cn";
@@ -93,12 +93,11 @@ export function Approach() {
 
             <div className="relative min-w-0 lg:col-span-7">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-[0_28px_64px_rgba(5,25,55,0.14)] md:rounded-[2rem]">
-                <Image
+                <SafeImage
                   src={media.approach.src}
                   alt={media.approach.alt}
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 640px"
                 />
               </div>
 

@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Clock3, Play, Rocket, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { cta } from "@/content/site";
 import { cn } from "@/lib/cn";
@@ -79,14 +79,12 @@ export function Hero() {
         </svg>
 
         <div className="absolute inset-y-0 right-0 z-0 hidden w-[50%] md:block lg:w-[48%]">
-          <Image
+          <SafeImage
             src="/assets/imgs/Landing.png"
             alt="TalentTekPro teammates collaborating at a laptop in a bright office"
             fill
             priority
-            placeholder="empty"
             className="border-0 object-cover object-[center_28%] outline-none ring-0"
-            sizes="50vw"
           />
         </div>
 
@@ -107,7 +105,7 @@ export function Hero() {
           className="pointer-events-none absolute -top-6 -left-4 z-[1] opacity-[0.06] md:top-2 md:left-2"
           aria-hidden
         >
-          <Image
+          <SafeImage
             src="/logo/logo-no-text-512.png"
             alt=""
             width={400}

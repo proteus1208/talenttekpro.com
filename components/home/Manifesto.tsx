@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 
@@ -36,12 +36,11 @@ export function Manifesto() {
               </p>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:rounded-3xl">
-              <Image
+              <SafeImage
                 src={media.manifesto.src}
                 alt={media.manifesto.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 560px"
               />
             </div>
           </div>

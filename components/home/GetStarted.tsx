@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cta, site } from "@/content/site";
@@ -28,12 +28,11 @@ export function GetStarted() {
 
       {/* Right photo plane */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
-        <Image
+        <SafeImage
           src={media.getStarted.src}
           alt={media.getStarted.alt}
           fill
           className="object-cover object-[center_30%]"
-          sizes="48vw"
         />
       </div>
 
@@ -56,12 +55,11 @@ export function GetStarted() {
 
       {/* Mobile / tablet photo underlay */}
       <div className="absolute inset-0 z-0 lg:hidden">
-        <Image
+        <SafeImage
           src={media.getStarted.src}
           alt=""
           fill
           className="object-cover object-center opacity-30"
-          sizes="100vw"
         />
         <div className="absolute inset-0 bg-[#F8FBFE]/88" aria-hidden />
       </div>
@@ -71,7 +69,7 @@ export function GetStarted() {
         className="pointer-events-none absolute -top-8 -left-6 z-[1] opacity-[0.07] md:top-0 md:left-4"
         aria-hidden
       >
-        <Image
+        <SafeImage
           src="/logo/logo-no-text-512.png"
           alt=""
           width={420}
