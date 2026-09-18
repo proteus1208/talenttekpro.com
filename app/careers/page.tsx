@@ -17,7 +17,6 @@ import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { careersPage } from "@/content/careers";
 import { media } from "@/content/media";
-import { site } from "@/content/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -156,7 +155,7 @@ export default function CareersPage() {
             <ul className="mt-10 divide-y divide-[#051937]/10 border-y border-[#051937]/10">
               {careersPage.roles.items.map((role) => (
                 <li
-                  key={role.title}
+                  key={role.slug}
                   className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <div>
@@ -167,7 +166,7 @@ export default function CareersPage() {
                     <p className="mt-1 text-sm text-[#64748B]">{role.location}</p>
                   </div>
                   <Button
-                    href={`mailto:${site.email}?subject=${encodeURIComponent(`Application: ${role.title}`)}&body=${encodeURIComponent("LinkedIn:\nRésumé attached or linked:\n")}`}
+                    href={`/careers/${role.slug}`}
                     variant="secondary"
                     className="shrink-0 rounded-full"
                   >

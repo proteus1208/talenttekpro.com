@@ -297,10 +297,30 @@ export const home = {
     headline: "Join our",
     headlineAccent: "team.",
     roles: [
-      { track: "Engineering", title: "Senior Full-Stack Engineer", location: "Remote · Global", href: "/careers" },
-      { track: "Data & AI", title: "AI / ML Engineer", location: "Remote · Global", href: "/careers" },
-      { track: "Talent", title: "Technical Recruiter", location: "Remote · Americas", href: "/careers" },
-      { track: "Engineering", title: "Junior Full Stack Software Engineer", location: "Remote · Americas & EU", href: "/careers" },
+      {
+        track: "Engineering",
+        title: "Senior Full-Stack Engineer",
+        location: "Remote · Global",
+        href: "/careers/senior-full-stack-engineer",
+      },
+      {
+        track: "Data & AI",
+        title: "AI / ML Engineer",
+        location: "Remote · Global",
+        href: "/careers/ai-ml-engineer",
+      },
+      {
+        track: "Talent",
+        title: "Technical Recruiter",
+        location: "Remote · Americas",
+        href: "/careers/technical-recruiter",
+      },
+      {
+        track: "Engineering",
+        title: "Junior Full Stack Software Engineer",
+        location: "Remote · Americas & EU",
+        href: "/careers/junior-full-stack-software-engineer",
+      },
     ],
   },
   blog: {
