@@ -61,7 +61,7 @@ const catalog: SearchRecord[] = [
   ...blogPage.posts.map((item) => ({
     kind: "blog" as const,
     title: item.title,
-    href: `/blog#${item.slug}`,
+    href: `/blog/${item.slug}`,
     hint: item.category,
     titleNorm: item.title.toLowerCase(),
     words: tokenize([item.title, item.category, item.excerpt].join(" ")),
