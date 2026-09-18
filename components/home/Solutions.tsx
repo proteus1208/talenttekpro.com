@@ -18,6 +18,7 @@ import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
+import { SectionEdge } from "@/components/ui/SectionShell";
 import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 
@@ -93,7 +94,8 @@ const icons: LucideIcon[] = [
 
 export function Solutions() {
   return (
-    <section className="relative z-0 overflow-hidden bg-[#F5F9FC] pt-20 pb-24 md:pt-24 md:pb-28">
+    <section className="relative z-[1] overflow-visible bg-[#F5F9FC] section-pad">
+      <SectionEdge fill="#F5F9FC" variant="soft" position="top" />
       {/* Soft cloud region */}
       <ScrollShape
         className="top-[8%] left-[4%] h-36 w-40 text-[#1E60FF] md:h-48 md:w-52"

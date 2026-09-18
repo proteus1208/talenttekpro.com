@@ -5,6 +5,7 @@
 export const site = {
   name: "TalentTekPro",
   legalName: "TalentTekPro LLC",
+  url: "https://talenttekpro.com",
   tagline: "Talent that ships. Technology that scales.",
   descriptor: "Tech Talent & Delivery",
   description:
@@ -27,7 +28,6 @@ export type NavItem = {
 export const primaryNav: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/projects" },
-  { label: "Approach", href: "/process" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
@@ -39,7 +39,6 @@ export const footerColumns = {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/projects" },
-    { label: "Our Approach", href: "/process" },
     { label: "Careers", href: "/careers" },
   ],
   resources: [

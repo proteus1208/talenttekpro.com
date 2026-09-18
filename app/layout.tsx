@@ -8,6 +8,7 @@ import { site } from "@/content/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} | ${site.descriptor}`,
     template: `%s | ${site.name}`,

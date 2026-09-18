@@ -22,7 +22,7 @@ export function FaqTeaser() {
       >
         <SoftRegion variant="swirl" />
       </ScrollShape>
-      <Container className="max-w-3xl">
+      <Container>
         <RevealOnScroll>
           <h2 className="section-title">
             {home.faq.headline}{" "}

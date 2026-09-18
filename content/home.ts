@@ -138,12 +138,12 @@ export const home = {
     ],
   },
   industries: {
-    index: "007 / Industries",
+    index: "008 / Industries",
     eyebrow: "Industries",
     headline: "Trusted across industries",
     headlineAccent: "that ship.",
     support:
-      "From logistics to healthcare, we help industry leaders solve complex problems with reliable, scalable technology.",
+      "From logistics to healthcare, we help industry leaders solve complex problems with reliable, scalable technology — and the senior talent to run it.",
     items: [
       {
         title: "Logistics",
@@ -183,57 +183,65 @@ export const home = {
     ],
   },
   approach: {
-    index: "008 / Approach",
-    badge: "Our Process",
-    headline: "Unlock capacity.",
-    headlineAccent: "People and platforms.",
-    body: "From discovery to scale, we align talent, architecture, and delivery so your teams ship with confidence.",
-    bullets: [
-      {
-        title: "Customized solutions",
-        body: "Tailored to your goals",
-      },
-      {
-        title: "Quality & reliability",
-        body: "Built to last",
-      },
-      {
-        title: "AI-native matching & delivery",
-        body: "Smart & efficient",
-      },
-      {
-        title: "Global delivery",
-        body: "Wherever you are",
-      },
-    ],
-    phases: [
-      {
-        num: "01",
-        label: "phase",
-        title: "Discover",
-        body: "Map constraints, stakeholders and success metrics.",
-      },
-      {
-        num: "02",
-        label: "phase",
-        title: "Match & Design",
-        body: "Scorecards, ADRs and a delivery roadmap.",
-      },
-      {
-        num: "03",
-        label: "phase",
-        title: "Build & Embed",
-        body: "Two-week sprints; talent ramps beside the squad.",
-      },
-      {
-        num: "04",
-        label: "phase",
-        title: "Scale",
-        body: "Harden, hand off and optimize for growth.",
-      },
-    ],
-    imageBadge: "Build better together",
-    cta: { label: "See our process", href: "/process" },
+    index: "007 / Approach",
+    eyebrow: "Our process",
+    headline: "Unlock the potential of",
+    headlineAccent: "your business.",
+    body: "TalentTekPro blends workforce strategy with deep technical delivery. We learn your constraints, then match people and architecture to the same success metrics.",
+    principles: {
+      headline: "How we",
+      headlineAccent: "operate.",
+      items: [
+        {
+          title: "Customized solutions",
+          body: "Scorecards, architecture, and staffing shaped to your constraints — not a catalog template.",
+        },
+        {
+          title: "Quality & reliability",
+          body: "Senior bar on every engagement. Foundations before feature theater.",
+        },
+        {
+          title: "AI-native delivery",
+          body: "Matching and delivery automation we use ourselves — then bring to your stack.",
+        },
+        {
+          title: "Global delivery",
+          body: "Onshore strategy with nearshore and offshore execution that stays accountable.",
+        },
+      ],
+    },
+    phases: {
+      headline: "From discover",
+      headlineAccent: "to scale.",
+      support: "Four phases. One accountable partner for talent and delivery.",
+      items: [
+        {
+          num: "00",
+          label: "discover",
+          title: "Discover",
+          body: "Map constraints, stakeholders, success metrics (hire + system).",
+        },
+        {
+          num: "01",
+          label: "match-design",
+          title: "Match & Design",
+          body: "Role scorecards, architecture ADRs, delivery roadmap.",
+        },
+        {
+          num: "02",
+          label: "build-embed",
+          title: "Build & Embed",
+          body: "Two-week sprints; talent ramps beside the squad.",
+        },
+        {
+          num: "03",
+          label: "scale",
+          title: "Scale",
+          body: "Harden, hand off, optimize hiring loops and platforms for growth.",
+        },
+      ],
+    },
+    cta: { label: "Start a project →", href: "/contact" },
   },
   partners: {
     index: "009 / Trust",
