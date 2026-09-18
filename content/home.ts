@@ -339,19 +339,19 @@ export const home = {
       {
         category: "AI & ML",
         title: "Production RAG with model routing that survives scale",
-        href: "/blog",
+        href: "/blog/production-rag-routing",
         read: "8 min",
       },
       {
         category: "Hiring Ops",
         title: "Scorecards that predict time-to-productivity",
-        href: "/blog",
+        href: "/blog/scorecards-time-to-productivity",
         read: "6 min",
       },
       {
         category: "DevOps",
         title: "Zero-downtime deploys we actually trust",
-        href: "/blog",
+        href: "/blog/zero-downtime-deploys",
         read: "7 min",
       },
     ],

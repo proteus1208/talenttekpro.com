@@ -73,10 +73,10 @@ export const media = {
   } satisfies MediaAsset,
   blogHero: {
     id: "blog-hero",
-    src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80",
+    src: "/media/blog/journal-hero.png",
     prompt:
-      "Person writing notes at a laptop in a bright modern workspace, soft natural light, editorial 16:9, no text overlays",
-    alt: "Writing and research at a laptop in a bright workspace.",
+      "Editorial blog journal hero illustration, 16:9. Deep navy ink background #051937. Abstract field-notes concept: floating luminous pages and geometric research nodes connected by cyan #00D2FF filaments with royal blue #1E60FF accents, suggesting talent and delivery knowledge. No people, no readable text, no logos, no purple. Premium flat/editorial hybrid CGI for TalentTekPro.",
+    alt: "Abstract journal field-notes illustration in navy, cyan, and royal blue.",
   } satisfies MediaAsset,
   projectsHero: {
     id: "projects-hero",
