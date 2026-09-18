@@ -2,7 +2,6 @@
 
 import {
   ArrowRight,
-  ArrowUpRight,
   Globe2,
   Layers,
   Map,
@@ -10,8 +9,6 @@ import {
   Settings2,
   ShieldCheck,
   Sparkles,
-  Users,
-  UsersRound,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkArrow } from "@/components/ui/LinkArrow";
@@ -24,7 +21,7 @@ import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cn } from "@/lib/cn";
 
-const bulletIcons = [Settings2, ShieldCheck, UsersRound, Globe2] as const;
+const principleIcons = [Settings2, ShieldCheck, Sparkles, Globe2] as const;
 
 const phaseStyles = [
   { icon: Map, tint: "bg-[#DBEAFE] text-[#1E60FF]" },
@@ -35,105 +32,114 @@ const phaseStyles = [
 
 export function Approach() {
   return (
-    <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
-      {/* Contrasts Industries white so the wave reads as a clear border */}
-      <SectionEdge fill="#EAF3FB" variant="wave" position="top" />
-      {/* Soft wave region */}
-      <ScrollShape
-        className="top-[55%] right-[2%] h-32 w-48 text-[#1E60FF] md:h-40 md:w-56"
+    <>
+      <section
+        id="approach"
+        className="relative z-[1] scroll-mt-28 overflow-visible bg-white section-pad"
       >
-        <SoftRegion variant="wave" />
-      </ScrollShape>
+        <SectionEdge fill="#ffffff" variant="soft" position="top" />
+        <ScrollShape
+          className="top-16 -right-8 h-40 w-48 text-[#1E60FF] md:h-52 md:w-60"
+          reverse
+        >
+          <SoftRegion variant="wave" />
+        </ScrollShape>
 
-      <Container className="relative z-10">
-        <RevealOnScroll>
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-5">
-              <p className="inline-flex items-center gap-2 rounded-full bg-[#EFF6FF] px-3 py-1.5 text-xs font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
-                <Users className="size-3.5" aria-hidden />
-                {home.approach.badge}
-              </p>
+        <Container className="relative z-10">
+          <RevealOnScroll>
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+              <div className="lg:col-span-6">
+                <p className="text-[0.8125rem] font-medium tracking-[0.16em] text-[#475569] uppercase md:text-sm">
+                  {home.approach.eyebrow}
+                </p>
+                <span className="mt-3 block h-px w-10 bg-[#1E60FF]" aria-hidden />
+                <h2 className="section-title mt-5">
+                  {home.approach.headline}{" "}
+                  <span className="hero-gradient-text">
+                    {home.approach.headlineAccent}
+                  </span>
+                </h2>
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-[#64748B]">
+                  {home.approach.body}
+                </p>
+              </div>
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
+                <SafeImage
+                  src={media.processHero.src}
+                  alt={media.processHero.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
 
-              <h2 className="section-title mt-5">
-                {home.approach.headline}{" "}
+            <div className="mt-16 border-t border-[#051937]/08 pt-14 md:mt-20 md:pt-16">
+              <h3 className="section-title">
+                {home.approach.principles.headline}{" "}
                 <span className="hero-gradient-text">
-                  {home.approach.headlineAccent}
+                  {home.approach.principles.headlineAccent}
                 </span>
-              </h2>
-
-              <p className="mt-5 max-w-md text-base leading-relaxed text-[#64748B]">
-                {home.approach.body}
-              </p>
-
-              <ul className="mt-8 space-y-4">
-                {home.approach.bullets.map((b, i) => {
-                  const Icon = bulletIcons[i] ?? Settings2;
+              </h3>
+              <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+                {home.approach.principles.items.map((item, i) => {
+                  const Icon = principleIcons[i] ?? Settings2;
                   return (
-                    <li key={b.title} className="flex items-start gap-3">
-                      <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-[#EFF6FF] text-[#1E60FF]">
-                        <Icon className="size-4" strokeWidth={2} aria-hidden />
+                    <li
+                      key={item.title}
+                      className="flex items-start gap-4 rounded-2xl border border-[#051937]/06 bg-[#F8FAFC] p-5 md:p-6"
+                    >
+                      <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-2xl bg-[#EFF6FF] text-[#1E60FF]">
+                        <Icon className="size-5" strokeWidth={2} aria-hidden />
                       </span>
-                      <p className="pt-1.5 text-sm leading-snug md:text-[0.95rem]">
-                        <span className="font-semibold text-[#1E60FF]">
-                          {b.title}
-                        </span>
-                        <span className="text-[#94A3B8]">. {b.body}</span>
-                      </p>
+                      <div>
+                        <h4 className="card-title">{item.title}</h4>
+                        <p className="mt-1.5 text-sm leading-relaxed text-[#64748B]">
+                          {item.body}
+                        </p>
+                      </div>
                     </li>
                   );
                 })}
               </ul>
+            </div>
+          </RevealOnScroll>
+        </Container>
+      </section>
 
-              <div className="mt-8">
-                <LinkArrow href={home.approach.cta.href}>
-                  {home.approach.cta.label}
-                </LinkArrow>
-              </div>
+      <section className="relative z-[1] overflow-visible bg-[#EAF3FB] section-pad">
+        <SectionEdge fill="#EAF3FB" variant="wave" position="top" />
+        <ScrollShape
+          className="bottom-12 -left-6 h-36 w-44 text-[#1E60FF] md:h-48 md:w-56"
+        >
+          <SoftRegion variant="pebble" />
+        </ScrollShape>
+
+        <Container className="relative z-10">
+          <RevealOnScroll>
+            <div className="max-w-2xl">
+              <h2 className="section-title">
+                {home.approach.phases.headline}{" "}
+                <span className="hero-gradient-text">
+                  {home.approach.phases.headlineAccent}
+                </span>
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-[#64748B]">
+                {home.approach.phases.support}
+              </p>
             </div>
 
-            <div className="relative min-w-0 lg:col-span-7">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-[0_28px_64px_rgba(5,25,55,0.14)] md:rounded-[2rem]">
-                <SafeImage
-                  src={media.approach.src}
-                  alt={media.approach.alt}
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-
-              {/* Floating chip — shadow only, no border; bare arrow */}
-              <div className="absolute bottom-0 left-[8%] z-[3] flex -translate-y-1/4 items-center gap-3 rounded-[1.25rem] bg-white px-4 py-3 shadow-[0_16px_40px_rgba(5,25,55,0.12)] sm:left-[12%] sm:px-5 sm:py-3.5 md:rounded-[1.5rem]">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#EFF6FF] text-[#1E60FF]">
-                  <Users className="size-4" aria-hidden />
-                </span>
-                <span className="text-sm font-semibold leading-tight text-[#051937]">
-                  Build better
-                  <br />
-                  together
-                </span>
-                <ArrowUpRight
-                  className="size-4 shrink-0 text-[#1E60FF]"
-                  strokeWidth={2}
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Process phases — equal-height floating cards */}
-          <div className="mt-16 rounded-[1.75rem] bg-[#EAF3FB] p-5 md:mt-20 md:rounded-[2rem] md:p-8">
-            <ol className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-              {home.approach.phases.map((phase, i) => {
+            <ol className="mt-12 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              {home.approach.phases.items.map((phase, i) => {
                 const style = phaseStyles[i] ?? phaseStyles[0];
                 const Icon = style.icon;
-                const isLast = i === home.approach.phases.length - 1;
+                const isLast = i === home.approach.phases.items.length - 1;
 
                 return (
                   <li
                     key={phase.num}
                     className="relative flex h-full items-stretch gap-3"
                   >
-                    <article className="flex h-full min-w-0 flex-1 flex-col items-start gap-3.5 rounded-[1.35rem] bg-white p-5 shadow-[0_14px_36px_rgba(5,25,55,0.08)] md:gap-4 md:rounded-[1.5rem] md:p-6">
+                    <article className="flex h-full min-w-0 flex-1 flex-col rounded-[1.35rem] bg-white p-5 shadow-[0_14px_36px_rgba(5,25,55,0.08)] md:rounded-[1.5rem] md:p-6">
                       <div className="flex w-full items-start gap-3.5 md:gap-4">
                         <span
                           className={cn(
@@ -141,15 +147,17 @@ export function Approach() {
                             style.tint,
                           )}
                         >
-                          <Icon className="size-5" strokeWidth={1.75} aria-hidden />
+                          <Icon
+                            className="size-5"
+                            strokeWidth={1.75}
+                            aria-hidden
+                          />
                         </span>
                         <div className="min-w-0 flex-1">
                           <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
                             {phase.num} · {phase.label}
                           </p>
-                          <h3 className="card-title mt-1.5">
-                            {phase.title}
-                          </h3>
+                          <h3 className="card-title mt-1.5">{phase.title}</h3>
                           <p className="mt-1.5 text-sm leading-relaxed text-[#64748B]">
                             {phase.body}
                           </p>
@@ -168,9 +176,15 @@ export function Approach() {
                 );
               })}
             </ol>
-          </div>
-        </RevealOnScroll>
-      </Container>
-    </section>
+
+            <div className="mt-10">
+              <LinkArrow href={home.approach.cta.href}>
+                {home.approach.cta.label}
+              </LinkArrow>
+            </div>
+          </RevealOnScroll>
+        </Container>
+      </section>
+    </>
   );
 }

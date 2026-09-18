@@ -22,7 +22,7 @@ export default function FaqPage() {
       />
 
       <section className="section-dark border-t border-border section-pad">
-        <Container className="max-w-3xl">
+        <Container>
           <RevealOnScroll>
             <FaqList items={faqPage.items} />
           </RevealOnScroll>

@@ -182,11 +182,11 @@ export function CaseStudies() {
         <RevealOnScroll>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <p className="inline-flex items-center gap-2 rounded-full bg-[#EFF6FF] px-3 py-1.5 text-xs font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
-                <Sparkles className="size-3.5" aria-hidden />
+              <p className="text-[0.8125rem] font-medium tracking-[0.16em] text-[#475569] uppercase md:text-sm">
                 {home.cases.eyebrow}
               </p>
-              <h2 className="section-title mt-4">
+              <span className="mt-3 block h-px w-10 bg-[#1E60FF]" aria-hidden />
+              <h2 className="section-title mt-5">
                 Work that{" "}
                 <span className="hero-gradient-text">hired</span> and{" "}
                 <span className="hero-gradient-text">shipped.</span>
