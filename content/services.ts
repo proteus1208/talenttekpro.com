@@ -3,31 +3,49 @@ export const engagementModels = [
     id: "project",
     name: "Project-Based",
     aim: "Fixed scope delivery",
+    body: "Clear milestones, acceptance criteria, and a delivery team sized to the outcome — from discovery through launch.",
+    bestFor: "Defined builds & migrations",
     price: "From $75k",
   },
   {
     id: "squad",
     name: "Embedded Squad",
     aim: "Senior team in your org",
+    body: "A cross-functional pod that works inside your rituals, tools, and roadmap — then leaves knowledge behind.",
+    bestFor: "Product velocity & platforms",
     price: "From $45k/mo",
   },
   {
     id: "retainer",
     name: "Retainer",
     aim: "Advisory + capacity on demand",
+    body: "Reserved senior hours for architecture, hiring counsel, and surge capacity without standing up a full squad.",
+    bestFor: "Ongoing advisory",
     price: "From $15k/mo",
   },
   {
     id: "search",
     name: "Talent Search",
     aim: "Retained / contingency search",
+    body: "Role intake, sourced shortlists, and structured interviews for senior tech hires that need to stick.",
+    bestFor: "Hard-to-fill roles",
     price: "Custom",
   },
   {
     id: "managed",
     name: "Managed Services",
     aim: "Platform ops",
+    body: "Monitoring, incidents, capacity, and cost control so the systems you shipped keep holding in production.",
+    bestFor: "SRE & platform ops",
     price: "Custom",
+  },
+  {
+    id: "hybrid",
+    name: "Hybrid Engagement",
+    aim: "Talent + delivery as one",
+    body: "Search and embed under one accountable partner — hire the bar, ship the roadmap, and keep decisions coherent.",
+    bestFor: "Scale people and product",
+    price: "Scoped together",
   },
 ] as const;
 
@@ -46,6 +64,20 @@ export const servicesPage = {
     headline: "Eight disciplines, one",
     headlineAccent: "accountable team.",
     body: "Talent, embedded squads, AI, cloud, and engineering — so architecture and workforce plans don’t diverge.",
+    pillars: [
+      {
+        title: "One intake",
+        body: "Role, roadmap, and constraints captured once — recruiters and engineers share the same brief.",
+      },
+      {
+        title: "Shared metrics",
+        body: "Time-to-hire, ramp, and delivery outcomes live on one scorecard your stakeholders can trust.",
+      },
+      {
+        title: "No handoff theater",
+        body: "When talent and delivery sit under one partner, decisions stick through launch — not just kickoff.",
+      },
+    ],
   },
   disciplines: {
     headline: "Flexible talent.",
