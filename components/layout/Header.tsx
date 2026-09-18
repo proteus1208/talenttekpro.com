@@ -56,7 +56,7 @@ export function Header() {
           wordmarkClassName="text-[#051937]"
         />
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 xl:gap-7 lg:flex">
           {primaryNav.map((item) => {
             const active = navActive(pathname, item.href);
             return (
