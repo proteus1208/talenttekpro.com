@@ -27,56 +27,48 @@ const tones = [
     iconBg: "bg-[#1E60FF]",
     check: "text-[#1E60FF]",
     num: "text-blue-300",
-    corner: "bg-[#DBEAFE]",
     btn: "bg-white text-[#1E60FF] shadow-sm group-hover:bg-[#1E60FF] group-hover:text-white",
   },
   {
     iconBg: "bg-[#16A34A]",
     check: "text-[#16A34A]",
     num: "text-green-300",
-    corner: "bg-[#DCFCE7]",
     btn: "bg-white text-[#16A34A] shadow-sm group-hover:bg-[#16A34A] group-hover:text-white",
   },
   {
     iconBg: "bg-[#7C3AED]",
     check: "text-[#7C3AED]",
     num: "text-violet-300",
-    corner: "bg-[#EDE9FE]",
     btn: "bg-white text-[#7C3AED] shadow-sm group-hover:bg-[#7C3AED] group-hover:text-white",
   },
   {
     iconBg: "bg-[#0284C7]",
     check: "text-[#0284C7]",
     num: "text-sky-300",
-    corner: "bg-[#E0F2FE]",
     btn: "bg-white text-[#0284C7] shadow-sm group-hover:bg-[#0284C7] group-hover:text-white",
   },
   {
     iconBg: "bg-[#0D9488]",
     check: "text-[#0D9488]",
     num: "text-teal-300",
-    corner: "bg-[#CCFBF1]",
     btn: "bg-white text-[#0D9488] shadow-sm group-hover:bg-[#0D9488] group-hover:text-white",
   },
   {
     iconBg: "bg-[#6D28D9]",
     check: "text-[#6D28D9]",
     num: "text-purple-300",
-    corner: "bg-[#EDE9FE]",
     btn: "bg-white text-[#6D28D9] shadow-sm group-hover:bg-[#6D28D9] group-hover:text-white",
   },
   {
     iconBg: "bg-[#2563EB]",
     check: "text-[#2563EB]",
     num: "text-blue-300",
-    corner: "bg-[#DBEAFE]",
     btn: "bg-white text-[#2563EB] shadow-sm group-hover:bg-[#2563EB] group-hover:text-white",
   },
   {
     iconBg: "bg-[#059669]",
     check: "text-[#059669]",
     num: "text-emerald-300",
-    corner: "bg-[#D1FAE5]",
     btn: "bg-white text-[#059669] shadow-sm group-hover:bg-[#059669] group-hover:text-white",
   },
 ] as const;
@@ -129,9 +121,9 @@ export function Solutions() {
                 <Link
                   key={d.num}
                   href={d.href}
-                  className="group relative flex min-h-[280px] flex-col overflow-hidden rounded-3xl border border-black/[0.04] bg-white p-6 shadow-[0_12px_40px_rgba(5,25,55,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(5,25,55,0.1)]"
+                  className="group relative flex min-h-[280px] flex-col rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-[0_12px_40px_rgba(5,25,55,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#CBD5E1] hover:shadow-[0_20px_50px_rgba(5,25,55,0.1)]"
                 >
-                  <div className="relative z-10 flex items-center gap-3">
+                  <div className="flex items-center gap-3">
                     <span
                       className={cn(
                         "grid size-11 shrink-0 place-items-center rounded-2xl text-white shadow-sm",
@@ -150,11 +142,9 @@ export function Solutions() {
                     </span>
                   </div>
 
-                  <h3 className="card-title relative z-10 mt-5">
-                    {d.title}
-                  </h3>
+                  <h3 className="card-title mt-5">{d.title}</h3>
 
-                  <ul className="relative z-10 mt-4 flex-1 space-y-2.5">
+                  <ul className="mt-4 flex-1 space-y-2.5">
                     {d.bullets.map((b) => (
                       <li
                         key={b}
@@ -170,16 +160,9 @@ export function Solutions() {
                     ))}
                   </ul>
 
-                  <div
-                    className={cn(
-                      "pointer-events-none absolute right-0 bottom-0 size-[5.5rem] rounded-tl-full",
-                      tone.corner,
-                    )}
-                    aria-hidden
-                  />
                   <span
                     className={cn(
-                      "absolute right-4 bottom-4 grid size-10 place-items-center rounded-full transition-colors duration-300",
+                      "mt-5 ml-auto grid size-10 place-items-center rounded-full transition-colors duration-300",
                       tone.btn,
                     )}
                     aria-hidden

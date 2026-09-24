@@ -13,14 +13,26 @@ import { cta, site } from "@/content/site";
 export function GetStarted() {
   return (
     <section className="relative z-[1] overflow-visible bg-[#F8FBFE]">
+      <svg width="0" height="0" className="absolute" aria-hidden>
+        <defs>
+          <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
+            {/*
+              One elliptical arc, same x at top & bottom → clean break with
+              section borders, no corner kink in the middle of the edge.
+            */}
+            <path d="M0,0 H0.93 A0.30,0.50 0 0 0 0.93,1 H0 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       <ScrollShape
         className="top-[18%] left-[42%] hidden h-28 w-40 text-[#1E60FF] lg:block"
       >
         <SoftRegion variant="softSquare" />
       </ScrollShape>
 
-      {/* Right photo plane */}
-      <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
+      {/* Right photo plane — same vertical seal as the wash so borders stay flush */}
+      <div className="absolute -top-px -bottom-px right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
         <PromptMedia
           asset={media.getStarted}
           className="absolute inset-0 h-full w-full"
@@ -29,21 +41,21 @@ export function GetStarted() {
       </div>
 
       {/*
-        Curved left wash — one SVG stretched to the full section height so the
-        top edge sits flush (no separate seal strip). Shadow only to the right.
+        Full-height wash; -top/-bottom seals hairlines so the arc meets the
+        section borders cleanly (no floating gap, no extra seal shape).
       */}
-      <svg
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden h-full w-[68%] lg:block xl:w-[70%]"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
+      <div
+        className="pointer-events-none absolute -top-px -bottom-px left-0 z-[1] hidden w-[68%] lg:block xl:w-[70%]"
+        style={{
+          filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
+        }}
         aria-hidden
       >
-        <path
-          d="M0,0 H100 C78,28 72,72 94,100 H0 Z"
-          fill="#F8FBFE"
-          style={{ filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))" }}
+        <div
+          className="h-full w-full bg-[#F8FBFE]"
+          style={{ clipPath: "url(#cta-left-curve)" }}
         />
-      </svg>
+      </div>
 
       {/* Mobile / tablet photo underlay (atmosphere only; generate from desktop tile) */}
       <div className="absolute inset-0 z-0 lg:hidden">
