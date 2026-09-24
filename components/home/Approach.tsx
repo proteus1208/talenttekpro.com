@@ -16,7 +16,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
-import { SafeImage } from "@/components/ui/SafeImage";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cn } from "@/lib/cn";
@@ -64,16 +64,14 @@ export function Approach() {
                 </p>
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
-                <SafeImage
-                  src={media.processHero.src}
-                  alt={media.processHero.alt}
-                  fill
-                  className="object-cover"
+                <PromptMedia
+                  asset={media.approach}
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
             </div>
 
-            <div className="mt-16 border-t border-[#051937]/08 pt-14 md:mt-20 md:pt-16">
+            <div className="mt-16 pt-14 md:mt-20 md:pt-16">
               <h3 className="section-title">
                 {home.approach.principles.headline}{" "}
                 <span className="hero-gradient-text">
@@ -86,7 +84,7 @@ export function Approach() {
                   return (
                     <li
                       key={item.title}
-                      className="flex items-start gap-4 rounded-2xl border border-[#051937]/06 bg-[#F8FAFC] p-5 md:p-6"
+                      className="flex items-start gap-4 rounded-2xl border border-[#E2E8F0] bg-transparent p-5 md:p-6"
                     >
                       <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-2xl bg-[#EFF6FF] text-[#1E60FF]">
                         <Icon className="size-5" strokeWidth={2} aria-hidden />

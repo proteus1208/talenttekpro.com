@@ -23,7 +23,7 @@ export default function ContactPage() {
         eyebrow={contactPage.hero.eyebrow}
         title={contactPage.hero.title}
         support={contactPage.hero.support}
-        image={{ src: media.contactHero.src, alt: media.contactHero.alt }}
+        image={media.contactHero}
       />
 
       <section className="relative z-[1] overflow-visible bg-white section-pad">

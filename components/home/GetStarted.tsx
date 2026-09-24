@@ -5,6 +5,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SafeImage } from "@/components/ui/SafeImage";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cta, site } from "@/content/site";
@@ -14,9 +15,10 @@ export function GetStarted() {
     <section className="relative z-[1] overflow-visible bg-[#F8FBFE]">
       <svg width="0" height="0" className="absolute" aria-hidden>
         <defs>
-            <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
-              <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
-            </clipPath>
+          <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
+            {/* Same curve; slight y overflow so the fill seals section top/bottom */}
+            <path d="M0,-0.03 H0.94 C0.72,0.28 0.72,0.72 0.94,1.03 H0 Z" />
+          </clipPath>
         </defs>
       </svg>
 
@@ -26,40 +28,42 @@ export function GetStarted() {
         <SoftRegion variant="softSquare" />
       </ScrollShape>
 
-      {/* Right photo plane */}
+      {/* Right photo plane — half width only */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
-        <SafeImage
-          src={media.getStarted.src}
-          alt={media.getStarted.alt}
-          fill
-          className="object-cover object-[center_30%]"
+        <PromptMedia
+          asset={media.getStarted}
+          className="absolute inset-0 h-full w-full"
+          imageClassName="object-[center_30%]"
         />
       </div>
 
       {/*
-        Curved left wash pushed further right; soft shadow casts only to the right
-        onto the photo (no downward/bottom bloom).
+        Curved left wash (half-overlap). Padded past the section top so the photo
+        cannot show a 1px stripe; filter sits on the clipped face (not the parent).
       */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[68%] lg:block xl:w-[70%]"
-        style={{
-          filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
-        }}
+        className="pointer-events-none absolute -top-[3px] -bottom-[3px] left-0 z-[2] hidden w-[68%] lg:block xl:w-[70%]"
         aria-hidden
       >
         <div
           className="h-full w-full bg-[#F8FBFE]"
-          style={{ clipPath: "url(#cta-left-curve)" }}
+          style={{
+            clipPath: "url(#cta-left-curve)",
+            filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
+          }}
         />
       </div>
 
-      {/* Mobile / tablet photo underlay */}
+      {/* Mobile / tablet photo underlay (atmosphere only; generate from desktop tile) */}
       <div className="absolute inset-0 z-0 lg:hidden">
-        <SafeImage
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={media.getStarted.src}
           alt=""
-          fill
-          className="object-cover object-center opacity-30"
+          aria-hidden
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
+          suppressHydrationWarning
         />
         <div className="absolute inset-0 bg-[#F8FBFE]/88" aria-hidden />
       </div>

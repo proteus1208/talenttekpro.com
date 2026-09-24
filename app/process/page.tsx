@@ -43,7 +43,7 @@ export default function ProcessPage() {
         title={processPage.hero.title}
         titleAccent={processPage.hero.titleAccent}
         support={processPage.hero.support}
-        image={{ src: media.processHero.src, alt: media.processHero.alt }}
+        image={media.processHero}
       />
 
       {/* Principles */}

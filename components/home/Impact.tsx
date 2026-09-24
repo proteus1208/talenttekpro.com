@@ -70,14 +70,9 @@ export function Impact() {
               return (
                 <div
                   key={metric.label}
-                  className="group relative overflow-hidden rounded-3xl bg-white/95 p-7 shadow-[0_16px_48px_rgba(5,25,55,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(5,25,55,0.12)]"
+                  className="group rounded-3xl bg-white/95 p-7 shadow-[0_16px_48px_rgba(5,25,55,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(5,25,55,0.12)]"
                 >
-                  <div
-                    className="pointer-events-none absolute -right-8 -top-8 size-24 rounded-full bg-[#E8F3FF]"
-                    aria-hidden
-                  />
-
-                  <div className="relative flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-4">
                     <span
                       className={cn(
                         "grid size-11 place-items-center rounded-2xl",
@@ -88,14 +83,14 @@ export function Impact() {
                     </span>
                   </div>
 
-                  <p className="font-display relative mt-8 bg-gradient-to-r from-[#1E60FF] to-[#00D2FF] bg-clip-text text-[clamp(2.4rem,3.5vw,3.25rem)] font-bold leading-none tracking-tight text-transparent">
+                  <p className="font-display mt-8 bg-gradient-to-r from-[#1E60FF] to-[#00D2FF] bg-clip-text text-[clamp(2.4rem,3.5vw,3.25rem)] font-bold leading-none tracking-tight text-transparent">
                     <CountUp value={metric.value} suffix={metric.suffix} />
                   </p>
 
-                  <h3 className="relative mt-4 text-sm font-semibold tracking-wide text-[#051937] capitalize">
+                  <h3 className="mt-4 text-sm font-semibold tracking-wide text-[#051937] capitalize">
                     {metric.label}
                   </h3>
-                  <p className="relative mt-2 text-sm leading-relaxed text-[#64748B]">
+                  <p className="mt-2 text-sm leading-relaxed text-[#64748B]">
                     {metric.detail}
                   </p>
                 </div>

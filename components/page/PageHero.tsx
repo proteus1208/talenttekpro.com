@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { SectionEdge } from "@/components/ui/SectionShell";
+import { PromptMedia, type PromptMediaAsset } from "@/components/ui/PromptMedia";
 import { cn } from "@/lib/cn";
 
 type PageHeroStat = {
@@ -14,7 +15,7 @@ type PageHeroProps = {
   /** Optional trailing phrase rendered with hero-gradient-text */
   titleAccent?: string;
   support?: string;
-  image?: { src: string; alt: string };
+  image?: PromptMediaAsset;
   /** Optional metrics row under the hero copy/media */
   stats?: readonly PageHeroStat[];
   className?: string;
@@ -78,15 +79,10 @@ export function PageHero({
             </div>
             {image ? (
               <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
-                {/* Native img: next/image fill styles (0 vs "0px") + extension blur mismatch SSR */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  decoding="async"
-                  fetchPriority="high"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  suppressHydrationWarning
+                <PromptMedia
+                  asset={image}
+                  priority
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
             ) : null}
