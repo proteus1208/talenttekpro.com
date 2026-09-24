@@ -13,14 +13,6 @@ import { cta, site } from "@/content/site";
 export function GetStarted() {
   return (
     <section className="relative z-[1] overflow-visible bg-[#F8FBFE]">
-      <svg width="0" height="0" className="absolute" aria-hidden>
-        <defs>
-            <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
-              <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
-            </clipPath>
-        </defs>
-      </svg>
-
       <ScrollShape
         className="top-[18%] left-[42%] hidden h-28 w-40 text-[#1E60FF] lg:block"
       >
@@ -37,21 +29,21 @@ export function GetStarted() {
       </div>
 
       {/*
-        Curved left wash pushed further right; soft shadow casts only to the right
-        onto the photo (no downward/bottom bloom).
+        Curved left wash — one SVG stretched to the full section height so the
+        top edge sits flush (no separate seal strip). Shadow only to the right.
       */}
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[68%] lg:block xl:w-[70%]"
-        style={{
-          filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
-        }}
+      <svg
+        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden h-full w-[68%] lg:block xl:w-[70%]"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
         aria-hidden
       >
-        <div
-          className="h-full w-full bg-[#F8FBFE]"
-          style={{ clipPath: "url(#cta-left-curve)" }}
+        <path
+          d="M0,0 H100 C78,28 72,72 94,100 H0 Z"
+          fill="#F8FBFE"
+          style={{ filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))" }}
         />
-      </div>
+      </svg>
 
       {/* Mobile / tablet photo underlay (atmosphere only; generate from desktop tile) */}
       <div className="absolute inset-0 z-0 lg:hidden">
