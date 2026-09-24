@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowUpRight, Check, Clock3 } from "lucide-react";
 import { PageHero } from "@/components/page/PageHero";
 import { PageCta } from "@/components/page/PageCta";
 import { Container } from "@/components/ui/Container";
-import { SafeImage } from "@/components/ui/SafeImage";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
@@ -71,12 +71,10 @@ export default async function BlogPostPage({ params }: Props) {
 
             <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:gap-12">
               <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] lg:col-span-8">
-                <SafeImage
-                  src={post.cover.src}
-                  alt={post.cover.alt}
-                  fill
+                <PromptMedia
+                  asset={post.cover}
                   priority
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
 
@@ -260,11 +258,9 @@ export default async function BlogPostPage({ params }: Props) {
                     className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-[#F8FBFE] shadow-[0_14px_40px_rgba(5,25,55,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_44px_rgba(5,25,55,0.08)]"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <SafeImage
-                        src={item.cover.src}
-                        alt={item.cover.alt}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      <PromptMedia
+                        asset={item.cover}
+                        className="absolute inset-0 h-full w-full"
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-5">

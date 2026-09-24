@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         title={projectsPage.hero.title}
         titleAccent={projectsPage.hero.titleAccent}
         support={projectsPage.hero.support}
-        image={{ src: media.projectsHero.src, alt: media.projectsHero.alt }}
+        image={media.projectsHero}
         stats={projectsPage.stats}
       />
 

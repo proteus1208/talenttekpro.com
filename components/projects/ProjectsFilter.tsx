@@ -1,15 +1,76 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type MouseEvent } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Calendar } from "lucide-react";
+import { ArrowUpRight, Calendar, Check, Copy } from "lucide-react";
 import {
   projectCases,
   projectsPage,
   projectMedia,
+  type ProjectCase,
   type ProjectFilter,
 } from "@/content/projects";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { cn } from "@/lib/cn";
+
+function buildPdfBrief(item: ProjectCase) {
+  const media = projectMedia(item);
+  return [
+    `# ${item.title}`,
+    `${item.type} · ${item.year} · ${item.filters.join(", ")}`,
+    "",
+    "## Description",
+    item.summary,
+    "",
+    "## Outcomes",
+    ...item.outcome.map((o) => `- ${o}`),
+    "",
+    "## Stack",
+    item.stack.join(", "),
+    "",
+    "## Image",
+    `Save as: ${media.path}`,
+    `Alt: ${media.alt}`,
+    `Prompt: ${media.prompt}`,
+  ].join("\n");
+}
+
+function CopyPdfButton({ item }: { item: ProjectCase }) {
+  const [copied, setCopied] = useState(false);
+
+  async function onCopy(e: MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(buildPdfBrief(item));
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // Clipboard unavailable
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide transition-colors",
+        copied
+          ? "border-emerald-500/40 bg-emerald-50 text-emerald-700"
+          : "border-[#1E60FF]/25 bg-white text-[#1E60FF] hover:border-[#1E60FF] hover:bg-[#EFF6FF]",
+      )}
+      aria-label={copied ? "Copied PDF brief" : `Copy ${item.title} PDF brief`}
+    >
+      {copied ? (
+        <Check className="size-3.5" aria-hidden />
+      ) : (
+        <Copy className="size-3.5" aria-hidden />
+      )}
+      {copied ? "Copied" : "Copy brief"}
+    </button>
+  );
+}
 
 export function ProjectsFilter() {
   const [filter, setFilter] = useState<ProjectFilter>("All");
@@ -39,25 +100,26 @@ export function ProjectsFilter() {
         ))}
       </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <p className="mt-4 text-sm text-[#64748B]">
+        Media tiles show the ChatGPT prompt and save-as filename. Use the copy
+        icon on the image, or <span className="font-medium text-[#475569]">Copy brief</span>{" "}
+        for the full case write-up.
+      </p>
+
+      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {items.map((item) => {
           const media = projectMedia(item);
           return (
-            <Link
+            <article
               key={item.slug}
-              href={`/projects/${item.slug}`}
-              className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-[0_14px_40px_rgba(5,25,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(5,25,55,0.12)]"
+              className="flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-[0_14px_40px_rgba(5,25,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(5,25,55,0.12)]"
             >
               <div className="relative aspect-[16/11] overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={media.src}
-                  alt={media.alt}
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  suppressHydrationWarning
+                <PromptMedia
+                  asset={media}
+                  className="absolute inset-0 h-full w-full"
                 />
-                <span className="absolute top-3 left-3 inline-flex rounded-full bg-[#1E60FF] px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-white shadow-sm">
+                <span className="absolute top-3 left-3 z-20 inline-flex rounded-full bg-[#1E60FF] px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-white shadow-sm">
                   {item.filters[0] ?? item.type}
                 </span>
               </div>
@@ -79,27 +141,45 @@ export function ProjectsFilter() {
                   ))}
                 </div>
 
-                <h3 className="card-title mt-3 transition-colors group-hover:text-[#1E60FF]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[#64748B]">
+                <Link href={`/projects/${item.slug}`} className="group mt-3 block">
+                  <h3 className="card-title transition-colors group-hover:text-[#1E60FF]">
+                    {item.title}
+                  </h3>
+                </Link>
+
+                <p className="mt-2 text-sm leading-relaxed text-[#64748B] select-text">
                   {item.summary}
                 </p>
 
-                <div className="mt-auto flex items-center justify-between pt-5">
+                <ul className="mt-3 space-y-1.5 border-t border-[#E8EEF5] pt-3">
+                  {item.outcome.slice(0, 2).map((o) => (
+                    <li
+                      key={o}
+                      className="text-xs leading-snug text-[#64748B] select-text"
+                    >
+                      <span className="text-[#1E60FF]">→</span> {o}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto flex items-center justify-between gap-3 pt-4">
                   <span className="inline-flex items-center gap-1.5 text-xs text-[#64748B]">
                     <Calendar className="size-3.5 text-[#94A3B8]" aria-hidden />
                     {item.year}
                   </span>
-                  <span
-                    className="grid size-9 place-items-center rounded-full border border-[#1E60FF]/25 text-[#1E60FF] transition-colors group-hover:border-[#1E60FF] group-hover:bg-[#1E60FF] group-hover:text-white"
-                    aria-hidden
-                  >
-                    <ArrowUpRight className="size-4" />
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <CopyPdfButton item={item} />
+                    <Link
+                      href={`/projects/${item.slug}`}
+                      className="grid size-9 place-items-center rounded-full border border-[#1E60FF]/25 text-[#1E60FF] transition-colors hover:border-[#1E60FF] hover:bg-[#1E60FF] hover:text-white"
+                      aria-label={`Open ${item.title}`}
+                    >
+                      <ArrowUpRight className="size-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </Link>
+            </article>
           );
         })}
       </div>

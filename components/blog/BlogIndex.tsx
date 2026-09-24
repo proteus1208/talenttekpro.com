@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Clock3 } from "lucide-react";
-import { SafeImage } from "@/components/ui/SafeImage";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { blogPage, type BlogPost } from "@/content/blog";
 import { cn } from "@/lib/cn";
 
@@ -110,16 +110,10 @@ export function BlogIndex() {
           className="group mt-10 grid overflow-hidden rounded-[1.75rem] bg-[#051937] shadow-[0_24px_60px_rgba(5,25,55,0.18)] transition-transform duration-300 hover:-translate-y-0.5 lg:grid-cols-12"
         >
           <div className="relative aspect-[16/11] overflow-hidden lg:col-span-7 lg:aspect-auto lg:min-h-[360px]">
-            <SafeImage
-              src={featured.cover.src}
-              alt={featured.cover.alt}
-              fill
+            <PromptMedia
+              asset={featured.cover}
               priority
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-[#051937]/70 via-[#051937]/15 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#051937]/20 lg:to-[#051937]/80"
-              aria-hidden
+              className="absolute inset-0 h-full w-full"
             />
           </div>
 
@@ -171,13 +165,11 @@ export function BlogIndex() {
             className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-[0_14px_40px_rgba(5,25,55,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(5,25,55,0.1)]"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
-              <SafeImage
-                src={post.cover.src}
-                alt={post.cover.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+              <PromptMedia
+                asset={post.cover}
+                className="absolute inset-0 h-full w-full"
               />
-              <span className="absolute top-3 left-3 inline-flex rounded-full bg-[#1E60FF] px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-white shadow-sm">
+              <span className="absolute top-3 left-3 z-20 inline-flex rounded-full bg-[#1E60FF] px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-white shadow-sm">
                 {post.category}
               </span>
             </div>

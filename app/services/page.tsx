@@ -141,7 +141,7 @@ export default function ServicesPage() {
         title={servicesPage.hero.title}
         titleAccent={servicesPage.hero.titleAccent}
         support={servicesPage.hero.support}
-        image={{ src: media.servicesHero.src, alt: media.servicesHero.alt }}
+        image={media.servicesHero}
       />
 
       {/* Integrated intro: text + pillars, no second image */}

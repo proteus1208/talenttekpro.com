@@ -5,6 +5,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SafeImage } from "@/components/ui/SafeImage";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cta, site } from "@/content/site";
@@ -28,11 +29,10 @@ export function GetStarted() {
 
       {/* Right photo plane */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
-        <SafeImage
-          src={media.getStarted.src}
-          alt={media.getStarted.alt}
-          fill
-          className="object-cover object-[center_30%]"
+        <PromptMedia
+          asset={media.getStarted}
+          className="absolute inset-0 h-full w-full"
+          imageClassName="object-[center_30%]"
         />
       </div>
 
@@ -53,13 +53,16 @@ export function GetStarted() {
         />
       </div>
 
-      {/* Mobile / tablet photo underlay */}
+      {/* Mobile / tablet photo underlay (atmosphere only; generate from desktop tile) */}
       <div className="absolute inset-0 z-0 lg:hidden">
-        <SafeImage
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={media.getStarted.src}
           alt=""
-          fill
-          className="object-cover object-center opacity-30"
+          aria-hidden
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
+          suppressHydrationWarning
         />
         <div className="absolute inset-0 bg-[#F8FBFE]/88" aria-hidden />
       </div>

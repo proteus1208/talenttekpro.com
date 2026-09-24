@@ -1,4 +1,4 @@
-import { caseMedia } from "./media";
+import { caseMedia, type MediaAsset } from "./media";
 
 export type ProjectFilter =
   | "All"
@@ -204,7 +204,7 @@ export type Project = {
   title: string;
   year: string;
   description: string;
-  image: { src: string; alt: string };
+  image: MediaAsset;
   href: string;
   type: string;
   /** Short category for the image badge */
@@ -222,10 +222,7 @@ export const projects: Project[] = [
     description:
       "Real-time matching product with an embedded FE/BE squad: live updates that stay responsive at scale.",
     href: "/projects/dating-web-app",
-    image: {
-      src: caseMedia(0).src,
-      alt: caseMedia(0).alt,
-    },
+    image: caseMedia(0),
   },
   {
     title: "Healthcare Management System",
@@ -236,10 +233,7 @@ export const projects: Project[] = [
     description:
       "Live ops panel for appointments and metrics: secure backend streaming into a calm control surface.",
     href: "/projects/healthcare-management",
-    image: {
-      src: caseMedia(1).src,
-      alt: caseMedia(1).alt,
-    },
+    image: caseMedia(1),
   },
   {
     title: "Food Delivery Headless Shopify",
@@ -250,10 +244,7 @@ export const projects: Project[] = [
     description:
       "Headless storefront engineered for performance and conversion for a modern commerce brand.",
     href: "/projects/food-delivery-shopify",
-    image: {
-      src: caseMedia(2).src,
-      alt: caseMedia(2).alt,
-    },
+    image: caseMedia(2),
   },
   {
     title: "Office Booking Platform",
@@ -263,10 +254,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript"],
     description: "Real-time booking connecting professionals to flexible workspaces.",
     href: "/projects/office-booking",
-    image: {
-      src: caseMedia(3).src,
-      alt: caseMedia(3).alt,
-    },
+    image: caseMedia(3),
   },
   {
     title: "Pipeline Inspection Platform",
@@ -277,10 +265,7 @@ export const projects: Project[] = [
     description:
       "Bridge from raw industrial data to human decisions: maps, streams, and operator-ready views.",
     href: "/projects/pipeline-inspection",
-    image: {
-      src: caseMedia(4).src,
-      alt: caseMedia(4).alt,
-    },
+    image: caseMedia(4),
   },
 ];
 
