@@ -15,9 +15,10 @@ export function GetStarted() {
     <section className="relative z-[1] overflow-visible bg-[#F8FBFE]">
       <svg width="0" height="0" className="absolute" aria-hidden>
         <defs>
-            <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
-              <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
-            </clipPath>
+          <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
+            {/* Same curve; slight y overflow so the fill seals section top/bottom */}
+            <path d="M0,-0.03 H0.94 C0.72,0.28 0.72,0.72 0.94,1.03 H0 Z" />
+          </clipPath>
         </defs>
       </svg>
 
@@ -27,7 +28,7 @@ export function GetStarted() {
         <SoftRegion variant="softSquare" />
       </ScrollShape>
 
-      {/* Right photo plane */}
+      {/* Right photo plane — half width only */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
         <PromptMedia
           asset={media.getStarted}
@@ -37,19 +38,19 @@ export function GetStarted() {
       </div>
 
       {/*
-        Curved left wash pushed further right; soft shadow casts only to the right
-        onto the photo (no downward/bottom bloom).
+        Curved left wash (half-overlap). Padded past the section top so the photo
+        cannot show a 1px stripe; filter sits on the clipped face (not the parent).
       */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[68%] lg:block xl:w-[70%]"
-        style={{
-          filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
-        }}
+        className="pointer-events-none absolute -top-[3px] -bottom-[3px] left-0 z-[2] hidden w-[68%] lg:block xl:w-[70%]"
         aria-hidden
       >
         <div
           className="h-full w-full bg-[#F8FBFE]"
-          style={{ clipPath: "url(#cta-left-curve)" }}
+          style={{
+            clipPath: "url(#cta-left-curve)",
+            filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
+          }}
         />
       </div>
 
