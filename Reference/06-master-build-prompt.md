@@ -1,4 +1,4 @@
-# Master Build Prompt — TalentTekPro Website
+# Master Build Prompt: TalentTekPro Website
 
 Paste this document (or the **Copy-paste block** at the bottom) into an AI coding / design agent as the single brief for building the full site. It consolidates brand, layout, pages, video, nav/footer, and **mandatory high-quality 3D + active animation**.
 
@@ -21,20 +21,20 @@ You are a senior product designer + frontend engineer shipping **talenttekpro.co
 | Name | **TalentTekPro** (no space) |
 | Tagline | Talent that ships. Technology that scales. |
 | Short descriptor | Tech Talent & Delivery |
-| Long descriptor | Integrated talent acquisition, embedded engineering, and digital delivery — so you scale people and product on one accountable partner. |
+| Long descriptor | Integrated talent acquisition, embedded engineering, and digital delivery so you scale people and product on one accountable partner. |
 | Email | contact@talenttekpro.com |
 | Est. | 2021 |
 | Legal | © 2026 TalentTekPro LLC |
 
 **Clients hire us to:** source/match senior technical talent (AI-assisted), embed cross-functional squads, and deliver cloud / AI / product / platform work end to end.
 
-**Unlike pure staffing:** we stay through launch — match, embed, deliver.  
+**Unlike pure staffing:** we stay through launch: match, embed, deliver.  
 **Unlike pure agencies:** we can staff your team *or* be your team.
 
 ### Voice
 
 - Concrete outcomes (time-to-hire, uptime, shipped increments). Senior, calm confidence.
-- Hybrid clarity — talent *and* delivery in the same breath.
+- Hybrid clarity: talent *and* delivery in the same breath.
 - No vague synergy/disrupt filler, emoji spam, or startup slang overload.
 - Honest scope (“what we don’t know yet”).
 
@@ -107,7 +107,7 @@ Scale (desktop): Display `clamp(2.75rem, 6vw, 4.5rem)` / 600 / 1.05 · H2 `clamp
 
 ### Logo
 
-- Wordmark: TalentTekPro; optional teal on “Tek” *or* teal center node on mark — pick one system.
+- Wordmark: TalentTekPro; optional teal on “Tek” *or* teal center node on mark: pick one system.
 - Mark: interlocking **T** + three-node pipeline (talent → match → ship); teal on **match** node preferred.
 - Lockups: horizontal mark+wordmark (nav/footer); wordmark only; mark only (favicon); stacked (splash/OG).
 - Clear space ≥ height of capital T. Nav wordmark ~28–32px; mark ~24–28px.
@@ -125,13 +125,13 @@ Interview / delivery rooms with cyan practical light; pair-programming and live 
 
 ## Global composition rules
 
-1. **One composition per viewport** — especially first screen: not a dashboard of widgets.
-2. **Brand first** — “TalentTekPro” is a hero-level signal (wordmark + display name), not only nav text. Brand test: if removing the nav makes the first viewport feel generic, branding is too weak.
-3. **Hero budget** — first viewport only: brand, one headline, one short supporting sentence, one CTA group, **one dominant full-bleed visual plane**. No stats, schedules, address blocks, or secondary promos in the first viewport.
-4. **Full-bleed hero** — edge-to-edge visual plane (3D canvas / video / image). No inset hero cards, side-panel hero media, floating mosaics.
-5. **No hero overlays** — no detached badges, promo stickers, or chips on top of hero media.
-6. **Cards default off** — cards only when they are the container for interaction. If removing border/shadow/radius doesn’t hurt interaction, don’t use a card.
-7. **One job per section** — one headline, usually one supporting sentence, then content.
+1. **One composition per viewport**: especially first screen: not a dashboard of widgets.
+2. **Brand first**: “TalentTekPro” is a hero-level signal (wordmark + display name), not only nav text. Brand test: if removing the nav makes the first viewport feel generic, branding is too weak.
+3. **Hero budget**: first viewport only: brand, one headline, one short supporting sentence, one CTA group, **one dominant full-bleed visual plane**. No stats, schedules, address blocks, or secondary promos in the first viewport.
+4. **Full-bleed hero**: edge-to-edge visual plane (3D canvas / video / image). No inset hero cards, side-panel hero media, floating mosaics.
+5. **No hero overlays**, no detached badges, promo stickers, or chips on top of hero media.
+6. **Cards default off**: cards only when they are the container for interaction. If removing border/shadow/radius doesn’t hurt interaction, don’t use a card.
+7. **One job per section**: one headline, usually one supporting sentence, then content.
 8. Numbered section indexes in mono: `001 / TalentTekPro / Est. 2021`, `002 / Manifesto`, …
 
 ### Grid & spacing
@@ -157,11 +157,11 @@ Interview / delivery rooms with cyan practical light; pair-programming and live 
 ### Hero visual plane (001)
 
 - Full-bleed **WebGL canvas** (React Three Fiber) as the dominant edge-to-edge background/plane.
-- HTML UI (brand, index, headline, support, CTAs) sits in a left/center safe stack with readable contrast — use a soft ink gradient scrim behind type, **not** floating chips or badges.
+- HTML UI (brand, index, headline, support, CTAs) sits in a left/center safe stack with readable contrast: use a soft ink gradient scrim behind type, **not** floating chips or badges.
 - Scene must feel **production-grade**: dense geometry or lattice (not three lonely spheres), intentional camera, material restraint, brand color lighting.
-- Motif: **talent → match → ship** pipeline — nodes, paths, orbital lattice, or abstract “team + system” network. Teal on the match/center signal; royal as secondary rim; deep ink void.
+- Motif: **talent → match → ship** pipeline: nodes, paths, orbital lattice, or abstract “team + system” network. Teal on the match/center signal; royal as secondary rim; deep ink void.
 - **Active animation always on** while the hero is in view: slow orbital rotation, breathing emissive pulse on match node, subtle particle or light travel along edges, micro parallax from pointer (desktop) / device tilt if safe (optional).
-- Pointer interactivity: cursor parallax / light follow; optional click or hover to emphasize a node (talent / match / ship) with a short camera ease — keep it elegant, not gamey.
+- Pointer interactivity: cursor parallax / light follow; optional click or hover to emphasize a node (talent / match / ship) with a short camera ease: keep it elegant, not gamey.
 - Performance: adaptive DPR, pause render loop when hero leaves viewport, fallback to high-quality **static poster** (or simplified CSS) if WebGL fails / software rasterizer / `prefers-reduced-motion`.
 - Reduced motion: freeze to a beautiful composed still of the same 3D world (or poster); keep UI readable.
 - Optional secondary layer: muted cinematic video *behind* or *as texture* only if it never competes with the 3D read; default is **3D owns the first fold**.
@@ -173,7 +173,7 @@ Interview / delivery rooms with cyan practical light; pair-programming and live 
 | Brand | TalentTekPro |
 | Index | `001 / TalentTekPro / Est. 2021` |
 | Headline options | **Build the team. Ship the system.** · **Talent that ships.** · **Match senior talent. Deliver production software.** |
-| Support | AI-assisted tech talent and embedded engineering squads — one partner from shortlist to production. |
+| Support | AI-assisted tech talent and embedded engineering squads: one partner from shortlist to production. |
 | CTAs | `Start a project →` · `Explore case studies` |
 
 ### 3D scene quality bar (acceptance)
@@ -197,17 +197,17 @@ Premium real-time WebGL brand hero for TalentTekPro, full-bleed dark void #05193
 
 ## Active animation & 3D effects design (site-wide)
 
-Ship a **motion system**, not isolated gimmicks. Goal: presence and hierarchy — active, alive, premium.
+Ship a **motion system**, not isolated gimmicks. Goal: presence and hierarchy: active, alive, premium.
 
 ### Required motion set (minimum)
 
-1. **Hero 3D ambient + parallax** (above) — primary quality signal.
-2. **Hero UI entrance** — wordmark + headline fade/rise 600–900ms ease-out; CTA group ~150ms later.
-3. **Section index scrub** — `00N / Name` opacity 0.35 → 1 when section is primary; optional teal rule grow 0→100%.
-4. **Pipeline match animation** (Capabilities / Platform / Approach) — SVG or lightweight 3D: path draws talent → match → ship (~1.2s); match node pulses teal once; optional score tick 0 → 94. Once per visit unless reduced motion.
-5. **Reveal on scroll** — sections/content rise + fade with intersection; staggered children on lists/grids.
-6. **Logo marquee** — infinite horizontal partner scroll; pause on hover.
-7. **Link / tile polish** — links → teal; project tiles image scale 1→1.03; scroll progress teal fill.
+1. **Hero 3D ambient + parallax** (above): primary quality signal.
+2. **Hero UI entrance**: wordmark + headline fade/rise 600–900ms ease-out; CTA group ~150ms later.
+3. **Section index scrub**: `00N / Name` opacity 0.35 → 1 when section is primary; optional teal rule grow 0→100%.
+4. **Pipeline match animation** (Capabilities / Platform / Approach): SVG or lightweight 3D: path draws talent → match → ship (~1.2s); match node pulses teal once; optional score tick 0 → 94. Once per visit unless reduced motion.
+5. **Reveal on scroll**: sections/content rise + fade with intersection; staggered children on lists/grids.
+6. **Logo marquee**: infinite horizontal partner scroll; pause on hover.
+7. **Link / tile polish**: links → teal; project tiles image scale 1→1.03; scroll progress teal fill.
 
 ### Elevated 3D / depth moments (use 1–2 beyond hero)
 
@@ -256,21 +256,21 @@ Do **not** put a second full-screen WebGL scene on every page. Inner pages: typo
 | 011 | Blog teaser | Latest 3 |
 | 012 | FAQ | 3 questions + link |
 | 013 | Get started | Contact band |
-| — | Footer | Columns per IA |
+| - | Footer | Columns per IA |
 
 ### Home section copy aims (brief)
 
-- **002 Manifesto:** “TalentTekPro charts how enterprises hire and build —” consulting-led talent strategy, AI matching, squads through launch; measure time-to-productivity and production systems.
+- **002 Manifesto:** “TalentTekPro charts how enterprises hire and build :” consulting-led talent strategy, AI matching, squads through launch; measure time-to-productivity and production systems.
 - **003 Impact:** 98% satisfaction · 50+ · 10+ countries · 99.9% · 40+ clients · 5+ years.
-- **004 Platform:** Same command surface recruiters + delivery leads use — funnel, match routing, sprint velocity.
+- **004 Platform:** Same command surface recruiters + delivery leads use: funnel, match routing, sprint velocity.
 - **005 Cases fixtures:** Dating platform · Healthcare ops · Headless commerce · Office booking · Pipeline inspection (mix staffing + build). Headline: “Work that hired and shipped.”
 - **006 Solutions:** “Tailored talent and technology for real-world scale.” Eight disciplines linked to `/services#...`.
 - **007 Industries:** Banking & Finance · Healthcare · Manufacturing · Retail & CPG · Energy · Telecom & Media · Public Sector · Travel & Logistics.
-- **008 Approach:** “Unlock capacity — people and platforms.” Bullets: Customized · Quality · AI-native · Global. CTA `See our process →`.
+- **008 Approach:** “Unlock capacity: people and platforms.” Bullets: Customized · Quality · AI-native · Global. CTA `See our process →`.
 - **010 Careers:** “Join our team.” 3–4 roles → `/careers`.
 - **011 Blog:** “The latest articles.” 3 posts.
 - **012 FAQ:** engagement models · how fast we start · startups vs enterprise.
-- **013 Get started:** “Ready to explore your possibilities? Talk to us today.” Free consultancy — talent, delivery, or both.
+- **013 Get started:** “Ready to explore your possibilities? Talk to us today.” Free consultancy: talent, delivery, or both.
 
 ---
 
@@ -341,7 +341,7 @@ Inner pattern: **breadcrumb → page hero (still, not full-screen WebGL unless s
 | `/projects` | Projects \| TalentTekPro… | Every team we placed. Every system we put into production. Filters: All · Talent · Digital Product · Platform · E-commerce. Fixture cases 01–09 as in `03-pages`. |
 | `/process` | Approach \| How We Work… | Unlock the potential of your business. Principles + phases Discover → Match & Design → Build & Embed → Scale. |
 | `/about` | About \| TalentTekPro | Recruiters, engineers, and innovation partners. Six principles + timeline 2021→2026. |
-| `/blog` | Blog \| TalentTekPro… | Field notes from the engine room — and the hiring floor. Categories talent + engineering. |
+| `/blog` | Blog \| TalentTekPro… | Field notes from the engine room and the hiring floor. Categories talent + engineering. |
 | `/careers` | Careers \| Join… | Build the work you want to be known for. Benefits, culture, open roles (fixtures). LinkedIn + résumé on apply. |
 | `/pricing` | Pricing \| … | Engagement models; custom scoping. |
 | `/faq` | FAQ \| … | Objection handling (models, timeline, mix, replacement, security, TZ, IP, AI matching, cadence). |
@@ -354,7 +354,7 @@ Shared CTA patterns: marketing → Start a project / Explore case studies; servi
 
 ## Optional hero video (secondary asset)
 
-If a brand film is produced (`04-landing-video`), it may support marketing or poster generation — **it does not replace the 3D first fold** unless WebGL is unavailable. Concept: 12–15s talent → delivery → dark negative space; no burned-in text/logos; grade ink/cyan/royal; poster required; `prefers-reduced-motion` → poster only.
+If a brand film is produced (`04-landing-video`), it may support marketing or poster generation: **it does not replace the 3D first fold** unless WebGL is unavailable. Concept: 12–15s talent → delivery → dark negative space; no burned-in text/logos; grade ink/cyan/royal; poster required; `prefers-reduced-motion` → poster only.
 
 ---
 
@@ -386,15 +386,15 @@ If a brand film is produced (`04-landing-video`), it may support marketing or po
 ```text
 Build the complete TalentTekPro marketing website (Next.js App Router, React, TypeScript, CSS variables, Framer Motion/CSS for 2D, React Three Fiber + drei + Three.js for WebGL).
 
-BRAND: TalentTekPro — hybrid tech talent acquisition + embedded engineering / digital delivery. Tagline: “Talent that ships. Technology that scales.” Email: contact@talenttekpro.com. Est. 2021. © 2026 TalentTekPro LLC. Voice: senior, calm, concrete outcomes; talent AND delivery in the same breath. CTAs: “Start a project →”, “Explore case studies”, “Get a Quote”.
+BRAND: TalentTekPro: hybrid tech talent acquisition + embedded engineering / digital delivery. Tagline: “Talent that ships. Technology that scales.” Email: contact@talenttekpro.com. Est. 2021. © 2026 TalentTekPro LLC. Voice: senior, calm, concrete outcomes; talent AND delivery in the same breath. CTAs: “Start a project →”, “Explore case studies”, “Get a Quote”.
 
 VISUAL: Deep navy → royal → cyan. Tokens: ink #051937, slate #0A1F3D, surface #0E2748, text #E8F7FF, muted #A8C5D8, teal/cyan #00D2FF (links, indexes, primary buttons), royal #1E60FF. Fonts: Sora (display), IBM Plex Sans (body), IBM Plex Mono (indexes). Logo: TalentTekPro wordmark + interlocking T with three-node pipeline (talent→match→ship), teal on center match node. FORBIDDEN: purple neon, cream+terracotta, broadsheet, Inter/Roboto as designed look, emoji, hero pill clusters, cards in hero, floating badges on hero media.
 
 COMPOSITION: One composition per viewport; brand-first first screen; hero budget = brand + one headline + one support line + one CTA group + one dominant full-bleed visual; cards default off; one job per section; numbered mono indexes 001, 002…; sticky translucent nav; optional teal scroll progress.
 
-CRITICAL — HOME HERO (001): The first section MUST be a premium full-bleed interactive 3D WebGL scene (not a static image-first or video-first hero). Dense orbital lattice / pipeline nodes (talent→match→ship), cyan emissive match node, royal rim light, continuous ambient animation (orbit, pulse, light along edges), desktop pointer parallax, pause when offscreen, adaptive DPR, poster/static fallback for no-WebGL and prefers-reduced-motion. HTML brand “TalentTekPro”, index “001 / TalentTekPro / Est. 2021”, headline (pick one: “Build the team. Ship the system.” / “Talent that ships.” / “Match senior talent. Deliver production software.”), support about AI-assisted talent + embedded squads, CTAs Start a project + Explore case studies, soft ink scrim behind type only — no overlay chips. Quality bar: production portfolio WebGL, alive when idle, readable type, brand colors, 60fps where possible.
+CRITICAL: HOME HERO (001): The first section MUST be a premium full-bleed interactive 3D WebGL scene (not a static image-first or video-first hero). Dense orbital lattice / pipeline nodes (talent→match→ship), cyan emissive match node, royal rim light, continuous ambient animation (orbit, pulse, light along edges), desktop pointer parallax, pause when offscreen, adaptive DPR, poster/static fallback for no-WebGL and prefers-reduced-motion. HTML brand “TalentTekPro”, index “001 / TalentTekPro / Est. 2021”, headline (pick one: “Build the team. Ship the system.” / “Talent that ships.” / “Match senior talent. Deliver production software.”), support about AI-assisted talent + embedded squads, CTAs Start a project + Explore case studies, soft ink scrim behind type only, no overlay chips. Quality bar: production portfolio WebGL, alive when idle, readable type, brand colors, 60fps where possible.
 
-ACTIVE ANIMATION SITE-WIDE: Hero 3D + UI entrance; section index scrub; pipeline draw talent→match→ship with teal pulse; scroll reveals; partner marquee; link/tile hover; scroll progress. Optional 1–2 extra 3D/depth moments (Platform panel tilt, Approach scroll-scrub pipeline) — do NOT put full-screen WebGL on every page. Respect reduced motion.
+ACTIVE ANIMATION SITE-WIDE: Hero 3D + UI entrance; section index scrub; pipeline draw talent→match→ship with teal pulse; scroll reveals; partner marquee; link/tile hover; scroll progress. Optional 1–2 extra 3D/depth moments (Platform panel tilt, Approach scroll-scrub pipeline); do NOT put full-screen WebGL on every page. Respect reduced motion.
 
 HOME ORDER: 001 Hero 3D · 002 Manifesto · 003 Impact metrics · 004 Platform tabs (Talent OS / AI Match / Ship Velocity) · 005 Case studies · 006 Eight disciplines · 007 Industries · 008 Approach teaser · 009 More work + partners · 010 Careers teaser · 011 Blog teaser · 012 FAQ · 013 Get started · Footer.
 

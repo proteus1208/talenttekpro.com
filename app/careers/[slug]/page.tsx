@@ -35,7 +35,7 @@ export default async function CareerRolePage({ params }: Props) {
       <PageHero
         eyebrow={`${role.track} · ${role.type}`}
         title={role.title}
-        support={`${role.location} — ${role.summary}`}
+        support={`${role.location}: ${role.summary}`}
       />
 
       <section className="relative z-[1] overflow-visible bg-white section-pad">

@@ -144,7 +144,7 @@ export default function ServicesPage() {
         image={{ src: media.servicesHero.src, alt: media.servicesHero.alt }}
       />
 
-      {/* Integrated intro — text + pillars, no second image */}
+      {/* Integrated intro: text + pillars, no second image */}
       <section className="relative z-[1] overflow-visible bg-white section-pad">
         <SectionEdge fill="#ffffff" variant="soft" position="top" />
         <ScrollShape

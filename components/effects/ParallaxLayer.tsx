@@ -19,7 +19,7 @@ type ParallaxLayerProps = {
 };
 
 /**
- * Scroll-linked Y parallax. Same DOM on server and client —
+ * Scroll-linked Y parallax. Same DOM on server and client:
  * motion activates after mount so hydration stays clean.
  */
 export function ParallaxLayer({

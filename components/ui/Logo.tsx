@@ -68,7 +68,7 @@ export function Logo({
   const box =
     resolvedVariant === "mark" ? markSizes[size] : lockupSizes[size];
 
-  // Native img — avoid next/image blur styles; suppressHydrationWarning
+  // Native img: avoid next/image blur styles; suppressHydrationWarning
   // ignores extension-injected filter:blur(0px) on <img>.
   const image = (
     // eslint-disable-next-line @next/next/no-img-element
@@ -77,7 +77,7 @@ export function Logo({
       alt={
         resolvedVariant === "mark"
           ? `${site.name} mark`
-          : `${site.name} — ${site.tagline}`
+          : `${site.name}: ${site.tagline}`
       }
       width={asset.width}
       height={asset.height}

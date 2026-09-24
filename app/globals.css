@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Logo palette — navy → royal → cyan. Literal hex in @theme so utilities always resolve. */
+/* Logo palette: navy → royal → cyan. Literal hex in @theme so utilities always resolve. */
 @theme {
   --color-ink: #051937;
   --color-slate: #f5f9fc;
@@ -169,7 +169,7 @@ body {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
-/** Shared home section H2 — one size across every landing block */
+/** Shared home section H2: one size across every landing block */
 .section-title {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   font-size: clamp(1.85rem, 3.2vw, 2.75rem);
@@ -179,7 +179,7 @@ body {
   color: #051937;
 }
 
-/** Shared card / list item title — one size for meaningfully equal hierarchy */
+/** Shared card / list item title: one size for meaningfully equal hierarchy */
 .card-title {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.125rem;
@@ -296,7 +296,7 @@ body {
   }
 }
 
-/* Primary CTA — royal blue (light landing / mockup) */
+/* Primary CTA: royal blue (light landing / mockup) */
 .ttp-btn-primary {
   background-color: #1e60ff !important;
   color: #ffffff !important;
@@ -332,7 +332,7 @@ body {
   z-index: 1;
 }
 
-/* Project card — traveling beam along rounded rect */
+/* Project card: traveling beam along rounded rect */
 @keyframes project-beam {
   0% {
     stroke-dashoffset: 100;

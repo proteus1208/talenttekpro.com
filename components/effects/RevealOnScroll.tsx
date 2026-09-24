@@ -10,7 +10,7 @@ type RevealOnScrollProps = {
 };
 
 /**
- * Subtle rise only — never starts at opacity 0 (that hid whole sections
+ * Subtle rise only, never starts at opacity 0 (that hid whole sections
  * when in-view detection failed under smooth-scroll / VMs).
  *
  * Always the same `motion.div` tree (no reduced-motion element swaps)

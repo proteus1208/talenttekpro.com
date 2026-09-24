@@ -15,7 +15,7 @@ type PageCtaProps = {
   showEmail?: boolean;
 };
 
-/** Shared bottom CTA — landing typography + soft blue band */
+/** Shared bottom CTA: landing typography + soft blue band */
 export function PageCta({
   headline,
   headlineAccent,

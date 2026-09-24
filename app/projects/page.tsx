@@ -25,31 +25,8 @@ export default function ProjectsPage() {
         titleAccent={projectsPage.hero.titleAccent}
         support={projectsPage.hero.support}
         image={{ src: media.projectsHero.src, alt: media.projectsHero.alt }}
+        stats={projectsPage.stats}
       />
-
-      {/* Stats */}
-      <section className="relative z-[1] overflow-visible bg-white section-pad !py-14 md:!py-16">
-        <SectionEdge fill="#ffffff" variant="soft" position="top" />
-        <Container className="relative z-10">
-          <RevealOnScroll>
-            <dl className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
-              {projectsPage.stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-[1.35rem] bg-[#F5F9FC] px-5 py-6 md:px-6"
-                >
-                  <dt className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#94A3B8] uppercase">
-                    {s.label}
-                  </dt>
-                  <dd className="font-display mt-2 text-3xl font-bold tracking-tight text-[#1E60FF] md:text-4xl">
-                    {s.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </RevealOnScroll>
-        </Container>
-      </section>
 
       {/* Grid */}
       <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">

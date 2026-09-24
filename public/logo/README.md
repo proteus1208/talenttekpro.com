@@ -17,7 +17,7 @@
 
 | Placement | Text in PNG? |
 |-----------|----------------|
-| Favicon / tab | No — mark only |
+| Favicon / tab | No: mark only |
 | Header | Mark PNG + site name in HTML (readable) |
-| Footer | Yes — full white-text lockup |
+| Footer | Yes: full white-text lockup |
 | Light bg | Use `logo-main.png` (`variant="lockupLight"`) |

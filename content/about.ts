@@ -1,7 +1,7 @@
 export const aboutPage = {
   metaTitle: "About | TalentTekPro",
   metaDescription:
-    "Recruiters, engineers, and innovation partners — founded 2021 to close the gap between hiring and shipping.",
+    "Recruiters, engineers, and innovation partners: founded 2021 to close the gap between hiring and shipping.",
   hero: {
     eyebrow: "About",
     title: "Recruiters, engineers, and",
@@ -12,7 +12,7 @@ export const aboutPage = {
   who: {
     headline: "Partners in talent and",
     headlineAccent: "digital transformation.",
-    body: "Strategic hiring plus hands-on engineering — embedding senior people who ship production systems, not slide decks alone.",
+    body: "Strategic hiring plus hands-on engineering: embedding senior people who ship production systems, not slide decks alone.",
   },
   metrics: {
     headline: "By the",
@@ -38,7 +38,7 @@ export const aboutPage = {
       {
         num: "02",
         title: "Ship the foundation first",
-        body: "Auth, observability, pipelines — before feature theater.",
+        body: "Auth, observability, pipelines, before feature theater.",
       },
       {
         num: "03",
@@ -58,7 +58,7 @@ export const aboutPage = {
       {
         num: "06",
         title: "Outcomes over output",
-        body: "Time-to-productivity, revenue, risk — not vanity story points.",
+        body: "Time-to-productivity, revenue, risk, not vanity story points.",
       },
     ],
   },
@@ -68,7 +68,7 @@ export const aboutPage = {
     items: [
       {
         year: "2021",
-        event: "TalentTekPro founded — tech talent + delivery thesis.",
+        event: "TalentTekPro founded: tech talent + delivery thesis.",
       },
       { year: "2022", event: "Expanded Americas / EU remote practice." },
       {

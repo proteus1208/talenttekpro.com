@@ -14,13 +14,13 @@ export type CareerRole = {
 export const careersPage = {
   metaTitle: "Careers | Join TalentTekPro",
   metaDescription:
-    "Build the work you want to be known for — senior recruiting, engineering, and delivery roles.",
+    "Build the work you want to be known for: senior recruiting, engineering, and delivery roles.",
   hero: {
     eyebrow: "Careers",
     title: "Build the work you want to be",
     titleAccent: "known for.",
     support:
-      "We hire exceptional people, pay competitively, and give them problems that compound — GenAI platforms, enterprise delivery, and talent systems.",
+      "We hire exceptional people, pay competitively, and give them problems that compound: GenAI platforms, enterprise delivery, and talent systems.",
   },
   benefits: {
     headline: "What you",
@@ -28,10 +28,10 @@ export const careersPage = {
     support: "Remote-first craft, real learning budget, and colleagues who raise the bar.",
     items: [
       { title: "Remote-first", body: "Work from where you do your best thinking." },
-      { title: "Learning budget", body: "Courses, conferences, and tools — on us." },
+      { title: "Learning budget", body: "Courses, conferences, and tools on us." },
       { title: "Top-tier gear", body: "Machine, monitor, and setup that keep pace." },
       { title: "Health & wellness", body: "Coverage that respects how hard we ship." },
-      { title: "Flexible PTO", body: "Take the time you need — no points system." },
+      { title: "Flexible PTO", body: "Take the time you need, no points system." },
       { title: "Senior colleagues", body: "Learn beside people who have done the work." },
     ],
   },
@@ -41,7 +41,7 @@ export const careersPage = {
     items: [
       {
         title: "Senior bar",
-        body: "Client engagements stay at a senior level — no bait-and-switch staffing.",
+        body: "Client engagements stay at a senior level, no bait-and-switch staffing.",
       },
       {
         title: "Transparent milestones",
@@ -61,7 +61,7 @@ export const careersPage = {
     headline: "Open",
     headlineAccent: "roles.",
     applyNote:
-      "Open a role for the full description, then apply with your LinkedIn and résumé — we review every senior-track application.",
+      "Open a role for the full description, then apply with your LinkedIn and résumé. We review every senior-track application.",
     items: [
       {
         slug: "junior-full-stack-software-engineer",
@@ -72,7 +72,7 @@ export const careersPage = {
         summary:
           "Ship production features across the stack with mentorship from senior engineers on real client and internal products.",
         about:
-          "You’ll work inside small product squads — React/Next.js on the front, Node or similar APIs on the back — while learning delivery habits that hold up in production.",
+          "You’ll work inside small product squads: React/Next.js on the front, Node or similar APIs on the back, while learning delivery habits that hold up in production.",
         responsibilities: [
           "Build and ship UI and API features with code review and clear acceptance criteria.",
           "Write tests and docs for the surfaces you own.",
@@ -94,7 +94,7 @@ export const careersPage = {
         location: "Remote · Global",
         type: "Full-time",
         summary:
-          "Own end-to-end product surfaces for client embeds and TalentTekPro platforms — architecture through production.",
+          "Own end-to-end product surfaces for client embeds and TalentTekPro platforms: architecture through production.",
         about:
           "You’ll lead technical delivery on digital product and platform work: design systems, APIs, performance, and the judgment to keep scope honest under real deadlines.",
         responsibilities: [
@@ -118,7 +118,7 @@ export const careersPage = {
         location: "Remote · Global",
         type: "Full-time",
         summary:
-          "Build production AI features — retrieval, agents, evals, and model routing — that clients and our own talent systems can trust.",
+          "Build production AI features: retrieval, agents, evals, and model routing that clients and our own talent systems can trust.",
         about:
           "You’ll turn applied AI into reliable product surfaces: RAG pipelines, scoring systems, and agent workflows with gates that survive real traffic.",
         responsibilities: [
@@ -142,7 +142,7 @@ export const careersPage = {
         location: "Remote · Americas",
         type: "Full-time",
         summary:
-          "Source and close senior engineering talent with scorecards that predict ramp — not just keyword matches.",
+          "Source and close senior engineering talent with scorecards that predict ramp, not just keyword matches.",
         about:
           "You’ll run full-cycle search for client and internal roles, partnering with engineers on intake, panels, and debriefs that keep the senior bar honest.",
         responsibilities: [
@@ -166,7 +166,7 @@ export const careersPage = {
         location: "Remote · LATAM & Europe",
         type: "Full-time / contract",
         summary:
-          "Keep founders and delivery leads unblocked — calendar, research, follow-ups, and light ops that stay accurate under pace.",
+          "Keep founders and delivery leads unblocked: calendar, research, follow-ups, and light ops that stay accurate under pace.",
         about:
           "You’ll support leadership and project teams with administrative excellence: scheduling, inbox triage, document prep, and coordination across time zones.",
         responsibilities: [
@@ -190,7 +190,7 @@ export const careersPage = {
         location: "Remote · U.S. only",
         type: "Full-time / contract",
         summary:
-          "Help tell the TalentTekPro story — drafts, media lists, social support, and campaign coordination that stay on brand.",
+          "Help tell the TalentTekPro story: drafts, media lists, social support, and campaign coordination that stay on brand.",
         about:
           "You’ll support PR and communications programs: outreach lists, draft copy, event support, and tracking coverage for a hybrid talent + delivery brand.",
         responsibilities: [
@@ -212,7 +212,7 @@ export const careersPage = {
   cta: {
     headline: "Ready to",
     headlineAccent: "build with us?",
-    support: "Tell us what you want to be known for — we’ll reply with next steps.",
+    support: "Tell us what you want to be known for: we’ll reply with next steps.",
   },
 } as const;
 

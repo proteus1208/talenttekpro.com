@@ -10,7 +10,7 @@ export const faqPage = {
   items: [
     {
       q: "What engagement models do you offer?",
-      a: "Fixed-scope projects, embedded squads, retainers, talent search, and managed delivery — alone or combined under one partner.",
+      a: "Fixed-scope projects, embedded squads, retainers, talent search, and managed delivery alone or combined under one partner.",
     },
     {
       q: "How quickly can you start?",
@@ -18,11 +18,11 @@ export const faqPage = {
     },
     {
       q: "Do you work with startups or only enterprise?",
-      a: "Both — from Series A ventures to Fortune-scale enterprises that need senior talent and shipping capacity.",
+      a: "Both: from Series A ventures to Fortune-scale enterprises that need senior talent and shipping capacity.",
     },
     {
       q: "Can we mix staffing and delivery?",
-      a: "Yes. Many clients start with a search, then embed a squad — or the reverse. We keep one success metric set across both.",
+      a: "Yes. Many clients start with a search, then embed a squad or the reverse. We keep one success metric set across both.",
     },
     {
       q: "What is your replacement policy?",
@@ -34,7 +34,7 @@ export const faqPage = {
     },
     {
       q: "Which time zones do you cover?",
-      a: "Americas and EU coverage as standard, with nearshore/offshore execution when the model calls for it — always with an onshore strategy lead.",
+      a: "Americas and EU coverage as standard, with nearshore/offshore execution when the model calls for it, always with an onshore strategy lead.",
     },
     {
       q: "Who owns the IP?",
@@ -42,7 +42,7 @@ export const faqPage = {
     },
     {
       q: "How does AI matching work?",
-      a: "Multi-signal routing across skills, seniority, timezone, and culture fit — with human recruiters owning the shortlist and eval gates.",
+      a: "Multi-signal routing across skills, seniority, timezone, and culture fit, with human recruiters owning the shortlist and eval gates.",
     },
     {
       q: "What is your communication cadence?",
@@ -51,6 +51,6 @@ export const faqPage = {
   ],
   cta: {
     headline: "Still deciding?",
-    support: "Send the open questions — we’ll answer plainly.",
+    support: "Send the open questions: we’ll answer plainly.",
   },
 } as const;

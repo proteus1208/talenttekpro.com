@@ -27,7 +27,7 @@ export const blogPage = {
     title: "Field notes from the",
     titleAccent: "engine room.",
     support:
-      "Essays and post-mortems from recruiters and engineers who shipped the work — talent, delivery, and the systems between them.",
+      "Essays and post-mortems from recruiters and engineers who shipped the work: talent, delivery, and the systems between them.",
   },
   stats: [
     { value: "6", label: "Field notes" },
@@ -61,25 +61,25 @@ export const blogPage = {
       },
       tags: ["RAG", "Routing", "Evals", "Latency"],
       takeaways: [
-        "Treat model choice as an operational control with scored gates — not a one-off prompt tweak.",
+        "Treat model choice as an operational control with scored gates, not a one-off prompt tweak.",
         "Log every route decision with the retrieval score that triggered it.",
         "Ship offline evals and online shadow traffic before users see a new route.",
       ],
       pullQuote:
-        "The fix is not a bigger prompt — it is a routing and evaluation system that treats model choice as an operational control.",
+        "The fix is not a bigger prompt. It is a routing and evaluation system that treats model choice as an operational control.",
       body: [
         {
           paragraphs: [
-            "Most RAG demos look sharp in a notebook and fall apart the first week of production traffic. Latency spikes, retrieval quality drifts, and the wrong model answers with confidence. Teams respond by stuffing more context into the prompt or swapping models mid-sprint — and the outage pattern repeats.",
+            "Most RAG demos look sharp in a notebook and fall apart the first week of production traffic. Latency spikes, retrieval quality drifts, and the wrong model answers with confidence. Teams respond by stuffing more context into the prompt or swapping models mid-sprint and the outage pattern repeats.",
             "We ship RAG as a gated pipeline: retrieve, score, route, generate, then verify. Each stage has a clear failure mode and a fallback that keeps answers useful when the preferred path is slow or low-confidence. That discipline is what separates a demo from a system you can operate on a Friday.",
           ],
         },
         {
           heading: "Gate model choice, don’t guess",
           paragraphs: [
-            "Cheap models handle high-volume, low-risk queries. Stronger models unlock when retrieval confidence is thin, the domain is regulated, or the user is mid-workflow. Routing rules are written as score thresholds and policy tags — not as one-off if-statements buried in the handler.",
+            "Cheap models handle high-volume, low-risk queries. Stronger models unlock when retrieval confidence is thin, the domain is regulated, or the user is mid-workflow. Routing rules are written as score thresholds and policy tags, not as one-off if-statements buried in the handler.",
             "We keep a short allowlist of models per environment and log every route decision with the retrieval score that triggered it. That audit trail is what makes Friday incidents diagnosable instead of folklore.",
-            "When a route fires unexpectedly often, the dashboard shows it. Product and ML review the threshold together — usually the retrieval index drifted, not the model itself.",
+            "When a route fires unexpectedly often, the dashboard shows it. Product and ML review the threshold together, usually the retrieval index drifted, not the model itself.",
           ],
         },
         {
@@ -93,7 +93,7 @@ export const blogPage = {
           heading: "What we measure in week one",
           paragraphs: [
             "p95 end-to-end latency by route, citation hit rate on a frozen eval pack, and fallback rate under peak. If fallback rate climbs, we investigate retrieval before we buy a larger model.",
-            "The result is a system the team can change without rewriting the product surface every sprint — and answers that still hold when traffic is ugly.",
+            "The result is a system the team can change without rewriting the product surface every sprint and answers that still hold when traffic is ugly.",
           ],
         },
       ],
@@ -103,7 +103,7 @@ export const blogPage = {
       category: "Hiring Ops",
       title: "Scorecards that predict time-to-productivity",
       excerpt:
-        "Interview signals that correlate with ramp — not just algorithm trivia.",
+        "Interview signals that correlate with ramp, not just algorithm trivia.",
       read: "6 min",
       date: "Feb 28, 2026",
       author: "Jordan Hale",
@@ -115,7 +115,7 @@ export const blogPage = {
       },
       tags: ["Scorecards", "Ramp", "Panels", "Rubrics"],
       takeaways: [
-        "Score for behaviors that show up in the first 30–60 days — not puzzle speed alone.",
+        "Score for behaviors that show up in the first 30–60 days, not puzzle speed alone.",
         "Use one shared rubric language across recruiters and hiring managers.",
         "Debrief with evidence first; recommendation second.",
       ],
@@ -124,7 +124,7 @@ export const blogPage = {
       body: [
         {
           paragraphs: [
-            "Most interview scorecards measure what is easy to ask, not what predicts ramp. Algorithm trivia and whiteboard puzzles feel rigorous — and often select for people who interview well rather than ship in your context.",
+            "Most interview scorecards measure what is easy to ask, not what predicts ramp. Algorithm trivia and whiteboard puzzles feel rigorous and often select for people who interview well rather than ship in your context.",
             "We design scorecards around time-to-productivity: the behaviors and artifacts that show up in the first 30–60 days on a real team. That shift changes who you hire and how fast they contribute.",
           ],
         },
@@ -132,7 +132,7 @@ export const blogPage = {
           heading: "Signals that travel",
           paragraphs: [
             "Work-sample reviews, system tradeoff discussions, and written decision notes correlate better with ramp than puzzle speed. Panels score against observable evidence, then debrief with a shared rubric before any hire recommendation.",
-            "When hiring managers and recruiters use the same scorecard language, feedback loops tighten — and you stop debating gut feel in Slack after the fact.",
+            "When hiring managers and recruiters use the same scorecard language, feedback loops tighten and you stop debating gut feel in Slack after the fact.",
           ],
         },
         {
@@ -160,7 +160,7 @@ export const blogPage = {
       },
       tags: ["Kubernetes", "CI/CD", "Canaries", "Rollback"],
       takeaways: [
-        "Promote the same build artifact across environments — never rebuild for prod.",
+        "Promote the same build artifact across environments, never rebuild for prod.",
         "Canaries need real traffic and real metrics, not a green health check alone.",
         "Make rollback a first-class pipeline path, not a hero move.",
       ],
@@ -175,14 +175,14 @@ export const blogPage = {
         {
           heading: "Kubernetes + Actions, without drama",
           paragraphs: [
-            "We use progressive rollouts with readiness gates, migration jobs that run before traffic shifts, and GitHub Actions that publish artifacts once and promote the same build across environments. Canaries get real traffic and real metrics — not a green health endpoint alone.",
+            "We use progressive rollouts with readiness gates, migration jobs that run before traffic shifts, and GitHub Actions that publish artifacts once and promote the same build across environments. Canaries get real traffic and real metrics, not a green health endpoint alone.",
             "Friday releases survive when rollback is a first-class path, not a hero move. If the canary fails, the previous revision is still warm and the pipeline already knows how to put it back.",
           ],
         },
         {
           heading: "Migrations that don’t strand traffic",
           paragraphs: [
-            "Schema changes land expand-contract. Features that depend on new columns stay dark until the expand step is verified. The deploy pipeline blocks promote if a migration job has not reported success — even if the container image is fine.",
+            "Schema changes land expand-contract. Features that depend on new columns stay dark until the expand step is verified. The deploy pipeline blocks promote if a migration job has not reported success, even if the container image is fine.",
           ],
         },
       ],
@@ -204,7 +204,7 @@ export const blogPage = {
       },
       tags: ["NestJS", "Stripe", "PostHog", "Multi-tenant"],
       takeaways: [
-        "Earn complexity — isolate tenants in data and auth before splitting infrastructure.",
+        "Earn complexity: isolate tenants in data and auth before splitting infrastructure.",
         "Instrument usage early so architecture decisions follow product truth.",
         "Billing and entitlements belong in one coherent model from day one.",
       ],
@@ -219,7 +219,7 @@ export const blogPage = {
         {
           heading: "From first invoice to multi-tenant",
           paragraphs: [
-            "Tenant isolation starts as disciplined data modeling and auth boundaries, then hardens into separate resources only when metrics demand it. Feature flags and usage events tell you when the MVP shape is lying — usually before the architecture does.",
+            "Tenant isolation starts as disciplined data modeling and auth boundaries, then hardens into separate resources only when metrics demand it. Feature flags and usage events tell you when the MVP shape is lying, usually before the architecture does.",
             "The goal is not a perfect stack on day one. It is a stack you can operate, observe, and evolve without a rewrite when the tenth customer asks for something the first never needed.",
           ],
         },
@@ -249,7 +249,7 @@ export const blogPage = {
       tags: ["Staff+", "Panels", "Debriefs", "Senior bar"],
       takeaways: [
         "Separate system design, influence, and execution into distinct sessions.",
-        "Start debriefs with scorecard evidence — never the hire recommendation.",
+        "Start debriefs with scorecard evidence, never the hire recommendation.",
         "Write prompts that force tradeoffs, not textbook recitation.",
       ],
       pullQuote:
@@ -263,7 +263,7 @@ export const blogPage = {
         {
           heading: "Panels with a shared bar",
           paragraphs: [
-            "We separate system design, leadership influence, and execution depth into distinct sessions with explicit rubrics. Debriefs start with evidence against the scorecard, then move to recommendation — never the reverse.",
+            "We separate system design, leadership influence, and execution depth into distinct sessions with explicit rubrics. Debriefs start with evidence against the scorecard, then move to recommendation, never the reverse.",
             "Candidates feel the difference: clearer prompts, fairer comparisons, and fewer “strong but vague” outcomes that waste everyone’s time.",
           ],
         },
@@ -293,7 +293,7 @@ export const blogPage = {
       tags: ["ADRs", "Embeds", "Tradeoffs", "Governance"],
       takeaways: [
         "Capture constraints in week one: compliance, latency, ownership, non-goals.",
-        "Keep ADRs short — context, decision, consequences — next to the code.",
+        "Keep ADRs short (context, decision, consequences) next to the code.",
         "Use ADRs to explain change cost when stakeholders rotate.",
       ],
       pullQuote:
@@ -301,14 +301,14 @@ export const blogPage = {
       body: [
         {
           paragraphs: [
-            "Feature velocity without decision memory creates the same debate every quarter. Architecture decision records (ADRs) are how we make tradeoffs durable — and how embedded teams avoid rebuilding context from Slack archaeology.",
+            "Feature velocity without decision memory creates the same debate every quarter. Architecture decision records (ADRs) are how we make tradeoffs durable and how embedded teams avoid rebuilding context from Slack archaeology.",
           ],
         },
         {
           heading: "Week-one discipline",
           paragraphs: [
             "In the first week of an embed we capture the constraints that already exist: compliance, latency budgets, ownership boundaries, and non-goals. New ADRs are short: context, decision, consequences. They live next to the code that depends on them.",
-            "When stakeholders change, the ADR still explains why the system looks the way it does — and what would have to be true to change it. That is how you ship features without feature theater.",
+            "When stakeholders change, the ADR still explains why the system looks the way it does and what would have to be true to change it. That is how you ship features without feature theater.",
           ],
         },
         {

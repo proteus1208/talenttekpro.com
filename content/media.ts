@@ -47,7 +47,7 @@ export const media = {
     id: "services-hero",
     src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
     prompt:
-      "Editorial services page hero illustration, 16:9. Deep navy ink background #051937. Abstract hybrid talent-and-delivery concept: two interlocking geometric systems — a cyan #00D2FF talent network of nodes on the left merging into a royal blue #1E60FF delivery lattice of modules on the right, joined at a luminous core. No people, no readable text, no logos, no purple. Premium flat/editorial hybrid CGI for TalentTekPro services.",
+      "Editorial services page hero illustration, 16:9. Deep navy ink background #051937. Abstract hybrid talent-and-delivery concept: two interlocking geometric systems: a cyan #00D2FF talent network of nodes on the left merging into a royal blue #1E60FF delivery lattice of modules on the right, joined at a luminous core. No people, no readable text, no logos, no purple. Premium flat/editorial hybrid CGI for TalentTekPro services.",
     alt: "Abstract talent network merging into a delivery lattice in navy, cyan, and royal blue.",
   } satisfies MediaAsset,
   processHero: {

@@ -12,7 +12,7 @@ import { cn } from "@/lib/cn";
 type ParallaxCopyProps = {
   children: React.ReactNode;
   className?: string;
-  /** Opposite of background — content rises while bg sinks */
+  /** Opposite of background: content rises while bg sinks */
   distance?: number;
 };
 

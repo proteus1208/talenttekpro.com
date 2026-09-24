@@ -12,7 +12,7 @@
 
 **Short descriptor (nav/footer):** Tech Talent & Delivery
 
-**Long descriptor:** Integrated talent acquisition, embedded engineering, and digital delivery — so you scale people and product on one accountable partner.
+**Long descriptor:** Integrated talent acquisition, embedded engineering, and digital delivery so you scale people and product on one accountable partner.
 
 ---
 
@@ -22,7 +22,7 @@
 |----|--------|
 | Concrete outcomes (time-to-hire, uptime, shipped increments) | Vague “synergy” / “disrupt” filler |
 | Senior, calm confidence | Hype, emoji, startup slang overload |
-| Hybrid clarity — talent *and* delivery in the same breath | Pretend we are only a staffing firm or only an agency |
+| Hybrid clarity: talent *and* delivery in the same breath | Pretend we are only a staffing firm or only an agency |
 | Honest scope (“what we don’t know yet”) | Inflated Fortune logos as decoration without relationship |
 
 **Sample microcopy**
@@ -120,7 +120,7 @@ Deep navy backgrounds, signal cyan for links/borders/indexes, royal blue for sec
 
 - **Wordmark:** `TalentTekPro` (no space). Capital T, T, P; “Tek” is the technical hinge.
 - **Mark (optional):** Interlocking **T** with a three-node pipeline (talent → match → ship). Nodes connected by a short path; teal on the center (match) node.
-- **Accent:** Teal on “Tek” *or* on the match node — pick one system and stay consistent. Preferred: teal match-node in the mark; wordmark stays solid white/ink.
+- **Accent:** Teal on “Tek” *or* on the match node: pick one system and stay consistent. Preferred: teal match-node in the mark; wordmark stays solid white/ink.
 
 ### Lockups
 
@@ -187,4 +187,4 @@ App icon: TalentTekPro pipeline-T mark centered on rounded-square mid navy #0A1F
 | Years experience | 5+ (Est. framing 2021+) |
 | Client satisfaction | 98% |
 
-Partner / logo marquee: use generic industry labels or licensed marks only — do not invent Fortune trademarks as endorsements.
+Partner / logo marquee: use generic industry labels or licensed marks only; do not invent Fortune trademarks as endorsements.

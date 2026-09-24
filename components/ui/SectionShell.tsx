@@ -19,7 +19,7 @@ type SectionEdgeProps = {
 
 /**
  * Paths fill from the wavy crest down past the baseline so they overlap into
- * the section face and hide its straight box edge — the curve itself is the border.
+ * the section face and hide its straight box edge: the curve itself is the border.
  */
 const PATHS: Record<SectionEdgeVariant, string> = {
   wave: "M0,50 C180,10 320,78 480,42 C640,8 720,70 900,38 C1080,6 1260,72 1440,28 L1440,100 L0,100 Z",
@@ -33,7 +33,7 @@ const PATHS: Record<SectionEdgeVariant, string> = {
 
 /**
  * Solid curved seam that overlaps the previous section. Fill must contrast with
- * the previous band so the wave reads as a clear border — never a straight cut.
+ * the previous band so the wave reads as a clear border, never a straight cut.
  */
 export function SectionEdge({
   fill,
@@ -63,7 +63,7 @@ export function SectionEdge({
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d={PATHS[variant]} fill={fill} />
-        {/* Seal strip under the curve — kills compositor hairlines */}
+        {/* Seal strip under the curve: kills compositor hairlines */}
         <rect x="0" y="88" width="1440" height="20" fill={fill} />
       </svg>
     </div>
