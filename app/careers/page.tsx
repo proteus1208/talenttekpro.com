@@ -152,25 +152,28 @@ export default function CareersPage() {
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#64748B]">
               {careersPage.roles.applyNote}
             </p>
-            <ul className="mt-10 divide-y divide-[#051937]/10 border-y border-[#051937]/10">
+            <ul className="mt-10 divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
               {careersPage.roles.items.map((role) => (
                 <li
                   key={role.slug}
                   className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between"
                 >
-                  <div>
+                  <div className="min-w-0 max-w-2xl">
                     <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#94A3B8] uppercase">
-                      {role.track}
+                      {role.track} · {role.type}
                     </p>
                     <p className="card-title mt-1.5">{role.title}</p>
                     <p className="mt-1 text-sm text-[#64748B]">{role.location}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[#64748B]">
+                      {role.summary}
+                    </p>
                   </div>
                   <Button
                     href={`/careers/${role.slug}`}
                     variant="secondary"
                     className="shrink-0 rounded-full"
                   >
-                    Apply →
+                    View & apply →
                   </Button>
                 </li>
               ))}

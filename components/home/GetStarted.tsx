@@ -15,9 +15,15 @@ export function GetStarted() {
     <section className="relative z-[1] overflow-visible bg-[#F8FBFE]">
       <svg width="0" height="0" className="absolute" aria-hidden>
         <defs>
-            <clipPath id="cta-left-curve" clipPathUnits="objectBoundingBox">
-              <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
-            </clipPath>
+          {/*
+            Same curve edge as the old left-wash (68% × H0.94 / C0.72…),
+            expressed on the full section so the photo is clipped flush
+            top → bottom (no hairline above the image).
+            0.94*0.68 ≈ 0.639, 0.72*0.68 ≈ 0.490
+          */}
+          <clipPath id="cta-photo-curve" clipPathUnits="objectBoundingBox">
+            <path d="M0.639,0 C0.490,0.28 0.490,0.72 0.639,1 L1,1 L1,0 Z" />
+          </clipPath>
         </defs>
       </svg>
 
@@ -27,29 +33,19 @@ export function GetStarted() {
         <SoftRegion variant="softSquare" />
       </ScrollShape>
 
-      {/* Right photo plane */}
-      <div className="absolute inset-y-0 right-0 z-0 hidden w-[48%] lg:block xl:w-[46%]">
+      {/*
+        Photo fills the section, then is clipped to the original curve.
+        Left side is just the section background — nothing to misalign at the top.
+        (No CSS filter here — filter shrinks the clipped paint and leaves a top scratch.)
+      */}
+      <div
+        className="absolute inset-0 z-0 hidden lg:block"
+        style={{ clipPath: "url(#cta-photo-curve)" }}
+      >
         <PromptMedia
           asset={media.getStarted}
           className="absolute inset-0 h-full w-full"
-          imageClassName="object-[center_30%]"
-        />
-      </div>
-
-      {/*
-        Curved left wash pushed further right; soft shadow casts only to the right
-        onto the photo (no downward/bottom bloom).
-      */}
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[68%] lg:block xl:w-[70%]"
-        style={{
-          filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
-        }}
-        aria-hidden
-      >
-        <div
-          className="h-full w-full bg-[#F8FBFE]"
-          style={{ clipPath: "url(#cta-left-curve)" }}
+          imageClassName="object-[right_center]"
         />
       </div>
 
