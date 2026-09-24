@@ -1,10 +1,10 @@
 export const contactPage = {
   metaTitle: "Contact | TalentTekPro",
   metaDescription:
-    "Start a project or get a quote — talent, delivery, or both.",
+    "Start a project or get a quote: talent, delivery, or both.",
   hero: {
     eyebrow: "Contact",
-    title: "Tell us what you need to hire — or ship.",
+    title: "Tell us what you need to hire or ship.",
     support:
       "Share a short brief. We’ll reply with next steps for talent, delivery, or a hybrid engagement.",
   },
@@ -12,7 +12,7 @@ export const contactPage = {
     headline: "Brief us once.",
     headlineAccent: "Hear back with a plan.",
     support:
-      "Whether you need senior talent, an embedded squad, or a scoped delivery engagement — one form is enough to start a serious conversation.",
+      "Whether you need senior talent, an embedded squad, or a scoped delivery engagement: one form is enough to start a serious conversation.",
   },
   needs: [
     {
@@ -58,7 +58,7 @@ export const contactPage = {
       {
         step: "02",
         title: "We reply with next steps",
-        body: "Expect a clear response within 1–2 business days — not an auto-reply.",
+        body: "Expect a clear response within 1–2 business days, not an auto-reply.",
       },
       {
         step: "03",
@@ -74,6 +74,6 @@ export const contactPage = {
     focusLabel: "Best suited for",
     focusValue:
       "Series A–enterprise teams needing senior talent, embedded squads, or production delivery.",
-    note: "Include stack, roles, and timing constraints if you have them — it shortens the back-and-forth.",
+    note: "Include stack, roles, and timing constraints if you have them. It shortens the back-and-forth.",
   },
 } as const;

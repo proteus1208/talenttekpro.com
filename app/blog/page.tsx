@@ -70,7 +70,7 @@ export default function BlogPage() {
               <span className="hero-gradient-text">articles.</span>
             </h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-[#64748B]">
-              Filter by topic, then open any note for the full write-up —
+              Filter by topic, then open any note for the full write-up:
               takeaways, tradeoffs, and what we actually ship.
             </p>
             <div className="mt-10">

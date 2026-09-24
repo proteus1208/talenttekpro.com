@@ -62,7 +62,7 @@ export default function ContactPage() {
                       </h3>
                     </div>
                     <p className="max-w-[14rem] text-right text-xs leading-relaxed text-[#94A3B8]">
-                      All fields required — so we can reply with a useful next step.
+                      All fields required so we can reply with a useful next step.
                     </p>
                   </div>
                   <ContactForm />

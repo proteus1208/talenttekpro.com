@@ -116,7 +116,7 @@ export function Solutions() {
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#64748B] md:text-lg">
               We provide AI-assisted tech talent and embedded engineering squads
-              to help you build, scale, and innovate faster — without the hiring
+              to help you build, scale, and innovate faster, without the hiring
               headaches.
             </p>
           </div>

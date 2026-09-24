@@ -3,7 +3,7 @@ export const engagementModels = [
     id: "project",
     name: "Project-Based",
     aim: "Fixed scope delivery",
-    body: "Clear milestones, acceptance criteria, and a delivery team sized to the outcome — from discovery through launch.",
+    body: "Clear milestones, acceptance criteria, and a delivery team sized to the outcome: from discovery through launch.",
     bestFor: "Defined builds & migrations",
     price: "From $75k",
   },
@@ -11,7 +11,7 @@ export const engagementModels = [
     id: "squad",
     name: "Embedded Squad",
     aim: "Senior team in your org",
-    body: "A cross-functional pod that works inside your rituals, tools, and roadmap — then leaves knowledge behind.",
+    body: "A cross-functional pod that works inside your rituals, tools, and roadmap, then leaves knowledge behind.",
     bestFor: "Product velocity & platforms",
     price: "From $45k/mo",
   },
@@ -43,7 +43,7 @@ export const engagementModels = [
     id: "hybrid",
     name: "Hybrid Engagement",
     aim: "Talent + delivery as one",
-    body: "Search and embed under one accountable partner — hire the bar, ship the roadmap, and keep decisions coherent.",
+    body: "Search and embed under one accountable partner: hire the bar, ship the roadmap, and keep decisions coherent.",
     bestFor: "Scale people and product",
     price: "Scoped together",
   },
@@ -52,22 +52,22 @@ export const engagementModels = [
 export const servicesPage = {
   metaTitle: "Services | TalentTekPro",
   metaDescription:
-    "Eight disciplines under one accountable partner — talent acquisition, embedded squads, AI, cloud, and engineering.",
+    "Eight disciplines under one accountable partner: talent acquisition, embedded squads, AI, cloud, and engineering.",
   hero: {
     eyebrow: "Services",
     title: "Eight disciplines. One",
     titleAccent: "accountable partner.",
     support:
-      "Senior recruiters and engineers under one roof — coherent hiring, faster decisions, teams that stay through launch.",
+      "Senior recruiters and engineers under one roof: coherent hiring, faster decisions, teams that stay through launch.",
   },
   integrated: {
     headline: "Eight disciplines, one",
     headlineAccent: "accountable team.",
-    body: "Talent, embedded squads, AI, cloud, and engineering — so architecture and workforce plans don’t diverge.",
+    body: "Talent, embedded squads, AI, cloud, and engineering so architecture and workforce plans don’t diverge.",
     pillars: [
       {
         title: "One intake",
-        body: "Role, roadmap, and constraints captured once — recruiters and engineers share the same brief.",
+        body: "Role, roadmap, and constraints captured once: recruiters and engineers share the same brief.",
       },
       {
         title: "Shared metrics",
@@ -75,7 +75,7 @@ export const servicesPage = {
       },
       {
         title: "No handoff theater",
-        body: "When talent and delivery sit under one partner, decisions stick through launch — not just kickoff.",
+        body: "When talent and delivery sit under one partner, decisions stick through launch, not just kickoff.",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const servicesPage = {
     headline: "Flexible talent.",
     headlineAccent: "Real impact.",
     support:
-      "We provide AI-assisted tech talent and embedded engineering squads to help you build, scale, and innovate faster — without the hiring headaches.",
+      "We provide AI-assisted tech talent and embedded engineering squads to help you build, scale, and innovate faster, without the hiring headaches.",
     items: [
       {
         id: "talent",
@@ -161,11 +161,11 @@ export const servicesPage = {
   models: {
     headline: "Engagement",
     headlineAccent: "models.",
-    support: "Pick a shape that fits — or combine them under one partner.",
+    support: "Pick a shape that fits or combine them under one partner.",
     items: engagementModels,
   },
   cta: {
-    headline: "Let’s scope your next hire — or",
+    headline: "Let’s scope your next hire: or",
     headlineAccent: "your next release.",
     support: "Tell us what you need: talent, delivery, or both.",
   },

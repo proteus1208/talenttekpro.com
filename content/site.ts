@@ -1,5 +1,5 @@
 /**
- * Site chrome & IA — swap later for CMS without rewriting components.
+ * Site chrome & IA: swap later for CMS without rewriting components.
  */
 
 export const site = {
@@ -9,7 +9,7 @@ export const site = {
   tagline: "Talent that ships. Technology that scales.",
   descriptor: "Tech Talent & Delivery",
   description:
-    "Integrated talent acquisition, embedded engineering, and digital delivery — so you scale people and product on one accountable partner.",
+    "Integrated talent acquisition, embedded engineering, and digital delivery so you scale people and product on one accountable partner.",
   email: "contact@talenttekpro.com",
   copyrightYear: 2026,
   est: 2021,

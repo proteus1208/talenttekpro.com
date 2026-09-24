@@ -1,6 +1,6 @@
 # Landing Page Hero Video
 
-Full-bleed background (or background plane) for `/` hero. Site UI supplies all copy — **no titles, logos, or captions burned into the video**.
+Full-bleed background (or background plane) for `/` hero. Site UI supplies all copy: **no titles, logos, or captions burned into the video**.
 
 ---
 
@@ -8,11 +8,11 @@ Full-bleed background (or background plane) for `/` hero. Site UI supplies all c
 
 **Split narrative in 12–15 seconds:** human talent energy → production delivery energy → quiet logo-safe negative space.
 
-1. **Talent** — interview / scorecard / focused candidate conversation  
-2. **Match cut** — hands on keyboard / pair programming / deploy terminal  
-3. **Resolve** — abstract pipeline nodes (talent → match → ship) dissolving into dark field for HTML wordmark overlay  
+1. **Talent**: interview / scorecard / focused candidate conversation  
+2. **Match cut**: hands on keyboard / pair programming / deploy terminal  
+3. **Resolve**: abstract pipeline nodes (talent → match → ship) dissolving into dark field for HTML wordmark overlay  
 
-**Mood:** Confident, precise, human. Editorial — not stock handshake, not purple AI sci-fi.
+**Mood:** Confident, precise, human. Editorial, not stock handshake, not purple AI sci-fi.
 
 **Audio:** Optional low ambient bed (room tone + soft synth pulse). **No VO.** Mute-autoplay friendly; assume many users start muted.
 
@@ -98,7 +98,7 @@ Still frame from a cinematic brand film, modern dark office interview at a lapto
 ```
 
 - **9:16 stories / mobile full-bleed:** keep subject in vertical center third.  
-- **Desktop:** left 40% may hold HTML text stack — keep that region less busy after t=10s (prefer dark field).  
+- **Desktop:** left 40% may hold HTML text stack: keep that region less busy after t=10s (prefer dark field).  
 - Do not place critical action in the top 80px (nav) or bottom 100px (CTA on mobile).
 
 ---

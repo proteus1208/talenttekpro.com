@@ -33,7 +33,7 @@ class WebGLErrorBoundary extends Component<
   }
 }
 
-/** Dense orbital lattice — not three lonely spheres. */
+/** Dense orbital lattice, not three lonely spheres. */
 function LatticeWorld({
   mouse,
 }: {

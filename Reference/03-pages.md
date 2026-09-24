@@ -1,12 +1,12 @@
-# Pages — Titles, Content Aims & Image Prompts
+# Pages: Titles, Content Aims & Image Prompts
 
-All routes for the TalentTekPro scenario. Metrics and case studies are **fixtures** — replace before production.
+All routes for the TalentTekPro scenario. Metrics and case studies are **fixtures**: replace before production.
 
 Image prompts assume editorial photography / Midjourney-style generation: dark ink atmosphere, teal practical light, no text overlays in-frame, no logos unless specified.
 
 ---
 
-## `/` — Home
+## `/`: Home
 
 **Document title:** TalentTekPro | Tech Talent & Delivery  
 **Aim:** Convert visitors; establish hybrid brand (talent + delivery) in one scroll narrative.
@@ -18,17 +18,17 @@ Image prompts assume editorial photography / Midjourney-style generation: dark i
 | Brand | TalentTekPro |
 | Index | `001 / TalentTekPro / Est. 2021` |
 | Headline options (pick one) | **Build the team. Ship the system.** · **Talent that ships.** · **Match senior talent. Deliver production software.** |
-| Support | AI-assisted tech talent and embedded engineering squads — one partner from shortlist to production. |
+| Support | AI-assisted tech talent and embedded engineering squads: one partner from shortlist to production. |
 | CTAs | `Start a project →` · `Explore case studies` |
-| Media | Full-bleed hero video — see [04-landing-video.md](./04-landing-video.md) |
+| Media | Full-bleed hero video: see [04-landing-video.md](./04-landing-video.md) |
 
 ### Manifesto (002)
 
-**Headline:** TalentTekPro charts how enterprises hire and build —  
+**Headline:** TalentTekPro charts how enterprises hire and build:  
 **Body:** consulting-led talent strategy, AI-powered matching, squads that stay through launch. We measure every engagement by time-to-productivity and systems that hold in production.  
 **Image required:** yes  
 
-**Image prompt — manifesto:**
+**Image prompt: manifesto:**
 ```text
 Editorial photo, cross-functional workshop in a modern dark-toned office, senior engineers and hiring lead reviewing a laptop and whiteboard, soft cyan accent lighting #00D2FF, charcoal shadows, shallow depth of field, cinematic 16:9, no text, no logos, diverse professionals, confident collaborative mood
 ```
@@ -45,7 +45,7 @@ No hero-style image; optional faint dashboard crop as background wash only.
 **Eyebrow:** Platform / TalentTekPro  
 **Headline:** Real-time talent & delivery  
 **Tabs:** Talent OS · AI Match · Ship Velocity  
-**Copy aim:** Same command surface our recruiters and delivery leads use — funnel health, match routing, sprint velocity.  
+**Copy aim:** Same command surface our recruiters and delivery leads use: funnel health, match routing, sprint velocity.  
 **Image:** UI is coded mock; optional device chrome only. No photo required.
 
 ### Case studies (005)
@@ -54,7 +54,7 @@ No hero-style image; optional faint dashboard crop as background wash only.
 **Aim:** 4–5 featured tiles linking to `/projects/...`  
 **Fixtures:** Dating platform squad · Healthcare ops panel · Headless commerce · Office booking · Pipeline inspection (mix staffing + build)  
 
-**Image prompt — case cover template:**
+**Image prompt: case cover template:**
 ```text
 Premium product UI mockup of [APP TYPE] on a laptop in a dim studio, edge lighting teal and royal blue, charcoal backdrop #051937, shallow depth, 16:9, no readable brand names, photoreal
 ```
@@ -71,7 +71,7 @@ Banking & Finance · Healthcare · Manufacturing · Retail & CPG · Energy · Te
 
 ### Approach teaser (008)
 
-**Headline:** Unlock capacity — people and platforms.  
+**Headline:** Unlock capacity: people and platforms.  
 **Bullets:** Customized solutions · Quality & reliability · AI-native matching & delivery · Global delivery  
 **CTA:** `See our process →` → `/process`  
 
@@ -101,7 +101,7 @@ Three questions: engagement models · how fast we start · startups vs enterpris
 ### Get started (013)
 
 **Headline:** Ready to explore your possibilities? Talk to us today.  
-**Support:** Free consultancy — talent, delivery, or both.  
+**Support:** Free consultancy: talent, delivery, or both.  
 **CTA:** Contact · `contact@talenttekpro.com`  
 
 **Image prompt:**
@@ -111,7 +111,7 @@ Enterprise leadership consultation, wide shot, warm and teal practical lights in
 
 ---
 
-## `/services` — Services
+## `/services`: Services
 
 **Document title:** Services | TalentTekPro  
 **Aim:** Explain the hybrid offer and engagement models; drive proposal CTA.
@@ -123,7 +123,7 @@ Enterprise leadership consultation, wide shot, warm and teal practical lights in
 | Breadcrumb | Home / Services |
 | Eyebrow | Capabilities / 08 Disciplines |
 | H1 | Eight disciplines. One accountable partner. |
-| Support | Senior recruiters and engineers under one roof — coherent hiring, faster decisions, teams that stay through launch. |
+| Support | Senior recruiters and engineers under one roof: coherent hiring, faster decisions, teams that stay through launch. |
 | Image | Required |
 
 **Image prompt:**
@@ -134,7 +134,7 @@ Modern technology workspace, wide desk with dual monitors showing code and a hir
 ### Integrated delivery band
 
 **Headline:** Eight disciplines, one accountable team.  
-**Body:** Talent, embedded squads, AI, cloud, and engineering — so architecture and workforce plans don’t diverge.
+**Body:** Talent, embedded squads, AI, cloud, and engineering so architecture and workforce plans don’t diverge.
 
 **Image prompt:**
 ```text
@@ -154,11 +154,11 @@ Engineers building enterprise software in a collaborative bay, candid documentar
 | 07 | Consulting & Workforce Strategy | Advice that binds talent + tech | Roadmaps · GCC / hub setup · Diligence · Vendor selection |
 | 08 | Managed Delivery / SRE | Keep it running | 24/7 monitoring · Incidents · Capacity · Cost optimization |
 
-Optional small icon art per discipline — geometric line icons in teal, not emoji.
+Optional small icon art per discipline: geometric line icons in teal, not emoji.
 
 **Icon set prompt (optional):**
 ```text
-Set of 8 minimal line icons, single weight, cyan #00D2FF on transparent, subjects: people network, team nodes, contract handshake abstract, AI node, code brackets, cloud, compass strategy, heartbeat monitor — flat vector, consistent 24px grid, no fill, no text
+Set of 8 minimal line icons, single weight, cyan #00D2FF on transparent, subjects: people network, team nodes, contract handshake abstract, AI node, code brackets, cloud, compass strategy, heartbeat monitor: flat vector, consistent 24px grid, no fill, no text
 ```
 
 ### Engagement models
@@ -173,7 +173,7 @@ Set of 8 minimal line icons, single weight, cyan #00D2FF on transparent, subject
 
 ### Closing CTA
 
-**Headline:** Let’s scope your next hire — or your next release.  
+**Headline:** Let’s scope your next hire or your next release.  
 **CTA:** `Request a Proposal →`
 
 **Image prompt:**
@@ -183,7 +183,7 @@ Enterprise business and technology leadership walking a bright-dark corridor wit
 
 ---
 
-## `/projects` — Case Studies
+## `/projects`: Case Studies
 
 **Document title:** Projects | TalentTekPro portfolio of shipped work & talent wins  
 **Aim:** Proof; filterable index of staffing + product delivery stories.
@@ -195,7 +195,7 @@ Enterprise business and technology leadership walking a bright-dark corridor wit
 | Breadcrumb | Home / Projects |
 | Eyebrow | Projects / Case Studies |
 | H1 | Every team we placed. Every system we put into production. |
-| Support | Filter by type, then open the full story — hiring outcomes and shipped product. |
+| Support | Filter by type, then open the full story: hiring outcomes and shipped product. |
 
 No full-bleed photo required; typography-led hero is fine. Optional:
 
@@ -230,7 +230,7 @@ Abstract top-down desk flat lay: laptop, badge lanyard, notebook with sketches o
 
 ### Bottom CTA
 
-**Headline:** Have a challenge like these? Let’s build the team — and the product.  
+**Headline:** Have a challenge like these? Let’s build the team and the product.  
 **CTA:** `Start a Project →`
 
 **Image prompt:**
@@ -240,7 +240,7 @@ Client partnership workshop, sticky notes on glass, two people pointing at a roa
 
 ---
 
-## `/process` — Our Approach
+## `/process`: Our Approach
 
 **Document title:** Approach | How We Work | TalentTekPro  
 **Aim:** Build trust with a clear hybrid process; reduce sales friction.
@@ -290,7 +290,7 @@ Phase Scale: NOC-style wall with calm green status lights, wide, 4:3
 
 ---
 
-## `/about` — About
+## `/about`: About
 
 **Document title:** About | TalentTekPro  
 **Aim:** Origin, principles, credibility; humanize the hybrid model.
@@ -312,7 +312,7 @@ Consulting session with enterprise leadership, confident gestures, dark modern b
 ### Who we are
 
 **Headline:** Partners in talent and digital transformation.  
-**Body:** Strategic hiring plus hands-on engineering — embedding senior people who ship production systems, not slide decks alone.
+**Body:** Strategic hiring plus hands-on engineering: embedding senior people who ship production systems, not slide decks alone.
 
 **Image prompt:**
 ```text
@@ -323,29 +323,29 @@ Product design review with stakeholders around a large monitor, Figma-like UI bl
 
 Reuse fixture counters (projects, clients, team, offices, countries, years).
 
-### Principles — Six rules we don’t break
+### Principles: Six rules we don’t break
 
 | # | Title | Aim |
 |---|-------|-----|
 | I | Senior teams only | No juniors learning on your dime for client-critical work. |
-| II | Ship the foundation first | Auth, observability, pipelines — before feature theater. |
+| II | Ship the foundation first | Auth, observability, pipelines, before feature theater. |
 | III | AI-native by default | Matching and delivery automation embedded in the practice. |
 | IV | Honest estimates | We say what we don’t know before we price discovery. |
 | V | Global delivery | Onshore strategy with near/offshore execution. |
-| VI | Outcomes over output | Time-to-productivity, revenue, risk — not vanity story points. |
+| VI | Outcomes over output | Time-to-productivity, revenue, risk, not vanity story points. |
 
 ### Timeline
 
 | Year | Event |
 |------|--------|
-| 2021 | TalentTekPro founded — tech talent + delivery thesis. |
+| 2021 | TalentTekPro founded: tech talent + delivery thesis. |
 | 2022 | Expanded Americas / EU remote practice. |
 | 2024 | Strengthened AI matching + multi-hub delivery. |
 | 2026 | 50+ projects & placements; 2+ hubs; 40+ clients. *(fixture)* |
 
 ---
 
-## `/blog` — Blog
+## `/blog`: Blog
 
 **Document title:** Blog | TalentTekPro field notes & essays  
 **Aim:** SEO and authority across talent ops + engineering.
@@ -356,7 +356,7 @@ Reuse fixture counters (projects, clients, team, offices, countries, years).
 |-------|---------|
 | Breadcrumb | Home / Blog |
 | Eyebrow | Journal / Entries |
-| H1 | Field notes from the engine room — and the hiring floor. |
+| H1 | Field notes from the engine room and the hiring floor. |
 | Support | Essays and post-mortems from recruiters and engineers who shipped the work. |
 
 Typography-led; no required hero image.
@@ -382,7 +382,7 @@ Editorial blog header illustration, abstract but grounded: [TOPIC SYMBOL], flat/
 
 ---
 
-## `/careers` — Careers
+## `/careers`: Careers
 
 **Document title:** Careers | Join TalentTekPro  
 **Aim:** Attract senior talent for recruiting, engineering, and delivery ops.
@@ -394,7 +394,7 @@ Editorial blog header illustration, abstract but grounded: [TOPIC SYMBOL], flat/
 | Breadcrumb | Home / Careers |
 | Eyebrow | Careers / Join Us |
 | H1 | Build the work you want to be known for. |
-| Support | We hire exceptional people, pay competitively, and give them problems that compound — GenAI platforms, enterprise delivery, and talent systems. |
+| Support | We hire exceptional people, pay competitively, and give them problems that compound: GenAI platforms, enterprise delivery, and talent systems. |
 
 **Image prompt:**
 ```text
@@ -446,7 +446,7 @@ Same theme, lighter content. Each: short H1, 1–2 sections, CTA or legal body, 
 **Title:** Pricing | TalentTekPro  
 **Aim:** Transparent starting points; push custom scoping.  
 **Content:** Repeat engagement models table from Services; note that talent search fees and delivery SOWs are scoped after discovery.  
-**Image:** optional — reuse services leadership corridor prompt.
+**Image:** optional: reuse services leadership corridor prompt.
 
 ### `/faq`
 
@@ -476,8 +476,8 @@ Calm reception desk in a modern tech office at night, soft teal signage glow (bl
 | Context | Primary | Secondary |
 |---------|---------|-----------|
 | Marketing pages | Start a project → | Explore case studies |
-| Services | Request a Proposal → | — |
-| Careers | View open roles → / Apply → | — |
+| Services | Request a Proposal → | - |
+| Careers | View open roles → / Apply → | - |
 | Blog | Read article | Read all |
 
 Primary button: ember fill, ink text or white text. Secondary: ghost / teal text link with arrow.

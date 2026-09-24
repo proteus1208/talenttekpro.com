@@ -52,7 +52,7 @@ type SoftRegionProps = {
   className?: string;
 };
 
-/** Soft geometric region — straight edges, smooth fillets only */
+/** Soft geometric region: straight edges, smooth fillets only */
 export function SoftRegion({ variant, className }: SoftRegionProps) {
   return (
     <svg

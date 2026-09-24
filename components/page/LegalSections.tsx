@@ -17,7 +17,7 @@ export function LegalSections({ sections }: { sections: readonly Section[] }) {
             ))}
           </div>
           <p className="mt-12 text-xs text-faint">
-            Scenario legal copy for the TalentTekPro marketing site — replace with counsel-approved text before production.
+            Scenario legal copy for the TalentTekPro marketing site: replace with counsel-approved text before production.
           </p>
         </RevealOnScroll>
       </Container>

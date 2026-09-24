@@ -102,7 +102,7 @@ export function CareerApplyForm({ roleTitle }: CareerApplyFormProps) {
       // Fall through to mailto + local file hand-off.
     }
 
-    // No mail provider configured — open a draft and keep the file ready to attach.
+    // No mail provider configured: open a draft and keep the file ready to attach.
     const subject = encodeURIComponent(`Application: ${roleTitle}`);
     const body = encodeURIComponent(
       [
@@ -139,7 +139,7 @@ export function CareerApplyForm({ roleTitle }: CareerApplyFormProps) {
       <div className="rounded-sm border border-[#1E60FF]/20 bg-white px-4 py-5">
         <p className="text-sm font-medium text-[#051937]">Application sent.</p>
         <p className="mt-2 text-sm leading-relaxed text-[#64748B]">
-          Thanks — we received your résumé and will reply with next steps.
+          Thanks. We received your résumé and will reply with next steps.
         </p>
         <button
           type="button"
@@ -247,7 +247,7 @@ export function CareerApplyForm({ roleTitle }: CareerApplyFormProps) {
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Why this role — and what you want to be known for."
+          placeholder="Why this role, and what you want to be known for."
           className={cn(field, "resize-y")}
         />
       </label>

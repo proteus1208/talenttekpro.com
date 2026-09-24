@@ -72,7 +72,7 @@ contact@talenttekpro.com
 
 Short line under name: Integrated talent acquisition and digital delivery.
 
-### Column — Company
+### Column: Company
 
 | Label | Route |
 |-------|-------|
@@ -82,7 +82,7 @@ Short line under name: Integrated talent acquisition and digital delivery.
 | Our Approach | `/process` |
 | Careers | `/careers` |
 
-### Column — Resources
+### Column: Resources
 
 | Label | Route |
 |-------|-------|
@@ -91,7 +91,7 @@ Short line under name: Integrated talent acquisition and digital delivery.
 | FAQ | `/faq` |
 | Contact | `/contact` |
 
-### Column — Legal
+### Column: Legal
 
 | Label | Route |
 |-------|-------|
@@ -99,7 +99,7 @@ Short line under name: Integrated talent acquisition and digital delivery.
 | Terms | `/terms` |
 | Cookies | `/cookies` |
 
-Also list `contact@talenttekpro.com` as a mailto link under Legal or under brand block (GeniusXLab places email near Legal — either is fine; prefer brand block + Legal links without duplicating three times).
+Also list `contact@talenttekpro.com` as a mailto link under Legal or under brand block (GeniusXLab places email near Legal: either is fine; prefer brand block + Legal links without duplicating three times).
 
 ### Bottom bar
 
@@ -111,7 +111,7 @@ Privacy    Terms    Cookies
 
 Repeat Privacy / Terms / Cookies as text links for quick access (same targets as Legal column).
 
-Optional: scroll percent indicator (`scroll 0%`) as micro interaction — non-essential.
+Optional: scroll percent indicator (`scroll 0%`) as micro interaction: non-essential.
 
 ---
 

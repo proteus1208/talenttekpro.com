@@ -82,7 +82,7 @@ export async function POST(request: Request) {
       from,
       to: [to],
       reply_to: email,
-      subject: `TalentTekPro inquiry — ${need} — ${company}`,
+      subject: `TalentTekPro inquiry: ${need} / ${company}`,
       text,
     }),
   });

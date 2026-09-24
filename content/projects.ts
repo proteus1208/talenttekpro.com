@@ -28,7 +28,7 @@ export const projectsPage = {
     title: "Every team we placed. Every system we",
     titleAccent: "put into production.",
     support:
-      "Filter by type, then open the full story — hiring outcomes and shipped product.",
+      "Filter by type, then open the full story: hiring outcomes and shipped product.",
   },
   stats: [
     { label: "case studies", value: "9" },
@@ -40,12 +40,12 @@ export const projectsPage = {
   list: {
     headline: "Featured",
     headlineAccent: "work.",
-    support: "Talent placements and production systems — filter to find your pattern.",
+    support: "Talent placements and production systems: filter to find your pattern.",
   },
   cta: {
     headline: "Have a challenge like these?",
     headlineAccent: "Let’s build.",
-    support: "We’ll assemble the team — and ship the product — under one partner.",
+    support: "We’ll assemble the team and ship the product under one partner.",
   },
 } as const;
 
@@ -57,7 +57,7 @@ export const projectCases: ProjectCase[] = [
     filters: ["Digital Product"],
     year: "2024",
     summary:
-      "Real-time matching product with an embedded FE/BE squad — live updates that stay responsive at scale.",
+      "Real-time matching product with an embedded FE/BE squad: live updates that stay responsive at scale.",
     outcome: [
       "Embedded squad through launch",
       "Sub-second match refresh under load",
@@ -73,7 +73,7 @@ export const projectCases: ProjectCase[] = [
     filters: ["Digital Product"],
     year: "2023",
     summary:
-      "Live ops panel for appointments and metrics — secure backend streaming into a calm control surface.",
+      "Live ops panel for appointments and metrics: secure backend streaming into a calm control surface.",
     outcome: [
       "HIPAA-minded architecture patterns",
       "Ops dashboard adopted by care coordinators",
@@ -164,7 +164,7 @@ export const projectCases: ProjectCase[] = [
     filters: ["Digital Product", "Platform"],
     year: "2025",
     summary:
-      "Bridge from raw industrial data to human decisions — maps, streams, and operator-ready views.",
+      "Bridge from raw industrial data to human decisions: maps, streams, and operator-ready views.",
     outcome: [
       "Map-centric operator console",
       "Streaming data into decision views",
@@ -180,7 +180,7 @@ export const projectCases: ProjectCase[] = [
     filters: ["Talent"],
     year: "2025",
     summary:
-      "Six senior hires in 90 days for a platform pod — with an embed option after acceptance.",
+      "Six senior hires in 90 days for a platform pod, with an embed option after acceptance.",
     outcome: [
       "6 senior hires in 90 days",
       "Scorecard-driven interviewing",
@@ -199,7 +199,7 @@ export function projectMedia(c: ProjectCase) {
   return caseMedia(c.mediaIndex);
 }
 
-/** Landing / shared project showcase — single source for cards & teasers. */
+/** Landing / shared project showcase: single source for cards & teasers. */
 export type Project = {
   title: string;
   year: string;
@@ -220,7 +220,7 @@ export const projects: Project[] = [
     category: "Web App",
     tags: ["React", "NestJS", "WebSockets"],
     description:
-      "Real-time matching product with an embedded FE/BE squad — live updates that stay responsive at scale.",
+      "Real-time matching product with an embedded FE/BE squad: live updates that stay responsive at scale.",
     href: "/projects/dating-web-app",
     image: {
       src: caseMedia(0).src,
@@ -234,7 +234,7 @@ export const projects: Project[] = [
     category: "Healthcare",
     tags: ["React", "Laravel"],
     description:
-      "Live ops panel for appointments and metrics — secure backend streaming into a calm control surface.",
+      "Live ops panel for appointments and metrics: secure backend streaming into a calm control surface.",
     href: "/projects/healthcare-management",
     image: {
       src: caseMedia(1).src,
@@ -275,7 +275,7 @@ export const projects: Project[] = [
     category: "Industrial",
     tags: ["Vue", "Nuxt"],
     description:
-      "Bridge from raw industrial data to human decisions — maps, streams, and operator-ready views.",
+      "Bridge from raw industrial data to human decisions: maps, streams, and operator-ready views.",
     href: "/projects/pipeline-inspection",
     image: {
       src: caseMedia(4).src,

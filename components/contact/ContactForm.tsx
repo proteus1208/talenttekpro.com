@@ -59,7 +59,7 @@ export function ContactForm() {
     }
 
     const subject = encodeURIComponent(
-      `TalentTekPro inquiry — ${need} — ${company || "No company"}`,
+      `TalentTekPro inquiry: ${need} / ${company || "No company"}`,
     );
     const body = encodeURIComponent(
       [
@@ -92,7 +92,7 @@ export function ContactForm() {
             Brief received.
           </p>
           <p className="mt-2 max-w-md text-sm leading-relaxed text-[#64748B]">
-            Thanks — a partner will review your {need.toLowerCase()} inquiry and reply with
+            Thanks. A partner will review your {need.toLowerCase()} inquiry and reply with
             next steps within 1–2 business days.
           </p>
         </div>

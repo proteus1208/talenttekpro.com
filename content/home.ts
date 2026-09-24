@@ -1,5 +1,5 @@
 /**
- * Landing page copy & fixtures — replace metrics/clients before production launch.
+ * Landing page copy & fixtures: replace metrics/clients before production launch.
  */
 
 export const home = {
@@ -8,7 +8,7 @@ export const home = {
     brand: "TalentTekPro",
     headline: "Build the team. Ship the system.",
     support:
-      "AI-assisted tech talent and embedded engineering squads — one partner from shortlist to production.",
+      "AI-assisted tech talent and embedded engineering squads: one partner from shortlist to production.",
   },
   manifesto: {
     index: "002 / Manifesto",
@@ -36,7 +36,7 @@ export const home = {
     headline: "Real-time",
     headlineAccent: "talent & delivery",
     support:
-      "The same surface our recruiters and delivery leads use — funnel health, match routing, and sprint velocity in one place.",
+      "The same surface our recruiters and delivery leads use: funnel health, match routing, and sprint velocity in one place.",
     tabs: [
       {
         id: "talent-os",
@@ -65,7 +65,7 @@ export const home = {
         id: "ship",
         label: "Ship Velocity",
         title: "Delivery velocity",
-        description: "Sprint progress, burn rate and risk register — demoable increments every two weeks.",
+        description: "Sprint progress, burn rate and risk register: demoable increments every two weeks.",
         stats: [
           { label: "velocity", value: "+24%" },
           { label: "deploys", value: "12" },
@@ -79,7 +79,7 @@ export const home = {
     eyebrow: "Featured projects",
     headline: "Work that hired and shipped.",
     support:
-      "Talent placements and production systems — the engagements where we hired the team and shipped the product.",
+      "Talent placements and production systems: the engagements where we hired the team and shipped the product.",
   },
   solutions: {
     index: "006 / Solutions",
@@ -143,7 +143,7 @@ export const home = {
     headline: "Trusted across industries",
     headlineAccent: "that ship.",
     support:
-      "From logistics to healthcare, we help industry leaders solve complex problems with reliable, scalable technology — and the senior talent to run it.",
+      "From logistics to healthcare, we help industry leaders solve complex problems with reliable, scalable technology and the senior talent to run it.",
     items: [
       {
         title: "Logistics",
@@ -194,7 +194,7 @@ export const home = {
       items: [
         {
           title: "Customized solutions",
-          body: "Scorecards, architecture, and staffing shaped to your constraints — not a catalog template.",
+          body: "Scorecards, architecture, and staffing shaped to your constraints, not a catalog template.",
         },
         {
           title: "Quality & reliability",
@@ -202,7 +202,7 @@ export const home = {
         },
         {
           title: "AI-native delivery",
-          body: "Matching and delivery automation we use ourselves — then bring to your stack.",
+          body: "Matching and delivery automation we use ourselves, then bring to your stack.",
         },
         {
           title: "Global delivery",
@@ -363,7 +363,7 @@ export const home = {
     items: [
       {
         q: "What engagement models do you offer?",
-        a: "Fixed-scope projects, embedded squads, retainers, talent search, and managed delivery — alone or combined.",
+        a: "Fixed-scope projects, embedded squads, retainers, talent search, and managed delivery alone or combined.",
       },
       {
         q: "How quickly can you start?",
@@ -371,7 +371,7 @@ export const home = {
       },
       {
         q: "Do you work with startups or only enterprise?",
-        a: "Both — from Series A ventures to Fortune-scale enterprises that need senior talent and shipping capacity.",
+        a: "Both: from Series A ventures to Fortune-scale enterprises that need senior talent and shipping capacity.",
       },
     ],
     cta: { label: "View all FAQs →", href: "/faq" },
@@ -381,6 +381,6 @@ export const home = {
     eyebrow: "Get started today",
     headline: "Ready to explore your possibilities?",
     headlineAccent: "Talk to us today.",
-    support: "Free consultancy — talent, delivery, or both. No obligation.",
+    support: "Free consultancy: talent, delivery, or both. No obligation.",
   },
 } as const;

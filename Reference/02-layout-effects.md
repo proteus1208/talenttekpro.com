@@ -8,13 +8,13 @@ GeniusXLab-inspired composition: numbered sections, one job per section, full-bl
 
 ### Composition
 
-1. **One composition per viewport** — especially the first screen: not a dashboard of widgets.
-2. **Brand first** — “TalentTekPro” is a hero-level signal (wordmark + display name), not only nav text.
-3. **Hero budget** — first viewport contains only: brand, one headline, one short supporting sentence, one CTA group, one dominant full-bleed video/image. **No** stats, schedules, address blocks, or secondary promos in the first viewport.
-4. **Full-bleed hero** — video/image is an edge-to-edge plane (or background). No inset hero cards, side-panel hero media, or floating image mosaics.
-5. **No hero overlays** — no detached badges, promo stickers, or chips on top of hero media.
-6. **Cards default off** — cards only when they are the container for interaction (e.s. quote form, role apply row, filterable project tile). If removing border/shadow/radius doesn’t hurt interaction, don’t use a card.
-7. **One job per section** — one headline, usually one supporting sentence, then content.
+1. **One composition per viewport**: especially the first screen: not a dashboard of widgets.
+2. **Brand first**: “TalentTekPro” is a hero-level signal (wordmark + display name), not only nav text.
+3. **Hero budget**: first viewport contains only: brand, one headline, one short supporting sentence, one CTA group, one dominant full-bleed video/image. **No** stats, schedules, address blocks, or secondary promos in the first viewport.
+4. **Full-bleed hero**: video/image is an edge-to-edge plane (or background). No inset hero cards, side-panel hero media, or floating image mosaics.
+5. **No hero overlays**, no detached badges, promo stickers, or chips on top of hero media.
+6. **Cards default off**: cards only when they are the container for interaction (e.s. quote form, role apply row, filterable project tile). If removing border/shadow/radius doesn’t hurt interaction, don’t use a card.
+7. **One job per section**: one headline, usually one supporting sentence, then content.
 
 ### Grid & spacing
 
@@ -56,7 +56,7 @@ Section index label (mono, muted) sits above or beside each major block:
 | 011 | Blog teaser | Latest 3 articles |
 | 012 | FAQ | 3 questions + link to full FAQ |
 | 013 | Get started CTA | Contact band |
-| — | Footer | See [05-footer-nav.md](./05-footer-nav.md) |
+| - | Footer | See [05-footer-nav.md](./05-footer-nav.md) |
 
 Inner pages follow: **breadcrumb → page hero (still, not video unless specified) → body sections → CTA → footer**.
 
@@ -72,7 +72,7 @@ Inner pages follow: **breadcrumb → page hero (still, not video unless specifie
 - Center/right: text links (muted → teal on hover/active)  
 - Far right: ember-filled or outline ember CTA  
 
-Announcer bar (optional, above nav): one line — `Talent that ships. Technology that scales.` + `contact@talenttekpro.com` + `Start a project →`
+Announcer bar (optional, above nav): one line: `Talent that ships. Technology that scales.` + `contact@talenttekpro.com` + `Start a project →`
 
 ---
 
