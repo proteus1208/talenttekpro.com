@@ -16,7 +16,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
-import { PromptMedia } from "@/components/ui/PromptMedia";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cn } from "@/lib/cn";
@@ -64,9 +64,11 @@ export function Approach() {
                 </p>
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
-                <PromptMedia
-                  asset={media.processHero}
-                  className="absolute inset-0 h-full w-full"
+                <SafeImage
+                  src={media.approach.src}
+                  alt={media.approach.alt}
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>

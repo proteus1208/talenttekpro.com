@@ -7,7 +7,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
-import { PromptMedia } from "@/components/ui/PromptMedia";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { aboutPage } from "@/content/about";
 import { media } from "@/content/media";
 
@@ -52,9 +52,11 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
-                <PromptMedia
-                  asset={media.manifesto}
-                  className="absolute inset-0 h-full w-full"
+                <SafeImage
+                  src={media.manifesto.src}
+                  alt={media.manifesto.alt}
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>

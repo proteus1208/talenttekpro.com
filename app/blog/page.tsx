@@ -25,30 +25,8 @@ export default function BlogPage() {
         titleAccent={blogPage.hero.titleAccent}
         support={blogPage.hero.support}
         image={media.blogHero}
+        stats={blogPage.stats}
       />
-
-      <section className="relative z-[1] overflow-visible bg-white section-pad !py-14 md:!py-16">
-        <SectionEdge fill="#ffffff" variant="soft" position="top" />
-        <Container className="relative z-10">
-          <RevealOnScroll>
-            <dl className="grid grid-cols-3 gap-4 md:gap-6">
-              {blogPage.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-[1.25rem] bg-[#F5F9FC] px-4 py-5 md:px-6 md:py-6"
-                >
-                  <dt className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#94A3B8] uppercase">
-                    {stat.label}
-                  </dt>
-                  <dd className="font-display mt-2 text-2xl font-bold tracking-tight text-[#1E60FF] md:text-3xl">
-                    {stat.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </RevealOnScroll>
-        </Container>
-      </section>
 
       <section className="relative z-[1] overflow-visible bg-[#F0F7FC] section-pad">
         <SectionEdge fill="#F0F7FC" variant="wave" position="top" />

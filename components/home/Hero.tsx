@@ -5,7 +5,6 @@ import { Clock3, Play, Rocket, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SafeImage } from "@/components/ui/SafeImage";
-import { PromptMedia } from "@/components/ui/PromptMedia";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { cta } from "@/content/site";
@@ -81,11 +80,12 @@ export function Hero() {
         </svg>
 
         <div className="absolute inset-y-0 right-0 z-0 hidden w-[50%] md:block lg:w-[48%]">
-          <PromptMedia
-            asset={media.landing}
+          <SafeImage
+            src={media.landing.src}
+            alt={media.landing.alt}
+            fill
             priority
-            className="absolute inset-0 h-full w-full"
-            imageClassName="object-[center_28%]"
+            className="border-0 object-cover object-[center_28%] outline-none ring-0"
           />
         </div>
 
