@@ -93,7 +93,7 @@ export const media = {
   } satisfies MediaAsset,
   projectsHero: {
     id: "projects-hero",
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
+    src: "/media/heroes/projects-hero.jpg",
     path: "/media/heroes/projects-hero.jpg",
     prompt: `Editorial photograph, 16:9. Product analytics and case-study work on a laptop in a bright workspace, soft natural light, cyan #00D2FF accent on screen glow, navy depth #051937 in background, premium portfolio mood. Screen content abstract and unreadable. ${BRAND}`,
     alt: "Product and analytics work on a laptop in a bright office.",

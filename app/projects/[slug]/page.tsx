@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page/PageHero";
 import { PageCta } from "@/components/page/PageCta";
 import { Container } from "@/components/ui/Container";
-import { PromptMedia } from "@/components/ui/PromptMedia";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { getProject, projectCases, projectMedia } from "@/content/projects";
 import { cta } from "@/content/site";
@@ -43,10 +43,12 @@ export default async function ProjectDetailPage({ params }: Props) {
           <RevealOnScroll>
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-border lg:col-span-7">
-                <PromptMedia
-                  asset={media}
+                <SafeImage
+                  src={media.src}
+                  alt={media.alt}
+                  fill
                   priority
-                  className="absolute inset-0 h-full w-full"
+                  className="object-cover"
                 />
               </div>
               <div className="lg:col-span-5">
