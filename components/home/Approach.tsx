@@ -65,8 +65,8 @@ export function Approach() {
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
                 <SafeImage
-                  src={media.processHero.src}
-                  alt={media.processHero.alt}
+                  src={media.approach.src}
+                  alt={media.approach.alt}
                   fill
                   className="object-cover"
                 />

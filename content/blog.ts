@@ -1,7 +1,10 @@
 import type { MediaAsset } from "@/content/media";
 
 const BLOG_BRAND =
-  "Brand palette only: deep navy #051937, cyan #00D2FF, royal blue #1E60FF. No purple, no neon glow stacks, no logos, no readable brand names or UI text, no watermarks.";
+  "Brand accents: deep navy #051937, cyan #00D2FF, royal blue #1E60FF. No purple, no logos, no readable text, no watermarks.";
+
+const BLOG_MARKETING =
+  "Premium SaaS marketing illustration: one clear hero metaphor, soft studio light on deep navy, polished 3D, calm empty space. Clean like Stripe/Linear marketing art — not busy, not sparse empty cubes.";
 
 export type BlogPost = {
   slug: string;
@@ -64,8 +67,8 @@ export const blogPage = {
         id: "blog-production-rag-routing",
         src: "/media/blog/production-rag-routing.png",
         path: "/media/blog/production-rag-routing.png",
-        prompt: `Editorial illustration, 16:9. Abstract RAG routing lattice: cyan #00D2FF filaments scoring and routing queries through geometric gates toward a royal-blue #1E60FF decision core on deep navy #051937. Suggests model routing, evals, and fallbacks under load. ${BLOG_BRAND}`,
-        alt: "Abstract RAG routing lattice with cyan filaments and a royal-blue core.",
+        prompt: `${BLOG_MARKETING} Meaning: RAG routing. One cyan filament passing through two clear gates into a royal-blue core. Simple and readable. 16:9. ${BLOG_BRAND}`,
+        alt: "A cyan filament passing gates into a royal-blue core.",
       },
       tags: ["RAG", "Routing", "Evals", "Latency"],
       takeaways: [
@@ -121,8 +124,8 @@ export const blogPage = {
         id: "blog-scorecards-time-to-productivity",
         src: "/media/blog/scorecards-time-to-productivity.png",
         path: "/media/blog/scorecards-time-to-productivity.png",
-        prompt: `Editorial illustration, 16:9. Abstract hiring scorecard panels and signal nodes linked by cyan #00D2FF lines on deep navy #051937, royal #1E60FF accents marking ramp predictors. Calm, systems-thinking mood. ${BLOG_BRAND}`,
-        alt: "Abstract scorecard panels and signal nodes for hiring rubrics.",
+        prompt: `${BLOG_MARKETING} Meaning: hiring scorecards. Two frosted scorecard panels beside one upward royal-blue arrow. Clear and simple. 16:9. ${BLOG_BRAND}`,
+        alt: "Two scorecard panels beside an upward royal-blue arrow.",
       },
       tags: ["Scorecards", "Ramp", "Panels", "Rubrics"],
       takeaways: [
@@ -169,8 +172,8 @@ export const blogPage = {
         id: "blog-zero-downtime-deploys",
         src: "/media/blog/zero-downtime-deploys.png",
         path: "/media/blog/zero-downtime-deploys.png",
-        prompt: `Editorial illustration, 16:9. Abstract canary rollout rings and progressive deploy arcs in cyan #00D2FF and royal #1E60FF on deep navy #051937, suggesting zero-downtime promotion and rollback safety. ${BLOG_BRAND}`,
-        alt: "Abstract canary rollout rings suggesting zero-downtime deploys.",
+        prompt: `${BLOG_MARKETING} Meaning: zero-downtime deploys. Two nested soft cyan rings with one royal-blue check-mark glow. Clear and simple. 16:9. ${BLOG_BRAND}`,
+        alt: "Two nested cyan rings with a royal-blue success glow.",
       },
       tags: ["Kubernetes", "CI/CD", "Canaries", "Rollback"],
       takeaways: [
@@ -216,8 +219,8 @@ export const blogPage = {
         id: "blog-saas-mvp-to-scale",
         src: "/media/blog/saas-mvp-to-scale.png",
         path: "/media/blog/saas-mvp-to-scale.png",
-        prompt: `Editorial illustration, 16:9. Modular SaaS lattice growing from simple MVP blocks into a multi-tenant structure, cyan #00D2FF connectors and royal #1E60FF cores on deep navy #051937. ${BLOG_BRAND}`,
-        alt: "Modular SaaS lattice growing from MVP blocks to multi-tenant scale.",
+        prompt: `${BLOG_MARKETING} Meaning: SaaS scale. One small frosted block growing into three connected blocks. Clear growth metaphor. 16:9. ${BLOG_BRAND}`,
+        alt: "A small frosted block growing into three connected blocks.",
       },
       tags: ["NestJS", "Stripe", "PostHog", "Multi-tenant"],
       takeaways: [
@@ -263,8 +266,8 @@ export const blogPage = {
         id: "blog-staff-engineer-interviews",
         src: "/media/blog/staff-engineer-interviews.png",
         path: "/media/blog/staff-engineer-interviews.png",
-        prompt: `Editorial illustration, 16:9. Three abstract interview panels linked to a shared staff-level rubric node, cyan #00D2FF evidence threads and royal #1E60FF seniority markers on deep navy #051937. ${BLOG_BRAND}`,
-        alt: "Three abstract interview panels linked to a shared staff-level rubric.",
+        prompt: `${BLOG_MARKETING} Meaning: staff interviews. Three small panels pointing to one central rubric circle. Clear and simple. 16:9. ${BLOG_BRAND}`,
+        alt: "Three small panels pointing to one central rubric circle.",
       },
       tags: ["Staff+", "Panels", "Debriefs", "Senior bar"],
       takeaways: [
@@ -310,8 +313,8 @@ export const blogPage = {
         id: "blog-adr-first-delivery",
         src: "/media/blog/adr-first-delivery.png",
         path: "/media/blog/adr-first-delivery.png",
-        prompt: `Editorial illustration, 16:9. Abstract architecture decision slabs with cyan #00D2FF tradeoff branches and royal #1E60FF consequence nodes on deep navy #051937. Suggests ADRs living next to code. ${BLOG_BRAND}`,
-        alt: "Abstract architecture decision slabs with cyan tradeoff branches.",
+        prompt: `${BLOG_MARKETING} Meaning: architecture decisions. One frosted decision slab with two cyan branch paths. Clear ADR metaphor. 16:9. ${BLOG_BRAND}`,
+        alt: "One frosted decision slab with two cyan branch paths.",
       },
       tags: ["ADRs", "Embeds", "Tradeoffs", "Governance"],
       takeaways: [

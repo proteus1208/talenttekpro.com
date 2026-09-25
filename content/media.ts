@@ -1,14 +1,11 @@
 /**
  * Media assets for UI.
- * Replace `src` with the matching `path` file after ChatGPT generation.
- * Keep `prompt` as the generation source of truth; `path` is where to save.
+ * Marketing-stock aesthetic: clear subject, polished, readable ? not busy CGI.
  */
 
 export type MediaAsset = {
   id: string;
-  /** Current placeholder (remote or local) shown faded behind the prompt UI */
   src: string;
-  /** Canonical save path under /public (also the final src once ready) */
   path: string;
   poster?: string;
   prompt: string;
@@ -16,7 +13,16 @@ export type MediaAsset = {
 };
 
 const BRAND =
-  "Brand palette only: deep navy #051937, cyan #00D2FF, royal blue #1E60FF. No purple, no neon glow stacks, no logos, no readable brand names or UI text, no watermarks.";
+  "Brand accents only when needed: deep navy #051937, cyan #00D2FF, royal blue #1E60FF. No purple, no logos, no readable UI text, no watermarks.";
+
+const TEAM =
+  "Cast only young white American men ages ~25-32, clean-cut tech professionals. No women, no other ethnicities.";
+
+const MARKETING_PHOTO =
+  "Premium SaaS marketing stock photograph style like Stripe/Notion/Linear careers pages: bright modern office, soft natural light, sharp focus on subjects, clean background, clear readable scene, professional color grade. Not cinematic fog, not dark moody drama.";
+
+const MARKETING_ABSTRACT =
+  "Premium SaaS marketing illustration style: one clear hero object centered, simple readable metaphor, soft studio lighting on deep navy #051937, subtle cyan #00D2FF and royal #1E60FF accents, polished 3D, plenty of calm empty space. Clean and premium like Stripe/Linear marketing art ? NOT busy particle storms, NOT dense lattices, NOT empty lonely cubes.";
 
 export const media = {
   heroVideo: {
@@ -25,121 +31,121 @@ export const media = {
     path: "/media/heroes/hero-poster.jpg",
     poster:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
-    prompt: `Still poster frame, 16:9, for a TalentTekPro hero video. Pure cinematic 3D CGI motion graphics still: deep navy void #051937, luminous geometric core with a cyan #00D2FF wireframe icosahedron nested in a royal-blue #1E60FF glass nucleus, three thin orbital rings, constellation of linked nodes (talent network becoming delivery lattice). Depth fog, volumetric cyan rim light, soft particle dust. Left third darker and emptier for headline overlay; spectacle center-right. Elegant, premium, photoreal metal/glass materials. ${BRAND}`,
-    alt: "Abstract 3D talent-to-delivery orbital lattice for TalentTekPro.",
+    prompt: `Unused on site. ${BRAND}`,
+    alt: "Hero poster placeholder.",
   } satisfies MediaAsset,
   landing: {
     id: "landing",
     src: "/media/heroes/landing.png",
     path: "/media/heroes/landing.png",
-    prompt: `Editorial photoreal hero photograph, 16:9 (or taller crop-safe). Small diverse product squad collaborating around a laptop in a bright modern office with soft natural light and subtle cyan #00D2FF practical accents against deeper navy shadow #051937. Confident, senior, calm energy. Subjects mid-conversation, no staged handshake cliche. Space on the left for website headline overlay. Shallow depth of field, premium tech-company look. ${BRAND}`,
-    alt: "TalentTekPro teammates collaborating at a laptop in a bright office.",
+    prompt: `Premium SaaS marketing hero photograph, 16:9. Bright modern tech office. A beautiful young woman developer collaborating with two young male developers around one laptop. Soft natural light, clear faces, left third open for headline. No logos, no readable UI text. ${BRAND}`,
+    alt: "A woman developer collaborating with teammates at a laptop.",
   } satisfies MediaAsset,
   manifesto: {
     id: "manifesto",
     src: "/media/heroes/manifesto.jpg",
     path: "/media/heroes/manifesto.jpg",
-    prompt: `Editorial photograph, 16:9. Cross-functional workshop in a modern office: senior engineers and a hiring lead reviewing a laptop and whiteboard together. Soft cyan #00D2FF accent lighting, deep navy shadows #051937, shallow depth of field, cinematic grading. Confident collaborative mood, diverse professionals, documentary realism. ${BRAND}`,
-    alt: "Cross-functional workshop reviewing plans on a laptop and whiteboard.",
+    prompt: `${MARKETING_PHOTO} ${TEAM} Two young white American men reviewing a laptop at a clean whiteboard in a bright office. Clear, simple marketing stock composition. 16:9. ${BRAND}`,
+    alt: "Two young white American engineers reviewing a laptop.",
   } satisfies MediaAsset,
   approach: {
     id: "approach",
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
+    src: "/media/heroes/approach.jpg",
     path: "/media/heroes/approach.jpg",
-    prompt: `Editorial photograph, 3:2. Two professionals sharing a genuine high-five in a bright modern office after a milestone, collaborative energy, soft natural light mixed with subtle cyan #00D2FF accents, navy depth in background #051937. Photoreal, warm but premium, no staged stock smile. ${BRAND}`,
-    alt: "Teammates celebrating with a high-five in a bright office.",
+    prompt: `${MARKETING_PHOTO} ${TEAM} Two young white American men smiling and high-fiving in a bright modern office after a win. Clear simple stock photo. 16:9. ${BRAND}`,
+    alt: "Two young white American teammates celebrating with a high-five.",
   } satisfies MediaAsset,
   getStarted: {
     id: "get-started",
     src: "/media/heroes/get-started.jpg",
     path: "/media/heroes/get-started.jpg",
-    prompt: `Editorial photograph, 16:9. Enterprise leadership consultation in a deep navy conference room #051937, cyan #00D2FF and royal #1E60FF practical lights, people leaning over a shared screen, hopeful decisive mood, wide cinematic frame. ${BRAND}`,
-    alt: "Leadership consultation around a shared screen.",
+    prompt: `${MARKETING_PHOTO} ${TEAM} Two young white American men leaning over a laptop on a meeting table in a bright glass conference room. Clear, hopeful CTA photo. 16:9. ${BRAND}`,
+    alt: "Young white American teammates reviewing a laptop in a meeting room.",
   } satisfies MediaAsset,
   servicesHero: {
     id: "services-hero",
     src: "/media/heroes/services-hero.png",
     path: "/media/heroes/services-hero.png",
-    prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: cinematic dark navy #051937 atmosphere, soft volumetric fog, photoreal glass and metal. A luminous translucent cyan crystalline core on a brushed metal pedestal, fed by flowing cyan fiber-optic light streams with bright data sparkles. Concept: talent network merging into delivery systems. No people, no text, no logos. ${BRAND}`,
-    alt: "A luminous cyan crystalline core fed by light streams on deep navy.",
+    prompt: `${MARKETING_ABSTRACT} Meaning: talent plus delivery. A single elegant glass sphere on the left connected by one clean cyan arc to a single royal-blue geometric module on the right ? two clear shapes, one connection. Soft studio light, deep navy background. 16:9. ${BRAND}`,
+    alt: "A glass sphere connected by a cyan arc to a royal-blue module.",
   } satisfies MediaAsset,
   processHero: {
     id: "process-hero",
     src: "/media/heroes/process-hero.jpg",
     path: "/media/heroes/process-hero.jpg",
-    prompt: `Documentary editorial photograph, 16:9. Client partnership strategy workshop around a wide table, laptops open, facilitator at a whiteboard, natural light mixed with cyan #00D2FF practical accents, navy depth #051937. Serious, calm, senior energy. ${BRAND}`,
-    alt: "Strategy workshop with laptops and whiteboard facilitation.",
+    prompt: `${MARKETING_PHOTO} ${TEAM} Three young white American men in a bright meeting room: two seated with laptops, one standing at a clean whiteboard. Clear marketing stock scene. 16:9. ${BRAND}`,
+    alt: "Young white American team in a bright strategy meeting.",
   } satisfies MediaAsset,
   aboutHero: {
     id: "about-hero",
     src: "/media/heroes/about-hero.jpg",
     path: "/media/heroes/about-hero.jpg",
-    prompt: `Editorial photograph, 16:9. Consulting session with enterprise leadership in a dark modern boardroom, teal glass reflection, cyan #00D2FF rim light, deep navy #051937 atmosphere, photoreal, composed and senior. ${BRAND}`,
-    alt: "Leadership consulting session in a modern boardroom.",
+    prompt: `${MARKETING_PHOTO} ${TEAM} Three young white American men in a bright modern boardroom around a table, talking calmly. Clear corporate marketing stock. 16:9. ${BRAND}`,
+    alt: "Young white American leaders in a bright boardroom.",
   } satisfies MediaAsset,
   careersHero: {
     id: "careers-hero",
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
+    src: "/media/heroes/careers-hero.jpg",
     path: "/media/heroes/careers-hero.jpg",
-    prompt: `Editorial photograph, 16:9. Engineering team collaborating in a bright-dark hybrid office, candid discussion at desks, teal/cyan ambient light #00D2FF, navy shadows #051937, diverse professionals, authentic workplace energy. ${BRAND}`,
-    alt: "Collaborative engineering team working together.",
+    prompt: `${MARKETING_PHOTO} ${TEAM} Three young white American men working together at standing desks in a bright open office. Clear friendly careers marketing photo. 16:9. ${BRAND}`,
+    alt: "Young white American engineers working together in a bright office.",
   } satisfies MediaAsset,
   blogHero: {
     id: "blog-hero",
     src: "/media/blog/journal-hero.png",
     path: "/media/blog/journal-hero.png",
-    prompt: `Editorial blog journal hero illustration, 16:9. Deep navy ink background #051937. Abstract field-notes concept: floating luminous pages and geometric research nodes connected by cyan #00D2FF filaments with royal blue #1E60FF accents, suggesting talent and delivery knowledge. Premium flat/editorial hybrid CGI. No people. ${BRAND}`,
-    alt: "Abstract journal field-notes illustration in navy, cyan, and royal blue.",
+    prompt: `${MARKETING_ABSTRACT} Meaning: journal / field notes. One soft luminous frosted page floating above one small cyan node cluster. Very clear, simple, premium. Deep navy background. 16:9. ${BRAND}`,
+    alt: "A single luminous page above a small cyan node cluster.",
   } satisfies MediaAsset,
   projectsHero: {
     id: "projects-hero",
     src: "/media/heroes/projects-hero.jpg",
     path: "/media/heroes/projects-hero.jpg",
-    prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: cinematic dark navy #051937 atmosphere, soft fog, photoreal glass and metal. A luminous translucent cyan crystalline structure on a brushed metal pedestal with flowing cyan light filaments and data sparkles. Concept: portfolio of shipped systems. No people, no text, no logos. ${BRAND}`,
-    alt: "A luminous cyan crystalline portfolio core with light streams on deep navy.",
+    prompt: `${MARKETING_ABSTRACT} Meaning: portfolio. Three frosted glass portfolio cards floating in a neat row, soft cyan edge light, one card slightly forward with royal-blue accent. Clear, orderly, premium marketing art. Deep navy background. 16:9. ${BRAND}`,
+    alt: "Three frosted glass portfolio cards in a neat floating row.",
   } satisfies MediaAsset,
   contactHero: {
     id: "contact-hero",
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
+    src: "/media/heroes/contact-hero.jpg",
     path: "/media/heroes/contact-hero.jpg",
-    prompt: `Editorial photograph, 16:9. Calm reception desk in a modern tech office at night, soft cyan #00D2FF glow, welcoming empty space, deep navy #051937 atmosphere, quiet and premium. ${BRAND}`,
-    alt: "Modern office reception area at night.",
+    prompt: `${MARKETING_PHOTO} Bright modern office reception desk, empty and welcoming, soft daylight, clean architecture, cyan accent on a small desk lamp. No crowds. Clear contact marketing photo. 16:9. ${BRAND}`,
+    alt: "Bright welcoming office reception desk.",
   } satisfies MediaAsset,
   cases: [
     {
       id: "case-dating",
       src: "/media/cases/case-dating.png",
       path: "/media/cases/case-dating.png",
-      prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: dark navy #051937, soft fog, photoreal glass/metal pedestal. Luminous translucent cyan crystalline twin-core with flowing cyan light streams and sparkles. Matching/connections theme. No people, no text, no logos. ${BRAND}`,
-      alt: "Twin luminous cyan crystalline cores linked by light streams on deep navy.",
+      prompt: `${MARKETING_ABSTRACT} Meaning: matching. Two soft glowing orbs connected by one clean cyan bridge to a shared center. Extremely clear, simple, premium. Deep navy. 16:9. ${BRAND}`,
+      alt: "Two glowing orbs connected by a cyan bridge.",
     },
     {
       id: "case-healthcare",
       src: "/media/cases/case-healthcare.png",
       path: "/media/cases/case-healthcare.png",
-      prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: dark navy #051937, soft fog, photoreal glass/metal pedestal. Luminous translucent cyan crystalline shield-core with calm cyan light streams and sparkles. Healthcare ops theme. No people, no text, no logos. ${BRAND}`,
-      alt: "A luminous cyan crystalline shield-core with light streams on deep navy.",
+      prompt: `${MARKETING_ABSTRACT} Meaning: healthcare trust. One clear translucent shield shape with a soft cyan rim and calm royal-blue center glow. Simple and readable. Deep navy. 16:9. ${BRAND}`,
+      alt: "A clear translucent shield with a soft cyan rim.",
     },
     {
       id: "case-commerce",
       src: "/media/cases/case-commerce.png",
       path: "/media/cases/case-commerce.png",
-      prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: dark navy #051937, soft fog, photoreal glass/metal pedestal. Luminous translucent cyan modular glass cube with cyan light streams and sparkles. Commerce theme. No people, no text, no logos. ${BRAND}`,
-      alt: "A luminous cyan modular crystalline cube with light streams on deep navy.",
+      prompt: `${MARKETING_ABSTRACT} Meaning: commerce. Three neat frosted product tiles in a clean shelf row, cyan edge light. Simple marketing product metaphor. Deep navy. 16:9. ${BRAND}`,
+      alt: "Three neat frosted product tiles in a shelf row.",
     },
     {
       id: "case-booking",
       src: "/media/cases/case-booking.png",
       path: "/media/cases/case-booking.png",
-      prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: dark navy #051937, soft fog, photoreal glass/metal pedestal. Luminous translucent cyan isometric floorplan crystal with cyan light streams and sparkles. Booking theme. No people, no text, no logos. ${BRAND}`,
-      alt: "A luminous cyan floorplan crystal with light streams on deep navy.",
+      prompt: `${MARKETING_ABSTRACT} Meaning: booking. A simple isometric glass room with one chair, soft cyan outline, one corner lit royal blue as reserved. Clear and minimal. Deep navy. 16:9. ${BRAND}`,
+      alt: "A simple isometric glass room with one reserved corner lit.",
     },
     {
       id: "case-pipeline",
       src: "/media/cases/case-pipeline.png",
       path: "/media/cases/case-pipeline.png",
-      prompt: `Premium 3D CGI editorial illustration matching TalentTekPro blog covers: dark navy #051937, soft fog, photoreal glass/metal pedestal. Luminous translucent cyan route-arc core with cyan sensor light streams and sparkles. Pipeline inspection theme. No people, no text, no logos. ${BRAND}`,
-      alt: "A luminous cyan route-arc core with sensor light streams on deep navy.",
+      prompt: `${MARKETING_ABSTRACT} Meaning: pipeline. One clean curved cyan path with three small sensor dots ending at a royal-blue beacon. Very clear line art 3D. Deep navy. 16:9. ${BRAND}`,
+      alt: "A clean cyan path with sensor dots ending at a royal beacon.",
     },
   ] satisfies MediaAsset[],
 };
@@ -148,7 +154,6 @@ export function caseMedia(index: number): MediaAsset {
   return media.cases[index % media.cases.length];
 }
 
-/** Filename segment for UI labels (e.g. case-dating.png). */
 export function mediaFilename(asset: Pick<MediaAsset, "path">): string {
   return asset.path.split("/").pop() ?? asset.path;
 }
