@@ -86,7 +86,7 @@ export const media = {
   } satisfies MediaAsset,
   blogHero: {
     id: "blog-hero",
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
+    src: "/media/blog/journal-hero.png",
     path: "/media/blog/journal-hero.png",
     prompt: `Editorial blog journal hero illustration, 16:9. Deep navy ink background #051937. Abstract field-notes concept: floating luminous pages and geometric research nodes connected by cyan #00D2FF filaments with royal blue #1E60FF accents, suggesting talent and delivery knowledge. Premium flat/editorial hybrid CGI. No people. ${BRAND}`,
     alt: "Abstract journal field-notes illustration in navy, cyan, and royal blue.",

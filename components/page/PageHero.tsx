@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { SectionEdge } from "@/components/ui/SectionShell";
 import { PromptMedia, type PromptMediaAsset } from "@/components/ui/PromptMedia";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { cn } from "@/lib/cn";
 
 type PageHeroStat = {
@@ -20,6 +21,10 @@ type PageHeroProps = {
   stats?: readonly PageHeroStat[];
   className?: string;
 };
+
+function isFinalMedia(image: PromptMediaAsset) {
+  return image.src.startsWith("/media/") || image.src === image.path;
+}
 
 /**
  * Shared inner-page hero: matches landing typography (section-title scale),
@@ -79,11 +84,21 @@ export function PageHero({
             </div>
             {image ? (
               <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
-                <PromptMedia
-                  asset={image}
-                  priority
-                  className="absolute inset-0 h-full w-full"
-                />
+                {isFinalMedia(image) ? (
+                  <SafeImage
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+                ) : (
+                  <PromptMedia
+                    asset={image}
+                    priority
+                    className="absolute inset-0 h-full w-full"
+                  />
+                )}
               </div>
             ) : null}
           </div>
