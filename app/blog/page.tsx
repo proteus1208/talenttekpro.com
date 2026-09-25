@@ -24,7 +24,7 @@ export default function BlogPage() {
         title={blogPage.hero.title}
         titleAccent={blogPage.hero.titleAccent}
         support={blogPage.hero.support}
-        image={{ src: media.blogHero.src, alt: media.blogHero.alt }}
+        image={media.blogHero}
       />
 
       <section className="relative z-[1] overflow-visible bg-white section-pad !py-14 md:!py-16">

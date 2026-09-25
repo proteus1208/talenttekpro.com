@@ -1,3 +1,12 @@
+import type { MediaAsset } from "@/content/media";
+
+/** Temporary faded backdrop until generated covers are saved to `path`. */
+const BLOG_PLACEHOLDER =
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80";
+
+const BLOG_BRAND =
+  "Brand palette only: deep navy #051937, cyan #00D2FF, royal blue #1E60FF. No purple, no neon glow stacks, no logos, no readable brand names or UI text, no watermarks.";
+
 export type BlogPost = {
   slug: string;
   category: string;
@@ -8,7 +17,7 @@ export type BlogPost = {
   author: string;
   role: string;
   featured: boolean;
-  cover: { src: string; alt: string };
+  cover: Pick<MediaAsset, "id" | "src" | "path" | "prompt" | "alt">;
   tags: string[];
   takeaways: string[];
   pullQuote: string;
@@ -56,7 +65,10 @@ export const blogPage = {
       role: "Staff ML Engineer",
       featured: true,
       cover: {
-        src: "/media/blog/production-rag-routing.png",
+        id: "blog-production-rag-routing",
+        src: BLOG_PLACEHOLDER,
+        path: "/media/blog/production-rag-routing.png",
+        prompt: `Editorial illustration, 16:9. Abstract RAG routing lattice: cyan #00D2FF filaments scoring and routing queries through geometric gates toward a royal-blue #1E60FF decision core on deep navy #051937. Suggests model routing, evals, and fallbacks under load. ${BLOG_BRAND}`,
         alt: "Abstract RAG routing lattice with cyan filaments and a royal-blue core.",
       },
       tags: ["RAG", "Routing", "Evals", "Latency"],
@@ -110,7 +122,10 @@ export const blogPage = {
       role: "Director of Talent",
       featured: false,
       cover: {
-        src: "/media/blog/scorecards-time-to-productivity.png",
+        id: "blog-scorecards-time-to-productivity",
+        src: BLOG_PLACEHOLDER,
+        path: "/media/blog/scorecards-time-to-productivity.png",
+        prompt: `Editorial illustration, 16:9. Abstract hiring scorecard panels and signal nodes linked by cyan #00D2FF lines on deep navy #051937, royal #1E60FF accents marking ramp predictors. Calm, systems-thinking mood. ${BLOG_BRAND}`,
         alt: "Abstract scorecard panels and signal nodes for hiring rubrics.",
       },
       tags: ["Scorecards", "Ramp", "Panels", "Rubrics"],
@@ -155,7 +170,10 @@ export const blogPage = {
       role: "Principal Platform Engineer",
       featured: false,
       cover: {
-        src: "/media/blog/zero-downtime-deploys.png",
+        id: "blog-zero-downtime-deploys",
+        src: BLOG_PLACEHOLDER,
+        path: "/media/blog/zero-downtime-deploys.png",
+        prompt: `Editorial illustration, 16:9. Abstract canary rollout rings and progressive deploy arcs in cyan #00D2FF and royal #1E60FF on deep navy #051937, suggesting zero-downtime promotion and rollback safety. ${BLOG_BRAND}`,
         alt: "Abstract canary rollout rings suggesting zero-downtime deploys.",
       },
       tags: ["Kubernetes", "CI/CD", "Canaries", "Rollback"],
@@ -199,7 +217,10 @@ export const blogPage = {
       role: "Engineering Lead",
       featured: false,
       cover: {
-        src: "/media/blog/saas-mvp-to-scale.png",
+        id: "blog-saas-mvp-to-scale",
+        src: BLOG_PLACEHOLDER,
+        path: "/media/blog/saas-mvp-to-scale.png",
+        prompt: `Editorial illustration, 16:9. Modular SaaS lattice growing from simple MVP blocks into a multi-tenant structure, cyan #00D2FF connectors and royal #1E60FF cores on deep navy #051937. ${BLOG_BRAND}`,
         alt: "Modular SaaS lattice growing from MVP blocks to multi-tenant scale.",
       },
       tags: ["NestJS", "Stripe", "PostHog", "Multi-tenant"],
@@ -243,7 +264,10 @@ export const blogPage = {
       role: "Senior Technical Recruiter",
       featured: false,
       cover: {
-        src: "/media/blog/staff-engineer-interviews.png",
+        id: "blog-staff-engineer-interviews",
+        src: BLOG_PLACEHOLDER,
+        path: "/media/blog/staff-engineer-interviews.png",
+        prompt: `Editorial illustration, 16:9. Three abstract interview panels linked to a shared staff-level rubric node, cyan #00D2FF evidence threads and royal #1E60FF seniority markers on deep navy #051937. ${BLOG_BRAND}`,
         alt: "Three abstract interview panels linked to a shared staff-level rubric.",
       },
       tags: ["Staff+", "Panels", "Debriefs", "Senior bar"],
@@ -287,7 +311,10 @@ export const blogPage = {
       role: "Principal Architect",
       featured: false,
       cover: {
-        src: "/media/blog/adr-first-delivery.png",
+        id: "blog-adr-first-delivery",
+        src: BLOG_PLACEHOLDER,
+        path: "/media/blog/adr-first-delivery.png",
+        prompt: `Editorial illustration, 16:9. Abstract architecture decision slabs with cyan #00D2FF tradeoff branches and royal #1E60FF consequence nodes on deep navy #051937. Suggests ADRs living next to code. ${BLOG_BRAND}`,
         alt: "Abstract architecture decision slabs with cyan tradeoff branches.",
       },
       tags: ["ADRs", "Embeds", "Tradeoffs", "Governance"],

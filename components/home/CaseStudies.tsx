@@ -17,7 +17,7 @@ import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
-import { SafeImage } from "@/components/ui/SafeImage";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { home } from "@/content/home";
 import { projects, type Project } from "@/content/projects";
 import { SectionEdge } from "@/components/ui/SectionShell";
@@ -83,16 +83,15 @@ function ProjectCard({
           featured ? "aspect-[4/5] sm:aspect-[5/6] lg:aspect-auto lg:min-h-[280px] lg:flex-1" : "aspect-[16/11]",
         )}
       >
-        <SafeImage
-          src={project.image.src}
-          alt={project.image.alt}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+        <PromptMedia
+          asset={project.image}
+          className="absolute inset-0 h-full w-full"
+          imageClassName="transition-transform duration-500 group-hover:scale-[1.04]"
           priority={featured}
         />
         <span
           className={cn(
-            "absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide shadow-sm",
+            "absolute left-3 top-3 z-20 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide shadow-sm",
             meta.className,
           )}
         >

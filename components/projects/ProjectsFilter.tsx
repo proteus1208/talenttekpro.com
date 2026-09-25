@@ -9,6 +9,7 @@ import {
   projectMedia,
   type ProjectFilter,
 } from "@/content/projects";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { cn } from "@/lib/cn";
 
 export function ProjectsFilter() {
@@ -49,15 +50,12 @@ export function ProjectsFilter() {
               className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-[0_14px_40px_rgba(5,25,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(5,25,55,0.12)]"
             >
               <div className="relative aspect-[16/11] overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={media.src}
-                  alt={media.alt}
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  suppressHydrationWarning
+                <PromptMedia
+                  asset={media}
+                  className="absolute inset-0 h-full w-full"
+                  imageClassName="transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-                <span className="absolute top-3 left-3 inline-flex rounded-full bg-[#1E60FF] px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-white shadow-sm">
+                <span className="absolute top-3 left-3 z-20 inline-flex rounded-full bg-[#1E60FF] px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-white shadow-sm">
                   {item.filters[0] ?? item.type}
                 </span>
               </div>

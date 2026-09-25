@@ -7,6 +7,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { aboutPage } from "@/content/about";
 import { media } from "@/content/media";
 
@@ -23,7 +24,7 @@ export default function AboutPage() {
         title={aboutPage.hero.title}
         titleAccent={aboutPage.hero.titleAccent}
         support={aboutPage.hero.support}
-        image={{ src: media.aboutHero.src, alt: media.aboutHero.alt }}
+        image={media.aboutHero}
       />
 
       {/* Who we are */}
@@ -51,13 +52,9 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(5,25,55,0.12)] md:rounded-[1.75rem] lg:col-span-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={media.manifesto.src}
-                  alt={media.manifesto.alt}
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  suppressHydrationWarning
+                <PromptMedia
+                  asset={media.manifesto}
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
             </div>

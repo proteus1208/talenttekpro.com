@@ -43,7 +43,7 @@ export default function CareersPage() {
         title={careersPage.hero.title}
         titleAccent={careersPage.hero.titleAccent}
         support={careersPage.hero.support}
-        image={{ src: media.careersHero.src, alt: media.careersHero.alt }}
+        image={media.careersHero}
       />
 
       {/* Benefits */}

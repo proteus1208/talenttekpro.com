@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page/PageHero";
 import { PageCta } from "@/components/page/PageCta";
 import { Container } from "@/components/ui/Container";
+import { PromptMedia } from "@/components/ui/PromptMedia";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { getProject, projectCases, projectMedia } from "@/content/projects";
 import { cta } from "@/content/site";
@@ -43,13 +43,10 @@ export default async function ProjectDetailPage({ params }: Props) {
           <RevealOnScroll>
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-border lg:col-span-7">
-                <Image
-                  src={media.src}
-                  alt={media.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 640px"
+                <PromptMedia
+                  asset={media}
                   priority
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
               <div className="lg:col-span-5">
