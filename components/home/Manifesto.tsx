@@ -5,7 +5,7 @@ import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { ScrollShape } from "@/components/effects/ScrollShape";
 import { SoftRegion } from "@/components/effects/SoftRegion";
 import { SectionEdge } from "@/components/ui/SectionShell";
-import { PromptMedia } from "@/components/ui/PromptMedia";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 
@@ -36,9 +36,11 @@ export function Manifesto() {
               </p>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:rounded-3xl">
-              <PromptMedia
-                asset={media.manifesto}
-                className="absolute inset-0 h-full w-full"
+              <SafeImage
+                src={media.manifesto.src}
+                alt={media.manifesto.alt}
+                fill
+                className="object-cover"
               />
             </div>
           </div>
