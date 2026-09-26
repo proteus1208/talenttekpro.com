@@ -36,7 +36,9 @@ const heroStats = [
   },
 ];
 
-const textShadow = { textShadow: "0 2px 12px rgba(28,58,110,0.22)" } as const;
+const softLift = {
+  textShadow: "0 1px 0 rgba(255,255,255,0.55), 0 2px 12px rgba(255,255,255,0.35)",
+} as const;
 
 export function Hero() {
   return (
@@ -44,7 +46,7 @@ export function Hero() {
       id="home-hero"
       className="relative z-20 h-svh min-h-svh overflow-hidden"
     >
-      {/* Layer 1 — full-bleed photograph */}
+      {/* Layer 1 — full-bleed photograph (no color washes — keep image clear) */}
       <SafeImage
         src={media.landing.src}
         alt={media.landing.alt}
@@ -53,23 +55,7 @@ export function Hero() {
         className="border-0 object-cover object-[72%_center] outline-none ring-0 sm:object-[68%_center]"
       />
 
-      {/* Layer 2 — soft blue readability wash (left → transparent) */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(28,58,110,0.38) 0%, rgba(28,58,110,0.18) 32%, rgba(28,58,110,0.06) 55%, rgba(28,58,110,0) 78%)",
-        }}
-        aria-hidden
-      />
-
-      {/* Layer 3 — very light cool tint */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-[rgba(28,58,110,0.08)] md:bg-[rgba(28,58,110,0.03)]"
-        aria-hidden
-      />
-
-      {/* Layer 4 — content */}
+      {/* Layer 2 — content */}
       <div className="relative z-10 flex h-full flex-col">
         <div className="flex flex-1 items-center px-5 pt-[var(--ttp-header-h)] sm:px-8 md:px-[9%] lg:px-[10%]">
           <motion.div
@@ -80,17 +66,15 @@ export function Hero() {
           >
             <h1
               className="font-display text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold leading-[0.98] tracking-tight"
-              style={textShadow}
+              style={softLift}
             >
-              <span className="block text-white">Build the team.</span>
-              <span className="mt-1 block bg-gradient-to-r from-[#2F6BFF] to-[#00AEEF] bg-clip-text text-transparent">
-                Ship the system.
-              </span>
+              <span className="block text-[#051937]">Build the team.</span>
+              <span className="mt-1 block text-[#246BFF]">Ship the system.</span>
             </h1>
 
             <p
-              className="mt-5 max-w-[520px] text-[17px] leading-[1.6] font-medium text-white/95 md:text-lg"
-              style={textShadow}
+              className="mt-5 max-w-[520px] text-[17px] leading-[1.6] font-medium text-[#334155] md:text-lg"
+              style={softLift}
             >
               {home.hero.support}
             </p>
@@ -104,7 +88,7 @@ export function Hero() {
               </Link>
               <Link
                 href={cta.secondary.href}
-                className="inline-flex h-[48px] items-center justify-center gap-2 rounded-full border border-white/55 bg-white/12 px-[26px] text-sm font-semibold text-white shadow-[0_8px_24px_rgba(28,58,110,0.1)] backdrop-blur-md transition-colors hover:bg-white/20"
+                className="inline-flex h-[48px] items-center justify-center gap-2 rounded-full border border-[#051937]/16 bg-white/70 px-[26px] text-sm font-semibold text-[#051937] shadow-[0_4px_18px_rgba(20,50,100,0.1)] backdrop-blur-md transition-colors hover:bg-white/90"
               >
                 <Play className="size-3.5 fill-current" aria-hidden />
                 {cta.secondary.label}
