@@ -62,15 +62,13 @@ function collect(root: HTMLElement): HTMLElement[] {
 }
 
 function clearMotion(node: HTMLElement) {
-  node.style.opacity = "";
   node.style.translate = "";
-  node.style.scale = "";
   node.style.transition = "";
 }
 
 /**
- * One strong rise per object: fade, scale, and a tall slide, staggered like a wave.
- * It runs once. Scrolling back does not hide or replay it.
+ * One rise per object. Color and opacity stay untouched so navy text
+ * cannot wash out into a different shade. The motion runs once.
  */
 export function RevealOnScroll({ children, className, delay = 0 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,12 +91,10 @@ export function RevealOnScroll({ children, className, delay = 0 }: RevealOnScrol
       const alreadyVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 48;
       if (alreadyVisible) return;
 
-      const wait = delay + (index % 6) * 0.12;
+      const wait = delay + (index % 6) * 0.1;
       waits.set(node, wait);
-      node.style.opacity = "0";
-      node.style.translate = "0 56px";
-      node.style.scale = "0.96";
-      node.style.transition = `opacity 0.7s ${EASE} ${wait}s, translate 0.9s ${EASE} ${wait}s, scale 0.9s ${EASE} ${wait}s`;
+      node.style.translate = "0 40px";
+      node.style.transition = `translate 0.8s ${EASE} ${wait}s`;
       pending.add(node);
     });
 
@@ -110,14 +106,12 @@ export function RevealOnScroll({ children, className, delay = 0 }: RevealOnScrol
           if (!pending.has(node)) continue;
           pending.delete(node);
           observer.unobserve(node);
-          node.style.opacity = "1";
           node.style.translate = "0 0";
-          node.style.scale = "1";
           const wait = waits.get(node) ?? 0;
-          timers.push(window.setTimeout(() => clearMotion(node), (wait + 1) * 1000));
+          timers.push(window.setTimeout(() => clearMotion(node), (wait + 0.9) * 1000));
         }
       },
-      { threshold: 0.18 },
+      { threshold: 0.12 },
     );
 
     pending.forEach((node) => observer.observe(node));

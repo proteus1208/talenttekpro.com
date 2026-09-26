@@ -152,7 +152,7 @@ export default function CareersPage() {
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#64748B]">
               {careersPage.roles.applyNote}
             </p>
-            <ul className="mt-10 divide-y divide-[#051937]/10 border-y border-[#051937]/10">
+            <ul className="mt-10 divide-y divide-[#D7E4F0] border-y border-[#D7E4F0]">
               {careersPage.roles.items.map((role) => (
                 <li
                   key={role.slug}

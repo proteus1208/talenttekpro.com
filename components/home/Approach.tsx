@@ -73,7 +73,7 @@ export function Approach() {
               </div>
             </div>
 
-            <div className="mt-16 border-t border-[#051937]/08 pt-14 md:mt-20 md:pt-16">
+            <div className="mt-16 border-t border-[#D7E4F0] pt-14 md:mt-20 md:pt-16">
               <h3 className="section-title">
                 {home.approach.principles.headline}{" "}
                 <span className="hero-gradient-text">
@@ -86,7 +86,7 @@ export function Approach() {
                   return (
                     <li
                       key={item.title}
-                      className="flex items-start gap-4 rounded-2xl border border-[#051937]/06 bg-[#F8FAFC] p-5 md:p-6"
+                      className="flex items-start gap-4 rounded-2xl border border-[#D7E4F0] bg-[#F8FAFC] p-5 md:p-6"
                     >
                       <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-2xl bg-[#EFF6FF] text-[#1E60FF]">
                         <Icon className="size-5" strokeWidth={2} aria-hidden />

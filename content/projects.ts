@@ -95,7 +95,7 @@ export const projectCases: ProjectCase[] = [
       "Content ops without engineering tickets",
     ],
     stack: ["BigCommerce", "Next.js"],
-    mediaIndex: 2,
+    mediaIndex: 5,
   },
   {
     slug: "office-booking",
@@ -140,7 +140,7 @@ export const projectCases: ProjectCase[] = [
       "Brand-safe PDP templates",
     ],
     stack: ["Shopify", "Skio"],
-    mediaIndex: 0,
+    mediaIndex: 6,
   },
   {
     slug: "personal-care-shopify",
@@ -155,7 +155,7 @@ export const projectCases: ProjectCase[] = [
       "Faster campaign launches",
     ],
     stack: ["Shopify", "Rebuy"],
-    mediaIndex: 1,
+    mediaIndex: 7,
   },
   {
     slug: "pipeline-inspection",
@@ -187,7 +187,7 @@ export const projectCases: ProjectCase[] = [
       "Optional C2H / embed path after ramp",
     ],
     stack: ["Hiring", "C2H"],
-    mediaIndex: 3,
+    mediaIndex: 8,
   },
 ];
 

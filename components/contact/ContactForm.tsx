@@ -79,7 +79,7 @@ export function ContactForm() {
   }
 
   const field =
-    "w-full rounded-xl border border-[#051937]/10 bg-white px-4 py-3.5 text-sm text-[#051937] outline-none transition-[border-color,box-shadow] placeholder:text-[#94A3B8] focus:border-[#1E60FF]/50 focus:shadow-[0_0_0_3px_rgba(30,96,255,0.08)]";
+    "w-full rounded-xl border border-[#D7E4F0] bg-white px-4 py-3.5 text-sm text-[#051937] outline-none transition-[border-color,box-shadow] placeholder:text-[#94A3B8] focus:border-[#1E60FF]/50 focus:shadow-[0_0_0_3px_rgba(30,96,255,0.08)]";
 
   if (status === "sent") {
     return (
@@ -185,7 +185,7 @@ export function ContactForm() {
                   "rounded-2xl border px-4 py-4 text-left transition-colors",
                   active
                     ? "border-[#1E60FF] bg-[#EFF6FF]"
-                    : "border-[#051937]/10 bg-white hover:border-[#1E60FF]/35",
+                    : "border-[#D7E4F0] bg-white hover:border-[#1E60FF]/35",
                 )}
               >
                 <span
@@ -221,7 +221,7 @@ export function ContactForm() {
                   "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
                   active
                     ? "border-[#1E60FF] bg-[#051937] text-white"
-                    : "border-[#051937]/10 bg-white text-[#64748B] hover:border-[#1E60FF]/35 hover:text-[#051937]",
+                    : "border-[#D7E4F0] bg-white text-[#64748B] hover:border-[#1E60FF]/35 hover:text-[#051937]",
                 )}
               >
                 {option}
@@ -253,7 +253,7 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <div className="flex flex-col gap-3 border-t border-[#051937]/08 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 border-t border-[#D7E4F0] pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-sm text-xs leading-relaxed text-[#94A3B8]">
           By submitting, you agree we may reply about your inquiry. We don’t share briefs with
           third parties.

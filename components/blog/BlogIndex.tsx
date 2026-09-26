@@ -107,7 +107,7 @@ export function BlogIndex() {
       {featured ? (
         <Link
           href={`/blog/${featured.slug}`}
-          className="group mt-10 grid overflow-hidden rounded-[1.75rem] bg-[#051937] shadow-[0_24px_60px_rgba(5,25,55,0.18)] transition-transform duration-300 hover:-translate-y-0.5 lg:grid-cols-12"
+          className="group mt-10 grid overflow-hidden rounded-[1.75rem] border border-[#D7E4F0] bg-white shadow-[0_18px_48px_rgba(5,25,55,0.07)] transition-transform duration-300 hover:-translate-y-0.5 lg:grid-cols-12"
         >
           <div className="relative aspect-[16/11] overflow-hidden lg:col-span-7 lg:aspect-auto lg:min-h-[360px]">
             <SafeImage
@@ -117,41 +117,30 @@ export function BlogIndex() {
               priority
               className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
-            <div
-              className="absolute inset-0 z-10 bg-gradient-to-t from-[#051937]/70 via-[#051937]/15 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#051937]/20 lg:to-[#051937]/80"
-              aria-hidden
-            />
           </div>
 
           <div className="relative flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:col-span-5 lg:px-10">
-            <p className="text-[0.75rem] font-semibold tracking-[0.16em] text-[#00D2FF] uppercase">
+            <p className="text-[0.75rem] font-semibold tracking-[0.16em] text-[#1E60FF] uppercase">
               Featured note
             </p>
             <div className="mt-5">
-              <PostMeta post={featured} tone="light" />
+              <PostMeta post={featured} />
             </div>
-            <h2 className="font-display mt-4 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <h2 className="font-display mt-4 text-2xl font-semibold tracking-tight text-[#051937] md:text-3xl">
               {featured.title}
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-white/70 md:text-[0.95rem]">
+            <p className="mt-4 text-sm leading-relaxed text-[#64748B] md:text-[0.95rem]">
               {featured.excerpt}
             </p>
-            <div className="mt-5 flex flex-wrap gap-1.5">
-              {featured.tags.slice(0, 3).map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[0.65rem] font-medium text-white/80"
-                >
-                  {tag}
-                </span>
-              ))}
+            <div className="mt-5">
+              <TagRow tags={featured.tags.slice(0, 3)} />
             </div>
-            <div className="mt-8 flex items-center justify-between gap-4 border-t border-white/10 pt-6">
+            <div className="mt-8 flex items-center justify-between gap-4 border-t border-[#D7E4F0] pt-6">
               <div>
-                <p className="text-sm font-medium text-white">{featured.author}</p>
-                <p className="mt-0.5 text-xs text-white/55">{featured.role}</p>
+                <p className="text-sm font-medium text-[#051937]">{featured.author}</p>
+                <p className="mt-0.5 text-xs text-[#94A3B8]">{featured.role}</p>
               </div>
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00D2FF]">
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E60FF]">
                 Read
                 <ArrowUpRight
                   className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
