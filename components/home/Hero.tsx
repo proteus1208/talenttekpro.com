@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Clock3, Play, Rocket, Star, Users } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
+import Link from "next/link";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
@@ -37,156 +36,120 @@ const heroStats = [
   },
 ];
 
-/** Rough hand-drawn underline under the gradient headline */
-function HandUnderline({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 320 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M4 11 C48 4 72 15 110 9 C148 3 168 14 210 8 C248 3 278 12 316 7"
-        stroke="#1E60FF"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity="0.55"
-      />
-      <path
-        d="M8 14 C56 8 88 16 128 12 C170 7 200 15 248 11 C278 8 300 13 314 10"
-        stroke="#00B4FF"
-        strokeWidth="2"
-        strokeLinecap="round"
-        opacity="0.35"
-      />
-    </svg>
-  );
-}
+const textShadow = { textShadow: "0 2px 12px rgba(28,58,110,0.22)" } as const;
 
 export function Hero() {
   return (
-    <section className="relative z-20 overflow-visible bg-[#F5F9FC]">
-      <div className="hero-viewport relative flex flex-col overflow-visible pb-[6.5rem] md:pb-[7.25rem]">
-        <svg width="0" height="0" className="absolute" aria-hidden>
-          <defs>
-            <clipPath id="hero-left-curve" clipPathUnits="objectBoundingBox">
-              <path d="M0,0 H0.94 C0.72,0.28 0.72,0.72 0.94,1 H0 Z" />
-            </clipPath>
-          </defs>
-        </svg>
+    <section
+      id="home-hero"
+      className="relative z-20 h-svh min-h-svh overflow-hidden"
+    >
+      {/* Layer 1 — full-bleed photograph */}
+      <SafeImage
+        src={media.landing.src}
+        alt={media.landing.alt}
+        fill
+        priority
+        className="border-0 object-cover object-[72%_center] outline-none ring-0 sm:object-[68%_center]"
+      />
 
-        <div className="absolute inset-y-0 right-0 z-0 hidden w-[50%] md:block lg:w-[48%]">
-          <SafeImage
-            src={media.landing.src}
-            alt={media.landing.alt}
-            fill
-            priority
-            className="border-0 object-cover object-[center_28%] outline-none ring-0"
-          />
-        </div>
+      {/* Layer 2 — soft blue readability wash (left → transparent) */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(28,58,110,0.38) 0%, rgba(28,58,110,0.18) 32%, rgba(28,58,110,0.06) 55%, rgba(28,58,110,0) 78%)",
+        }}
+        aria-hidden
+      />
 
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[68%] md:block lg:w-[70%]"
-          style={{
-            filter: "drop-shadow(36px 0 48px rgba(5,25,55,0.1))",
-          }}
-          aria-hidden
-        >
-          <div
-            className="h-full w-full bg-[#F5F9FC]"
-            style={{ clipPath: "url(#hero-left-curve)" }}
-          />
-        </div>
+      {/* Layer 3 — very light cool tint */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[rgba(28,58,110,0.08)] md:bg-[rgba(28,58,110,0.03)]"
+        aria-hidden
+      />
 
-        <div
-          className="pointer-events-none absolute -top-6 -left-4 z-[1] opacity-[0.06] md:top-2 md:left-2"
-          aria-hidden
-        >
-          <SafeImage
-            src="/logo/logo-no-text-512.png"
-            alt=""
-            width={400}
-            height={400}
-            className="h-52 w-52 md:h-64 md:w-64 lg:h-72 lg:w-72"
-            priority
-          />
-        </div>
-
-        <Container className="relative z-20 flex flex-1 items-center py-12 md:py-16">
+      {/* Layer 4 — content */}
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="flex flex-1 items-center px-5 pt-[var(--ttp-header-h)] sm:px-8 md:px-[9%] lg:px-[10%]">
           <motion.div
-            className="relative max-w-[34rem] lg:max-w-[36rem]"
-            initial={{ opacity: 0, y: 18 }}
+            className="max-w-[600px] -translate-y-[4%] md:-translate-y-[6%]"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="font-display text-[clamp(2.35rem,5vw,3.85rem)] font-bold leading-[1.08] tracking-tight text-[#051937]">
-              <span className="block">Build the team.</span>
-              <span className="relative inline-block whitespace-nowrap">
-                <span className="hero-gradient-text">Ship the system.</span>
-                <HandUnderline className="absolute -bottom-1 left-0 h-3 w-full md:h-3.5" />
+            <h1
+              className="font-display text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold leading-[0.98] tracking-tight"
+              style={textShadow}
+            >
+              <span className="block text-white">Build the team.</span>
+              <span className="mt-1 block bg-gradient-to-r from-[#2F6BFF] to-[#00AEEF] bg-clip-text text-transparent">
+                Ship the system.
               </span>
             </h1>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-[#64748B] md:text-lg">
+
+            <p
+              className="mt-5 max-w-[520px] text-[17px] leading-[1.6] font-medium text-white/95 md:text-lg"
+              style={textShadow}
+            >
               {home.hero.support}
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button href={cta.primary.href} className="rounded-full px-6 py-3">
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <Link
+                href={cta.primary.href}
+                className="inline-flex h-[48px] items-center justify-center rounded-full bg-[#246BFF] px-[26px] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(36,107,255,0.28)] transition-colors hover:bg-[#3B7AFF]"
+              >
                 {cta.primary.label}
-              </Button>
-              <Button
+              </Link>
+              <Link
                 href={cta.secondary.href}
-                variant="secondary"
-                className="gap-2 rounded-full px-6 py-3"
+                className="inline-flex h-[48px] items-center justify-center gap-2 rounded-full border border-white/55 bg-white/12 px-[26px] text-sm font-semibold text-white shadow-[0_8px_24px_rgba(28,58,110,0.1)] backdrop-blur-md transition-colors hover:bg-white/20"
               >
                 <Play className="size-3.5 fill-current" aria-hidden />
                 {cta.secondary.label}
-              </Button>
+              </Link>
             </div>
           </motion.div>
-        </Container>
-      </div>
+        </div>
 
-      <div className="relative z-30 -mt-[6.5rem] w-full md:-mt-[7.25rem]">
-        <Container>
+        {/* Floating glass stats — overlaps bottom of photograph */}
+        <div className="mx-auto w-full max-w-[1180px] shrink-0 px-4 pb-3.5 md:px-6 md:pb-4">
           <motion.div
-            className="rounded-[1.75rem] border border-black/5 bg-white px-4 py-5 shadow-[0_24px_70px_rgba(5,25,55,0.14)] sm:px-6 md:rounded-[2rem] md:px-2 md:py-6"
-            initial={{ opacity: 0, y: 16 }}
+            className="rounded-[1.75rem] border border-white/55 bg-white/88 px-3 py-4 shadow-[0_16px_40px_rgba(28,58,110,0.12)] backdrop-blur-[20px] sm:px-4 md:rounded-[2rem] md:px-2 md:py-5"
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.65,
-              delay: 0.15,
+              delay: 0.18,
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <dl className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-0">
+            <dl className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-0">
               {heroStats.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
                   <div
                     key={stat.label}
                     className={cn(
-                      "flex items-center gap-3 px-3 md:justify-center md:px-4",
-                      i > 0 && "md:border-l md:border-black/8",
+                      "flex items-center gap-3 px-2 sm:px-3 md:justify-center md:px-4",
+                      i > 0 && "md:border-l md:border-[#051937]/08",
                     )}
                   >
                     <span
                       className={cn(
-                        "grid size-10 shrink-0 place-items-center rounded-full md:size-11",
+                        "grid size-9 shrink-0 place-items-center rounded-full md:size-10",
                         stat.tint,
                       )}
                     >
-                      <Icon className="size-5" aria-hidden />
+                      <Icon className="size-4 md:size-[1.125rem]" aria-hidden />
                     </span>
                     <div>
                       <dt className="sr-only">{stat.label}</dt>
-                      <dd className="font-display text-xl font-bold tracking-tight text-[#051937] md:text-2xl">
+                      <dd className="font-display text-[1.35rem] font-bold tracking-tight text-[#051937] md:text-[1.55rem]">
                         {stat.value}
                       </dd>
-                      <p className="text-xs text-[#64748B] md:text-sm">
+                      <p className="text-[13px] font-medium text-[#64748B] md:text-sm">
                         {stat.label}
                       </p>
                     </div>
@@ -195,7 +158,7 @@ export function Hero() {
               })}
             </dl>
           </motion.div>
-        </Container>
+        </div>
       </div>
     </section>
   );

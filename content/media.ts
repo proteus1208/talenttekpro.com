@@ -36,10 +36,10 @@ export const media = {
   } satisfies MediaAsset,
   landing: {
     id: "landing",
-    src: "/media/heroes/landing.png",
-    path: "/media/heroes/landing.png",
-    prompt: `Premium SaaS marketing hero photograph, 16:9. Bright modern tech office. Strikingly beautiful young woman developer in a stylish white open-neckline top collaborating with two male developers around a laptop. Soft daylight, left third open for headline. No logos, no readable UI text.`,
-    alt: "A beautiful woman developer in white collaborating with teammates at a laptop.",
+    src: "/media/heroes/landing.jpg",
+    path: "/media/heroes/landing.jpg",
+    prompt: `Premium cinematic B2B tech hero. Bright modern open office, large windows, natural daylight. Young professional man (navy sweater, glasses) and woman (light grey sweater) collaborating on a laptop on the RIGHT. Softly blurred coworkers and plants in background. LEFT third quiet bright negative space for headline. No sci-fi, holograms, logos, or readable UI.`,
+    alt: "Software engineers collaborating on a laptop in a bright modern office.",
   } satisfies MediaAsset,
   manifesto: {
     id: "manifesto",

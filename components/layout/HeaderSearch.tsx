@@ -17,9 +17,16 @@ type HeaderSearchProps = {
   className?: string;
   forceClosed?: boolean;
   onOpen?: () => void;
+  /** inverse = white icon for transparent hero overlay */
+  tone?: "default" | "inverse";
 };
 
-export function HeaderSearch({ className, forceClosed, onOpen }: HeaderSearchProps) {
+export function HeaderSearch({
+  className,
+  forceClosed,
+  onOpen,
+  tone = "default",
+}: HeaderSearchProps) {
   const pathname = usePathname();
   const inputRef = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false);
@@ -155,7 +162,10 @@ export function HeaderSearch({ className, forceClosed, onOpen }: HeaderSearchPro
         aria-expanded={open}
         onClick={openSearch}
         className={cn(
-          "grid size-10 place-items-center rounded-full text-[#64748B] transition-colors hover:bg-[#F1F5F9] hover:text-[#051937]",
+          "grid size-10 place-items-center rounded-full transition-colors",
+          tone === "inverse"
+            ? "text-white hover:bg-white/12 hover:text-white"
+            : "text-[#64748B] hover:bg-[#F1F5F9] hover:text-[#051937]",
           className,
         )}
       >
