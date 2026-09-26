@@ -84,7 +84,7 @@ function MarqueePills({
         return (
           <span
             key={`${trackKey}-${item.title}-${i}`}
-            className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#051937]/06 bg-white px-4 py-2.5 text-sm font-medium whitespace-nowrap text-[#051937] shadow-[0_8px_22px_rgba(5,25,55,0.05)]"
+            className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#D7E4F0] bg-white px-4 py-2.5 text-sm font-medium whitespace-nowrap text-[#051937] shadow-[0_8px_22px_rgba(5,25,55,0.05)]"
           >
             <span
               className={cn(

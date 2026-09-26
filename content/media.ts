@@ -147,6 +147,34 @@ export const media = {
       prompt: `Premium modern SaaS case-study hero image, bright high-key product photography, clean light background, soft white and pale blue environment, elegant studio lighting, subtle natural shadows, soft depth of field, refined blue accent colors, minimal composition, photorealistic, professional web portfolio artwork, no dark background, no neon glow, no cyberpunk aesthetic, no text, no watermark, 16:9. Industrial pipeline inspection scene with a compact inspection robot and tablet showing inspection data, large clean metal pipeline, professional industrial environment, daylight, realistic materials, subtle blue technology accents, photorealistic engineering photography, clean premium composition.`,
       alt: "Inspection robot and tablet beside a clean metal pipeline in daylight.",
     },
+    {
+      id: "case-leds",
+      src: "/media/cases/case-leds.png",
+      path: "/media/cases/case-leds.png",
+      prompt: `Premium modern SaaS case-study hero image, bright high-key product photography, clean light background, soft white and pale blue environment, realistic 3D product visualization, elegant studio lighting, subtle natural shadows, soft depth of field, refined blue accent colors, minimal composition, no dark background, no neon glow, no text, no watermark, 16:9. Premium LED lighting catalog: two slim LED panels and one linear light bar on a white studio table, one panel softly glowing, a silver laptop beside them showing an abstract pale-blue product grid.`,
+      alt: "LED light panels and a laptop on a bright white studio table.",
+    },
+    {
+      id: "case-nutrition",
+      src: "/media/cases/case-nutrition.png",
+      path: "/media/cases/case-nutrition.png",
+      prompt: `Premium modern SaaS case-study hero image, bright high-key product photography, clean light background, soft white and pale blue environment, elegant studio lighting, subtle natural shadows, refined blue accent colors, minimal composition, no dark background, no neon glow, no text, no watermark, 16:9. Functional nutrition products: two frosted supplement jars and a small powder tin on a white studio surface, a smartphone with an abstract pale-blue screen, a few blueberries.`,
+      alt: "Frosted nutrition jars and a smartphone on a bright studio surface.",
+    },
+    {
+      id: "case-personal-care",
+      src: "/media/cases/case-personal-care.png",
+      path: "/media/cases/case-personal-care.png",
+      prompt: `Premium modern SaaS case-study hero image, bright high-key product photography, clean light background, soft white and pale blue environment, elegant studio lighting, subtle natural shadows, refined blue accent colors, minimal composition, no dark background, no neon glow, no text, no watermark, 16:9. Sustainable personal care: two frosted pump bottles and a glass dropper bottle on a white studio surface, one green leaf, a smartphone with an abstract pale-blue screen.`,
+      alt: "Personal care bottles and a smartphone on a bright white surface.",
+    },
+    {
+      id: "case-staffing",
+      src: "/media/cases/case-staffing.png",
+      path: "/media/cases/case-staffing.png",
+      prompt: `Premium modern SaaS case-study hero image, bright high-key product photography, clean light background, soft white and pale blue environment, elegant studio lighting, subtle natural shadows, refined blue accent colors, minimal composition, no dark background, no neon glow, no text, no watermark, no people, 16:9. A senior platform pod: three open silver laptops in a row on a long white conference table, pale-blue chairs, bright windows, abstract dashboards only.`,
+      alt: "Three laptops on a bright conference table for a platform team.",
+    },
   ] satisfies MediaAsset[],
 };
 

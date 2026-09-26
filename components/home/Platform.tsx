@@ -128,7 +128,7 @@ export function Platform() {
                       {pillar.description}
                     </p>
 
-                    <dl className="mt-8 grid grid-cols-3 gap-3 border-t border-[#051937]/06 pt-6">
+                    <dl className="mt-8 grid grid-cols-3 gap-3 border-t border-[#D7E4F0] pt-6">
                       {pillar.stats.map((stat) => (
                         <div key={stat.label}>
                           <dt className="text-[0.65rem] tracking-wide text-[#94A3B8] uppercase">

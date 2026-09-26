@@ -52,7 +52,7 @@ export default function ContactPage() {
             <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
               <div className="lg:col-span-7 xl:col-span-8">
                 <div className="rounded-[1.75rem] border border-black/[0.05] bg-[#F8FAFC] p-6 shadow-[0_24px_60px_rgba(5,25,55,0.06)] md:p-8 lg:p-10">
-                  <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-[#051937]/08 pb-6">
+                  <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-[#D7E4F0] pb-6">
                     <div>
                       <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#1E60FF] uppercase">
                         Proposal request
